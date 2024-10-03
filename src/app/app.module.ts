@@ -11,6 +11,11 @@ import { FooterComponent } from './footer/footer.component';
 import { AdvertisementComponent } from './home/advertisement/advertisement.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { BestSellingComponent } from './home/best-selling/best-selling.component';
+import { TestHeaderComponent } from './test-header/test-header.component';
+import { ContactComponent } from './contact/contact.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { BestSellingComponent } from './home/best-selling/best-selling.component
     FooterComponent,
     AdvertisementComponent,
     CategoriesComponent,
-    BestSellingComponent
+    BestSellingComponent,
+    TestHeaderComponent,
+    ContactComponent,
+    SignUpComponent,
+    ShopingCartComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
