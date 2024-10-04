@@ -1,0 +1,32 @@
+.banner {
+    background-image: url(/assets/images/main-banner.jpg);
+    background-size: cover;
+    background-position: top right;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.content {
+    padding: 30px;
+    width: 450px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #001F3F;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #3A6D8C;
+}
+
+a {
+    background-color: #4A249D;
+    border: none;
+    margin-top: 20px;
+}
