@@ -16,6 +16,8 @@ import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -31,12 +33,13 @@ import { LogInComponent } from './log-in/log-in.component';
     ContactComponent,
     SignUpComponent,
     ShopingCartComponent,
-    LogInComponent
+    LogInComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
