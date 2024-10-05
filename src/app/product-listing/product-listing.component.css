@@ -1,22 +1,22 @@
 p {
-  margin: auto;
-  font-size: 40px;
-  background-color: blue;
-  color: white;
-  padding: 100px;
-  text-align: center;
+    margin: auto;
+    font-size: 40px;
+    background-color: blue;
+    color: white;
+    padding: 100px;
+    text-align: center;
 }
 
 .example-card {
   width: 350px;
-  height: fit-content;
+  height: 450px;
   float: left;
   border-radius: 20px;
 }
 
 .example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover
 }
 
 .container {
@@ -26,15 +26,10 @@ p {
   gap: 15px;
 }
 
-<<<<<<< HEAD
 img
 {
   padding: 15px;
   width: 250px;
-=======
-img {
-  width: 200px;
->>>>>>> 837766ff0212b214c4f3d5814c93c8e7b18d7570
   height: 300px;
   margin: 0 auto;
 }
@@ -49,11 +44,10 @@ img {
 .title {
   font-size: 16px;
   padding: 5px;
-  height: 50px;
 }
 
 button {
-  background-color: #689ab5;
+  background-color: #689AB5;
   color: white;
   width: 110px;
   height: 40px;
@@ -61,5 +55,5 @@ button {
   border-radius: 10px;
 }
 mat-card-actions {
-  justify-content: left;
+  justify-content: center;
 }
