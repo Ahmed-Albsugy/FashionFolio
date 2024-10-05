@@ -1,1 +1,22 @@
-<p>categories works!</p>
+<section class="categories-section">
+  <div class="container">
+    <h2 class="mat-h1 section-title">Shop By Category</h2>
+
+    <div class="categories-grid">
+      <mat-card
+        *ngFor="let category of categories"
+        class="category-card"
+        (click)="onCategoryClick(category.id)"
+      >
+        <img mat-card-image [src]="category.image" [alt]="category.name" />
+        <mat-card-content>
+          <h3 class="mat-h2">{{ category.name }}</h3>
+          <p class="mat-body-1">{{ category.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary">EXPLORE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section>
