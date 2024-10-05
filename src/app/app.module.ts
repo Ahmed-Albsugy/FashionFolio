@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { ProductListingComponent } from './product-listing/product-listing.component';
+import { TreeFlatOverviewExample } from './product-listing/product-listing.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdvertisementComponent } from './home/advertisement/advertisement.component';
 import { CategoriesComponent } from './home/categories/categories.component';
@@ -16,13 +16,13 @@ import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    ProductListingComponent,
     FooterComponent,
     AdvertisementComponent,
     CategoriesComponent,
@@ -31,14 +31,16 @@ import { LogInComponent } from './log-in/log-in.component';
     ContactComponent,
     SignUpComponent,
     ShopingCartComponent,
-    LogInComponent
+    LogInComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTreeModule,
+    TreeFlatOverviewExample,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
