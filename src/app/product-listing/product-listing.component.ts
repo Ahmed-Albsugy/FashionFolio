@@ -13,105 +13,400 @@ export class ProductListingComponent {
       "price": 22.3,
       "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
       "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "image": "https://m.media-amazon.com/images/I/81MXgcHqBIL._AC_SL1500_.jpg",
       "rating": {
       "rate": 4.1,
       "count": 259}},
-    {
-      "id": 2,
-      "title": "Mens Cotton Jacket",
-      "price": 55.99,
-      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      "rating": {
-      "rate": 4.7,
-      "count": 500
+
+      {
+        "id": 2,
+        "title": "Men's Leather Bracelet",
+        "price": 20,
+        "description": "A classic and stylish bracelet for men.",
+        "category": "asseccories",
+        "image": "https://i.pinimg.com/originals/76/05/82/7605827032655a581cc9abc57e05484e.jpg",
+        "rating": {
+            "rate": 3.9,
+            "count": 70
         }
-        },
+      },
+
+      {
+        "id": 3,
+        "title": "Women's Denim Jacket",
+        "price": 42.5,
+        "description": "Classic denim jacket with a button-up front and chest pockets. A timeless wardrobe staple for layering",
+        "category": "women's clothing",
+        "image": "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/21/722562/1.jpg?9739",
+        "rating": {
+            "rate": 2.6,
+            "count": 235
+        }
+      },
+
+      {
+        "id": 4,
+        "title": "Women's Casual Maxi Dress",
+        "price": 50.0,
+        "description": "Long maxi dress with a relaxed fit and soft fabric. Perfect for casual days or beach outings.",
+          "category": "women's clothing",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/41gpl70tusL._UL500_.jpg",
+        "rating": {
+            "rate": 3.8,
+            "count": 679
+        }
+      },
+
+      { "id": 5,
+        "title": "Comfortable Khaki Chinos ",
+        "price": 38.00,
+        "description": "Versatile and comfortable chinos for everyday wear.",
+        "category": "men's clothing",
+        "image": "https://www.cordings.co.uk/media/catalog/product/cache/e89452242e02ce17aec9919532009943/t/r/tr478stone.jpg",
+        "rating": {
+        "rate": 3.1,
+        "count": 259}},
+
         {
-          "id": 3,
-          "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-          "price": 95,
-          "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-          "category": "jewelery",
-          "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+          "id": 6,
+          "title": "Unisex Aviator Sunglasses",
+          "price": 50,
+          "description": "A timeless and stylish pair of sunglasses for both men and women",
+          "category": "accessories",
+          "image": "https://th.bing.com/th?id=OIF.lyN41FD%2bBtTSHsQOXCYSdg&rs=1&pid=ImgDetMain",
           "rating": {
               "rate": 4.6,
               "count": 400
           }
       },
+
       {
-        "id": 4,
-        "title": "Mens Casual Slim Fit",
-        "price": 15.99,
-        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-        "category": "men's clothing",
-        "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+        "id": 7,
+        "title": "Men's Cufflinks",
+        "price": 150,
+        "description": "A formal accessory for men to add a touch of sophistication to their dress shirts",
+        "category": "accessories",
+        "image": "https://image.harrods.com/tateossian-square-cufflinks_14993064_25394599_2048.jpg",
         "rating": {
-            "rate": 2.1,
-            "count": 430
+            "rate": 3.9,
+            "count": 70
         }
-    },
-    {
-      "id": 5,
-      "title": "White Gold Plated Princess",
-      "price": 299.99,
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-      "rating": {
-          "rate": 3,
-          "count": 400
-      }
-  },
-  {
-    "id": 6,
-    "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-    "price": 29.95,
-    "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
-    "category": "women's clothing",
-    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
-    "rating": {
-        "rate": 2.9,
-        "count": 340
-    }
-},
-{
-  "id": 7,
-  "title": "Solid Gold Petite Micropave ",
-  "price": 168,
-  "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-  "category": "jewelery",
-  "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-  "rating": {
-      "rate": 3.9,
-      "count": 70
-  }
-},
-{
-  "id": 8,
-  "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-  "price": 56.99,
-  "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
-  "category": "women's clothing",
-  "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-  "rating": {
-      "rate": 2.6,
-      "count": 235
-  }
-},
-{
-  "id": 9,
-  "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-  "price": 39.99,
-  "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-  "category": "women's clothing",
-  "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-  "rating": {
-      "rate": 3.8,
-      "count": 679
-  }
-}
+      },
+
+      {
+        "id": 8,
+        "title": "Women's Lightweight Cardigan",
+        "price": 28.0,
+        "description": "Soft and cozy cardigan with an open front design, perfect for layering during cooler months.",
+        "category": "women's clothing",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/81LlRQoAKyL._SL250_.jpg",
+        "rating": {
+            "rate": 3.8,
+            "count": 679
+        }
+      },
+
+      { "id": 9,
+        "title": "Relaxed-Fit Crewneck Sweater",
+        "price": 65.00,
+        "description": "Soft and cozy sweater for cool weather. Perfect for layering.",
+        "category": "men's clothing",
+        "image": "https://www.houseofblanks.com/cdn/shop/files/HOB-RelaxedCrew-Heather-Front.jpg?v=1707341201&width=533",
+        "rating": {
+        "rate": 4.1,
+        "count": 259}},
+
+        {
+          "id": 10,
+          "title": "Vintage Leather Strap Watch",
+          "price": 150,
+          "description": "A timeless and elegant watch with a classic aesthetic.",
+          "category": "accessories",
+          "image": "https://i.ebayimg.com/images/g/CVYAAOSwaENj7A27/s-l500.jpg",
+          "rating": {
+              "rate": 3.9,
+              "count": 70
+          }
+        },
+
+        {
+          "id": 11,
+          "title": "Women's Casual Chiffon Blouse",
+          "price": 30.0,
+          "description": "Elegant chiffon blouse with a relaxed fit, featuring delicate detailing on the neckline and sleeves..",
+          "category": "women's clothing",
+          "image": "https://cdn-img.prettylittlething.com/8/e/d/1/8ed19d6f6ba88357f41b3d2db157b6582314156f_CLV0472_3.JPG",
+          "rating": {
+              "rate": 3.8,
+              "count": 679
+          }
+        },
+
+        {
+          "id": 12,
+          "title": "Women's Midi Skirt",
+          "price": 35.0,
+          "description": "A-line midi skirt with a flowy design, perfect for casual wear or semi-formal occasions..",
+          "category": "women's clothing",
+          "image": "https://m.media-amazon.com/images/I/51-wJ71RG+L._AC_SX385_.jpg",
+          "rating": {
+              "rate": 3.8,
+              "count": 679
+          }
+        },
+
+        {
+          "id": 13,
+          "title": "Diamond",
+          "price": 300,
+          "description": "Diamond Necklace-Elegant-Women",
+          "category": "accessories",
+          "image": "https://ion.bluenile.com/sets/Jewelry-bn/194174/NOP/Images/stage.jpg",
+          "rating": {
+              "rate": 3.9,
+              "count": 70
+          }
+        },
+
+        {
+          "id": 14,
+          "title": "Classic Silver Chain Necklace",
+          "price": 100,
+          "description": "A versatile piece that can be dressed up or down.",
+          "category": "accessories",
+          "image": "https://content.thewosgroup.com/productimage/12040048/12040048_1.jpg?impolicy=zoom",
+          "rating": {
+              "rate": 3.9,
+              "count": 70
+          }
+        },
+
+        { "id": 15,
+          "title": "Men's Fleece Pullover Hoodie",
+          "price": 35.0,
+          "description": "Fleece-lined hoodie with adjustable drawstrings and a front pocket. Soft fabric, suitable for layering in cold weather.",
+          "category": "men's clothing",
+          "image": "https://i.pinimg.com/originals/3b/f4/ad/3bf4ad1ad55d2302ab942396b94ee4f9.jpg",
+          "rating": {
+          "rate": 4.1,
+          "count": 259}},
+
+          {
+            "id": 16,
+            "title": "Women's Casual Jumpsuit",
+            "price": 55.0,
+            "description": "Trendy jumpsuit with a cinched waist and wide-leg pants. Great for casual outings or summer nights.",
+            "category": "women's clothing",
+            "image": "https://i5.walmartimages.com/asr/2a5d37f4-ec43-43ec-80a9-7e8bb0c35e6a.7997b57df5cb9c0f1bf3a024702e9b77.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+            "rating": {
+                "rate": 3.8,
+                "count": 679
+            }
+          },
+
+          {
+            "id": 17,
+            "title": "Women's Shirt",
+            "price": 40.0,
+            "description": "Cozy and soft.",
+            "category": "women's clothing",
+            "image": "https://ae01.alicdn.com/kf/HTB1v7YXSpXXXXXNaVXXq6xXFXXXq/2017-Women-Floral-Embroidery-White-Blouses-Roll-up-Long-Sleeve-V-Neck-Curved-Hem-Ladies-Office.jpg",
+            "rating": {
+                "rate": 3.8,
+                "count": 679
+            }
+          },
+
+          {
+            "id": 18,
+            "title": "Silver Earrings",
+            "price": 160,
+            "description": "Simple and glowy",
+            "category": "accessories",
+            "image": "https://www.rubyandoscar.com/media/catalog/product/r/1/r131245sa.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=768&width=768&canvas=768:768",
+            "rating": {
+                "rate": 3.9,
+                "count": 70
+            }
+          },
+
+          { "id": 19,
+            "title": "Durable Denim Jeans",
+            "price": 70.00,
+            "description": "Classic straight-leg jeans made with high-quality denim.",
+            "category": "men's clothing",
+            "image": "https://th.bing.com/th/id/OIP.-Awebs3_y4N0vT-vv030IwAAAA?rs=1&pid=ImgDetMain",
+            "rating": {
+            "rate": 4.1,
+            "count": 259}},
+
+            {
+              "id": 20,
+              "title": "Women's Knit Sweater",
+              "price": 40.0,
+              "description": "Cozy and soft knit sweater, ideal for chilly days. Features a relaxed fit with ribbed cuffs and hem.",
+              "category": "women's clothing",
+              "image": "https://images-cdn.ubuy.co.in/654ec7dd9fb75b0f9d500283-aelfric-eden-cable-knit-sweater-women.jpg",
+              "rating": {
+                  "rate": 3.8,
+                  "count": 679
+              }
+            },
+
+            {
+              "id": 21,
+              "title": "Men's Leather Wallet",
+              "price": 100.00,
+              "description": "A classic and functional accessory for men to carry cash and cards.",
+              "category": "accessories",
+              "image": "https://ae01.alicdn.com/kf/HTB1Y2c_aOnrK1Rjy1Xcq6yeDVXap/DIKEDAKU-Baellerry-Lucky-Box-Gift-Short-Wallet-Zipper-Multifunction-Wallet-Multicard-Zero-Wallet-Men-Purse.jpg",
+              "rating": {
+                  "rate": 3,
+                  "count": 400
+              }
+          },
+
+          {
+            "id": 22,
+            "title": "Men's Casual Slim Fit",
+            "price": 15.99,
+            "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+            "category": "men's clothing",
+            "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+            "rating": {
+                "rate": 2.1,
+                "count": 430
+            }
+        },
+
+        { "id": 23,
+          "title": "Classic Oxford Button-Down Shirt ",
+          "price": 45.00,
+          "description": "A timeless wardrobe staple. Crisp cotton fabric and a clean",
+          "category": "men's clothing",
+          "image": "https://media.endclothing.com/media/catalog/product/2/9/29-05-2019_ami_heartlogooxfordshirt_white_a19c013-45-100_blr_1.jpg",
+          "rating": {
+          "rate": 5,
+          "count": 260}},
+
+          {
+            "id": 24,
+            "title": "Silver Bracelet",
+            "price": 120,
+            "description": "Silver Bracelet Lady women jewelry",
+            "category": "accessories",
+            "image": "https://assets.anniehaakdesigns.co.uk/media/catalog/product/t/u/tumbnail_28ad8b45-da3d-4636-8a5e-c89e3e86e909.jpg?q=90&canvas.width=325&canvas.height=325&canvas.color=ffffff&w=325&h=325",
+            "rating": {
+                "rate": 3.9,
+                "count": 70
+            }
+          },
+
+          {
+            "id": 25,
+            "title": "Women's Floral Summer Dress",
+            "price": 35.0,
+            "description": "Elegant floral dress with a flowy fit, perfect for summer outings and casual events. Lightweight fabric ensures comfort in warm weather.",
+            "category": "women's clothing",
+            "image": "https://cdn.shopify.com/s/files/1/0281/5757/5299/products/image_b8598dc7-741d-4f4b-b1ad-7b4f16b77f74_1445x.jpg?v=1675779170",
+            "rating": {
+                "rate": 3.8,
+                "count": 679
+            }
+          },
+
+          {
+            "id": 26,
+            "title": "Minimalist Stainless Steel Watch",
+            "price": 150,
+            "description": "A sleek and modern timepiece for everyday wear.",
+            "category": "accessories",
+            "image": "https://i5.walmartimages.com/seo/Minimalist-Stainless-Steel-Quartz-Men-s-Watch-For-Men_0a4ecf12-aaa0-4614-af9a-b1aa40fd4a84.101672e262c7f6a51cc26815b3d9e45b.jpeg",
+            "rating": {
+                "rate": 3.9,
+                "count": 70
+            }
+          },
+
+          { "id": 27,
+            "title": "Stylish Bomber Jacket",
+            "price": 89.00,
+            "description": "A trendy and functional jacket for colder days.",
+            "category": "men's clothing",
+            "image": "https://i.pinimg.com/736x/32/cb/6c/32cb6c465c8a3bfb080917c061f46237.jpg",
+            "rating": {
+            "rate": 4.1,
+            "count": 259}},
+
+            { "id": 28,
+              "title": "Warm Down Puffer Jacket",
+              "price": 120.00,
+              "description": "A cozy and insulated jacket for winter weather.",
+              "category": "men's clothing",
+              "image": "https://lp.arket.com/app006prod?set%3Dsource[02_0644961_005_1]%2Ctype[PRODUCT]%2Cdevice[hdpi]%2Cquality[80]%2CImageVersion[201909111034]%26call%3Durl[file:%2Fproduct%2Fmain]",
+              "rating": {
+              "rate": 4.1,
+              "count": 259}},
+
+              {
+                "id": 29,
+                "title": "Simple Neckless",
+                "price": 200,
+                "description": "A simple accessory for women",
+                "category": "accessories",
+                "image": "https://images.bloomingdalesassets.com/is/image/BLM/products/3/optimized/13464023_fpx.tif?op_sharpen=1&wid=700&fit=fit,1&$filtersm$",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 70
+                }
+              },
+
+              {
+                "id": 30,
+                "title": "Women's Wool Peacoat",
+                "price": 110.0,
+                "description": "A classic wool peacoat featuring a double-breasted design and a tailored fit. Suitable for formal or casual occasions.",
+                "category": "women's clothing",
+                "image": "https://m.media-amazon.com/images/I/41j+MwlcWqL._QL92_SH45_SR240,220_.jpg",
+                "rating": {
+                    "rate": 3.8,
+                    "count": 679
+                }
+              },
+
+              { "id": 31,
+                "title": "Comfortable Crewneck T-Shirt (Basic)",
+                "price": 15.00,
+                "description": "A simple and affordable t-shirt for everyday wear.",
+                "category": "men's clothing",
+                "image": "https://th.bing.com/th/id/OIP.VHOryi2FL5ZI64oUFQNnxQAAAA?rs=1&pid=ImgDetMain",
+                "rating": {
+                "rate": 4.1,
+                "count": 259}},
+
+                {
+                  "id": 32,
+                  "title": " Leather Moto Biker Jacket",
+                  "price": 29.95,
+                  "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+                  "category": "women's clothing",
+                  "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+                  "rating": {
+                      "rate": 2.9,
+                      "count": 340
+                  }
+              },
+
+              { "id": 33,
+                "title": "Trendy Graphic Tee",
+                "price": 25.00,
+                "description": "A fun and expressive t-shirt with a unique graphic design.",
+                "category": "men's clothing",
+                "image": "https://cdn.shopify.com/s/files/1/1520/5960/files/NFTSFUTURE_SS_Creme_Front.jpg?v=1683927261&width=650",
+                "rating": {
+                "rate": 4.1,
+                "count": 259
+              }
+            },
   ]
 }
