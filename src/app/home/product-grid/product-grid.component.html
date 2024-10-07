@@ -1,0 +1,99 @@
+<section class="products-section">
+  <div class="container">
+    <div class="controls-wrapper mat-elevation-z1">
+      <div class="view-controls">
+        <button
+          mat-icon-button
+          [color]="viewType === 'grid' ? 'primary' : ''"
+          (click)="toggleView('grid')"
+        >
+          <mat-icon>grid_view</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          [color]="viewType === 'list' ? 'primary' : ''"
+          (click)="toggleView('list')"
+        >
+          <mat-icon>view_list</mat-icon>
+        </button>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Sort By</mat-label>
+        <mat-select (selectionChange)="onSortChange($event)">
+          <mat-option *ngFor="let option of sortOptions" [value]="option.value">
+            {{ option.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="products-grid" [class.list-view]="viewType === 'list'">
+      <mat-card *ngFor="let product of products" class="product-card">
+        <div class="image-container">
+          <img mat-card-image [src]="product.image" [alt]="product.name" />
+          <button
+            mat-icon-button
+            class="wishlist-button"
+            (click)="addToWishlist(product)"
+          >
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+          <div class="discount-badge" *ngIf="product.discountPrice">
+            {{
+              ((product.price - product.discountPrice) / product.price) * 100
+                | number : "1.0-0"
+            }}% OFF
+          </div>
+        </div>
+
+        <mat-card-content>
+          <div class="product-info">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-description">{{ product.description }}</p>
+
+            <div class="rating">
+              <mat-icon
+                *ngFor="let star of getStarArray(product.rating)"
+                class="star-icon"
+                >star</mat-icon
+              >
+              <mat-icon
+                *ngIf="getPartialStar(product.rating)"
+                class="star-icon partial"
+                [style.width.%]="getPartialStar(product.rating)"
+              >
+                star
+              </mat-icon>
+              <span class="rating-value">({{ product.rating }})</span>
+            </div>
+
+            <div class="price-container">
+              <span
+                class="current-price"
+                [class.discounted]="product.discountPrice"
+              >
+                {{ product.discountPrice || product.price | currency }}
+              </span>
+              <span class="original-price" *ngIf="product.discountPrice">
+                {{ product.price | currency }}
+              </span>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!product.inStock"
+            (click)="addToCart(product)"
+          >
+            <mat-icon>shopping_cart</mat-icon>
+            {{ product.inStock ? "Add to Cart" : "Out of Stock" }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section>
