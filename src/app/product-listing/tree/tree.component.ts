@@ -19,23 +19,46 @@ interface FoodNode {
 
 const TREE_DATA: FoodNode[] = [
   {
-    name: 'Fruit',
-    children: [{ name: 'Apple' }, { name: 'Banana' }, { name: 'Fruit loops' }],
+    name: 'Women',
+    children: [
+      {name: 'Clothhing',
+      children:[{name:'Coats'}, {name:'Jackets'}, {name:'Dresses'}, {name:'Shirts & Blouses'}, {name:'Tops'}, {name:'Skirts'}, {name:'jeans'}],
+      },
+       {name: 'Accessories',
+        children: []
+       },
+
+       {name: 'Bags',
+        children: [{name:'Shoulder Bags'}, {name :'Tote Bags'} , {name :'Clutch Bags'} , {name :'BackPacks Bags'},{name :'Belt Bags'}],
+       },
+    ],
   },
+
   {
-    name: 'Vegetables',
+    name: 'Men',
     children: [
       {
-        name: 'Green',
-        children: [{ name: 'Broccoli' }, { name: 'Brussels sprouts' }],
+        name: 'Clothing',
+        children: [{name: 'Suits'}, {name: 'Blazers'}, {name: 'Shirts'}, {name: 'Pants'}, {name: 'shorts & Swimwear'},{name: 'Sweaters & Hoodies'}],
       },
       {
-        name: 'Orange',
-        children: [{ name: 'Pumpkins' }, { name: 'Carrots' }],
+        name: 'Shoes',
+        children: [{name: 'Adidas'}, {name: 'Nike'}, {name: 'New Balance'}, {name: 'vanss'}],
       },
     ],
   },
+  {
+    name: 'Kids',
+    children:[
+    {
+      name: 'Clothing',
+        children: [{name: 'Suits'}, {name: 'Blazers'}, {name: 'Shirts'}, {name: 'Pants'}, {name: 'shorts & Swimwear'},{name: 'Sweaters & Hoodies'}],
+    }
+      ]
+
+  },
 ];
+
 
 /** Flat node with expandable and level information */
 interface ExampleFlatNode {
