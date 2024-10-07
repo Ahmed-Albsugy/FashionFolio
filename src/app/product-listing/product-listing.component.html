@@ -17,3 +17,23 @@
   </mat-tree-node>
 </mat-tree>
 
+
+
+<div class="container">
+  <div class="item" *ngFor ="let product of products">
+    <mat-card class="example-card" appearance="outlined">
+      <img mat-card-image [src]="product.image" alt="Photo of a Shiba Inu">
+      <br>
+      <div class="price">
+        ${{product.price}}
+      </div>
+      <div class="title">
+        {{product.title}}
+      </div>
+      <mat-card-actions>
+        <button mat-flat-button>Add to Card</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
