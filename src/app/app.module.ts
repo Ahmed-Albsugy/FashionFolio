@@ -10,7 +10,7 @@ import { ProductListingComponent } from './product-listing/product-listing.compo
 import { FooterComponent } from './footer/footer.component';
 import { AdvertisementComponent } from './home/advertisement/advertisement.component';
 import { CategoriesComponent } from './home/categories/categories.component';
-import { BestSellingComponent } from './home/best-selling/best-selling.component';
+import { ProductGridComponent } from './home/product-grid/product-grid.component';
 import { TestHeaderComponent } from './test-header/test-header.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -18,6 +18,10 @@ import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,7 @@ import { MatButtonModule } from '@angular/material/button';
     FooterComponent,
     AdvertisementComponent,
     CategoriesComponent,
-    BestSellingComponent,
+    ProductGridComponent,
     TestHeaderComponent,
     ContactComponent,
     SignUpComponent,
@@ -41,6 +45,9 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
+    MatSelectModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
