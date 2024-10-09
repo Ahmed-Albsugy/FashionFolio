@@ -13,7 +13,7 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductGridComponent } from './home/product-grid/product-grid.component';
 import { TestHeaderComponent } from './test-header/test-header.component';
 import { ContactComponent } from './contact/contact.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignupComponent } from './sign-up/sign-up.component';
 import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatTreeModule } from '@angular/material/tree';
@@ -22,6 +22,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
 
 @NgModule({
@@ -35,7 +37,7 @@ import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
     ProductGridComponent,
     TestHeaderComponent,
     ContactComponent,
-    SignUpComponent,
+    SignupComponent,
     ShopingCartComponent,
     LogInComponent,
     ProductListingComponent,
@@ -51,6 +53,8 @@ import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
     MatSelectModule,
     MatFormFieldModule,
     TreeFlatOverviewExample,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
