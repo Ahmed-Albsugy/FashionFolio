@@ -23,6 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
     MatSelectModule,
     MatFormFieldModule,
     TreeFlatOverviewExample,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
