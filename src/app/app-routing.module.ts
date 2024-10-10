@@ -7,6 +7,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { TestHeaderComponent } from './test-header/test-header.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'shopping-cart', component: ShopingCartComponent },
   { path: 'log-in', component: LogInComponent },
+  { path: 'product-details', component: ProductDetailsComponent },
   {
     path: '',
     pathMatch: 'full',
