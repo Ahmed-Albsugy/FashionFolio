@@ -1,6 +1,9 @@
-<tree-flat-overview-example></tree-flat-overview-example>
+<tree-flat-overview-example (categorySelected)="onCategorySelected($event)"></tree-flat-overview-example>
 <div class="container">
-  <div class="item" *ngFor="let product of products">
+  <div *ngIf="filteredProducts.length === 0" class="no-products-message">
+    <h2>No products found for this category.</h2>
+  </div>
+  <div class="item" *ngFor="let product of filteredProducts">
     <mat-card class="example-card" appearance="outlined">
       <img mat-card-image [src]="product.image" alt="Photo of a Shiba Inu" />
       <br />

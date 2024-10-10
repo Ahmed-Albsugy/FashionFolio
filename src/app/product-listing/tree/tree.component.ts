@@ -1,5 +1,5 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { Component } from '@angular/core';
+import { Component , EventEmitter , Output} from '@angular/core';
 import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
@@ -24,13 +24,13 @@ const TREE_DATA: FoodNode[] = [
       {name: 'Clothhing',
       children:[{name:'Coats'}, {name:'Jackets'}, {name:'Dresses'}, {name:'Shirts & Blouses'}, {name:'Tops'}, {name:'Skirts'}, {name:'jeans'}],
       },
-       {name: 'Accessories',
+        {name: 'Accessories',
         children: []
-       },
+        },
 
-       {name: 'Bags',
+        {name: 'Bags',
         children: [{name:'Shoulder Bags'}, {name :'Tote Bags'} , {name :'Clutch Bags'} , {name :'BackPacks Bags'},{name :'Belt Bags'}],
-       },
+        },
     ],
   },
 
@@ -39,7 +39,7 @@ const TREE_DATA: FoodNode[] = [
     children: [
       {
         name: 'Clothing',
-        children: [{name: 'Suits'}, {name: 'Blazers'}, {name: 'Shirts'}, {name: 'Pants'}, {name: 'shorts & Swimwear'},{name: 'Sweaters & Hoodies'}],
+        children: [{name: 'Men Suits'}, {name: 'Men Blazers'}, {name: 'Men Shirts'}, {name: 'Men Pants'}, {name: 'Men shorts & Swimwear'},{name: 'Men Sweaters & Hoodies'}],
       },
       {
         name: 'Shoes',
@@ -52,7 +52,7 @@ const TREE_DATA: FoodNode[] = [
     children:[
     {
       name: 'Clothing',
-        children: [{name: 'Suits'}, {name: 'Blazers'}, {name: 'Shirts'}, {name: 'Pants'}, {name: 'shorts & Swimwear'},{name: 'Sweaters & Hoodies'}],
+        children: [{name: 'Kids Suits'}, {name: 'Kids Blazers'}, {name: 'Kids Shirts'}, {name: 'Kids Pants'}, {name: 'Kids shorts & Swimwear'},{name: 'Kids Sweaters & Hoodies'}],
     }
       ]
 
@@ -76,6 +76,7 @@ interface ExampleFlatNode {
   standalone: true,
   imports: [MatTreeModule, MatButtonModule, MatIconModule],
 })
+
 export class TreeFlatOverviewExample {
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -104,4 +105,23 @@ export class TreeFlatOverviewExample {
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+  @Output() categorySelected: EventEmitter<{ category: string, subcategory?: string, supsupcategory?: string }> = new EventEmitter();
+
+
+  onCategoryClick(node: FoodNode) {
+    const selectedCategory = node.name.toLowerCase();
+    const selectedSubCategory = node.name.toLowerCase();
+    const selectedSupSubCategory = node.name.toLowerCase();
+
+    this.categorySelected.emit({
+      category: selectedCategory,
+      subcategory: selectedSubCategory,
+      supsupcategory: selectedSupSubCategory
+    });
+  }
 }
+
+
+
+
