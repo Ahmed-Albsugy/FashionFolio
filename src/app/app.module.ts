@@ -29,11 +29,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -68,11 +66,9 @@ import { FormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatChipsModule,
     MatButtonToggleModule,
-    MatSnackBarModule,
     MatListModule,
     MatDividerModule,
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent],
