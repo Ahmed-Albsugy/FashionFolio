@@ -17,7 +17,7 @@ export class CategoriesComponent implements OnInit {
     {
       id: 1,
       name: "Men's Fashion",
-      image: 'assets/images/mens-fashion.jpg',
+      image: 'assets/images/mens-fashion.png',
       description: "Discover the latest trends in men's clothing",
     },
     {

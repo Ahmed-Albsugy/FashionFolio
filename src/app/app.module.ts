@@ -26,6 +26,14 @@ import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +50,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ShopingCartComponent,
     LogInComponent,
     ProductListingComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +66,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatInputModule,
     MatSnackBarModule,
+    MatChipsModule,
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    MatListModule,
+    MatDividerModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
