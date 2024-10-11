@@ -10,21 +10,22 @@ export class ProductListingComponent {
   products = [
     {
       id: 1,
-      title: 'Mens Casual Premium Slim Fit T-Shirts ',
-      price: 22.3,
-      description:
-        'Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.',
-      category: "men's clothing",
-      image: 'https://m.media-amazon.com/images/I/81MXgcHqBIL._AC_SL1500_.jpg',
+      title: 'Diamond Necklace',
+      price: 300,
+      description: 'Diamond Necklace-Elegant-Women',
+      category: 'accessories',
+      image:
+        'https://ion.bluenile.com/sets/Jewelry-bn/194174/NOP/Images/stage.jpg',
       rating: {
-        rate: 4.1,
-        count: 259,
+        rate: 3.9,
+        count: 70,
       },
     },
 
+
     {
       id: 2,
-      title: "Men's Leather Bracelet",
+      title: "Leather Bracelet",
       price: 20,
       description: 'A classic and stylish bracelet for men.',
       category: 'asseccories',
@@ -38,7 +39,7 @@ export class ProductListingComponent {
 
     {
       id: 3,
-      title: "Women's Denim Jacket",
+      title: "Denim Jacket",
       price: 42.5,
       description:
         'Classic denim jacket with a button-up front and chest pockets. A timeless wardrobe staple for layering',
@@ -53,7 +54,7 @@ export class ProductListingComponent {
 
     {
       id: 4,
-      title: "Women's Casual Maxi Dress",
+      title: "Casual Maxi Dress",
       price: 50.0,
       description:
         'Long maxi dress with a relaxed fit and soft fabric. Perfect for casual days or beach outings.',
@@ -68,7 +69,7 @@ export class ProductListingComponent {
 
     {
       id: 5,
-      title: 'Comfortable Khaki Chinos ',
+      title: 'Khaki Chinos ',
       price: 38.0,
       description: 'Versatile and comfortable chinos for everyday wear.',
       category: "men's clothing",
@@ -97,7 +98,7 @@ export class ProductListingComponent {
 
     {
       id: 7,
-      title: "Men's Cufflinks",
+      title: "Cufflinks",
       price: 150,
       description:
         'A formal accessory for men to add a touch of sophistication to their dress shirts',
@@ -112,7 +113,7 @@ export class ProductListingComponent {
 
     {
       id: 8,
-      title: "Women's Lightweight Cardigan",
+      title: "Lightweight Cardigan",
       price: 28.0,
       description:
         'Soft and cozy cardigan with an open front design, perfect for layering during cooler months.',
@@ -127,10 +128,10 @@ export class ProductListingComponent {
 
     {
       id: 9,
-      title: 'Relaxed-Fit Crewneck Sweater',
+      title: 'Crewneck Sweater',
       price: 65.0,
       description:
-        'Soft and cozy sweater for cool weather. Perfect for layering.',
+        'Relaxed-Fit Soft and cozy sweater for cool weather. Perfect for layering.',
       category: "men's clothing",
       image:
         'https://www.houseofblanks.com/cdn/shop/files/HOB-RelaxedCrew-Heather-Front.jpg?v=1707341201&width=533',
@@ -142,7 +143,7 @@ export class ProductListingComponent {
 
     {
       id: 10,
-      title: 'Vintage Leather Strap Watch',
+      title: 'Leather Strap Watch',
       price: 150,
       description: 'A timeless and elegant watch with a classic aesthetic.',
       category: 'accessories',
@@ -155,7 +156,7 @@ export class ProductListingComponent {
 
     {
       id: 11,
-      title: "Women's Casual Chiffon Blouse",
+      title: "Chiffon Blouse",
       price: 30.0,
       description:
         'Elegant chiffon blouse with a relaxed fit, featuring delicate detailing on the neckline and sleeves..',
@@ -170,7 +171,7 @@ export class ProductListingComponent {
 
     {
       id: 12,
-      title: "Women's Midi Skirt",
+      title: "Midi Skirt",
       price: 35.0,
       description:
         'A-line midi skirt with a flowy design, perfect for casual wear or semi-formal occasions..',
@@ -184,21 +185,20 @@ export class ProductListingComponent {
 
     {
       id: 13,
-      title: 'Diamond',
-      price: 300,
-      description: 'Diamond Necklace-Elegant-Women',
-      category: 'accessories',
-      image:
-        'https://ion.bluenile.com/sets/Jewelry-bn/194174/NOP/Images/stage.jpg',
+      title: 'Slim Fit T-Shirts ',
+      price: 22.3,
+      description:'Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.',
+      category: "men's clothing",
+      image: 'https://m.media-amazon.com/images/I/81MXgcHqBIL._AC_SL1500_.jpg',
       rating: {
-        rate: 3.9,
-        count: 70,
+        rate: 4.1,
+        count: 259,
       },
     },
-
+    
     {
       id: 14,
-      title: 'Classic Silver Chain Necklace',
+      title: 'Silver Necklace',
       price: 100,
       description: 'A versatile piece that can be dressed up or down.',
       category: 'accessories',
@@ -212,7 +212,7 @@ export class ProductListingComponent {
 
     {
       id: 15,
-      title: "Men's Fleece Pullover Hoodie",
+      title: "Pullover Hoodie",
       price: 35.0,
       description:
         'Fleece-lined hoodie with adjustable drawstrings and a front pocket. Soft fabric, suitable for layering in cold weather.',
@@ -227,7 +227,7 @@ export class ProductListingComponent {
 
     {
       id: 16,
-      title: "Women's Casual Jumpsuit",
+      title: "Jumpsuit",
       price: 55.0,
       description:
         'Trendy jumpsuit with a cinched waist and wide-leg pants. Great for casual outings or summer nights.',
@@ -242,7 +242,7 @@ export class ProductListingComponent {
 
     {
       id: 17,
-      title: "Women's Shirt",
+      title: "Shirt",
       price: 40.0,
       description: 'Cozy and soft.',
       category: "women's clothing",
@@ -284,7 +284,7 @@ export class ProductListingComponent {
 
     {
       id: 20,
-      title: "Women's Knit Sweater",
+      title: "Knit Sweater",
       price: 40.0,
       description:
         'Cozy and soft knit sweater, ideal for chilly days. Features a relaxed fit with ribbed cuffs and hem.',
@@ -299,7 +299,7 @@ export class ProductListingComponent {
 
     {
       id: 21,
-      title: "Men's Leather Wallet",
+      title: "Leather Wallet",
       price: 100.0,
       description:
         'A classic and functional accessory for men to carry cash and cards.',
@@ -314,7 +314,7 @@ export class ProductListingComponent {
 
     {
       id: 22,
-      title: "Men's Casual Slim Fit",
+      title: "Slim Fit",
       price: 15.99,
       description:
         'The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.',
@@ -328,7 +328,7 @@ export class ProductListingComponent {
 
     {
       id: 23,
-      title: 'Classic Oxford Button-Down Shirt ',
+      title: 'Oxford Button-Down Shirt ',
       price: 45.0,
       description:
         'A timeless wardrobe staple. Crisp cotton fabric and a clean',
@@ -357,7 +357,7 @@ export class ProductListingComponent {
 
     {
       id: 25,
-      title: "Women's Floral Summer Dress",
+      title: "Summer Dress",
       price: 35.0,
       description:
         'Elegant floral dress with a flowy fit, perfect for summer outings and casual events. Lightweight fabric ensures comfort in warm weather.',
@@ -372,7 +372,7 @@ export class ProductListingComponent {
 
     {
       id: 26,
-      title: 'Minimalist Stainless Steel Watch',
+      title: 'Stainless Steel Watch',
       price: 150,
       description: 'A sleek and modern timepiece for everyday wear.',
       category: 'accessories',
@@ -386,7 +386,7 @@ export class ProductListingComponent {
 
     {
       id: 27,
-      title: 'Stylish Bomber Jacket',
+      title: 'Bomber Jacket',
       price: 89.0,
       description: 'A trendy and functional jacket for colder days.',
       category: "men's clothing",
@@ -400,7 +400,7 @@ export class ProductListingComponent {
 
     {
       id: 28,
-      title: 'Warm Down Puffer Jacket',
+      title: 'Puffer Jacket',
       price: 120.0,
       description: 'A cozy and insulated jacket for winter weather.',
       category: "men's clothing",
@@ -414,7 +414,7 @@ export class ProductListingComponent {
 
     {
       id: 29,
-      title: 'Simple Neckless',
+      title: 'Simple Necklace',
       price: 200,
       description: 'A simple accessory for women',
       category: 'accessories',
@@ -428,7 +428,7 @@ export class ProductListingComponent {
 
     {
       id: 30,
-      title: "Women's Wool Peacoat",
+      title: "Wool Peacoat",
       price: 110.0,
       description:
         'A classic wool peacoat featuring a double-breasted design and a tailored fit. Suitable for formal or casual occasions.',
@@ -443,7 +443,7 @@ export class ProductListingComponent {
 
     {
       id: 31,
-      title: 'Comfortable Crewneck T-Shirt (Basic)',
+      title: 'Basic T-Shirt',
       price: 15.0,
       description: 'A simple and affordable t-shirt for everyday wear.',
       category: "men's clothing",
@@ -457,7 +457,7 @@ export class ProductListingComponent {
 
     {
       id: 32,
-      title: ' Leather Moto Biker Jacket',
+      title: ' Leather Jacket',
       price: 29.95,
       description:
         '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON',
@@ -471,9 +471,9 @@ export class ProductListingComponent {
 
     {
       id: 33,
-      title: 'Trendy Graphic Tee',
+      title: 'Graphic Tee',
       price: 25.0,
-      description: 'A fun and expressive t-shirt with a unique graphic design.',
+      description: 'A fun and expressive trendy t-shirt with a unique graphic design.',
       category: "men's clothing",
       image:
         'https://cdn.shopify.com/s/files/1/1520/5960/files/NFTSFUTURE_SS_Creme_Front.jpg?v=1683927261&width=650',
@@ -483,4 +483,6 @@ export class ProductListingComponent {
       },
     },
   ];
+  searchText: string = '';
+
 }
