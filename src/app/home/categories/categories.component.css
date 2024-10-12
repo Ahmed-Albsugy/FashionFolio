@@ -22,6 +22,7 @@
   }
 
   .category-card {
+    padding-top: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
     height: 100%;
@@ -32,9 +33,8 @@
     }
 
     img {
-      aspect-ratio: 1/1;
       height: 200px;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     mat-card-content {

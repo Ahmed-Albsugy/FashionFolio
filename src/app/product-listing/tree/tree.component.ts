@@ -24,13 +24,13 @@ const TREE_DATA: FoodNode[] = [
       {name: 'Clothhing',
       children:[{name:'Coats'}, {name:'Jackets'}, {name:'Dresses'}, {name:'Shirts & Blouses'}, {name:'Tops'}, {name:'Skirts'}, {name:'jeans'}],
       },
-       {name: 'Accessories',
+      {name: 'Accessories',
         children: []
-       },
+      },
 
-       {name: 'Bags',
+      {name: 'Bags',
         children: [{name:'Shoulder Bags'}, {name :'Tote Bags'} , {name :'Clutch Bags'} , {name :'BackPacks Bags'},{name :'Belt Bags'}],
-       },
+      },
     ],
   },
 
@@ -71,7 +71,7 @@ interface ExampleFlatNode {
  * @title Tree with flat nodes
  */
 @Component({
-  selector: 'tree-flat-overview-example',
+  selector: 'tree-list',
   templateUrl: './tree.component.html',
   standalone: true,
   imports: [MatTreeModule, MatButtonModule, MatIconModule],
