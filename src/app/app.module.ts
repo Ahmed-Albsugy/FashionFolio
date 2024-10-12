@@ -13,7 +13,7 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductGridComponent } from './home/product-grid/product-grid.component';
 import { TestHeaderComponent } from './test-header/test-header.component';
 import { ContactComponent } from './contact/contact.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignupComponent } from './sign-up/sign-up.component';
 import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatTreeModule } from '@angular/material/tree';
@@ -22,9 +22,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { MatChipsModule } from '@angular/material/chips';
@@ -44,7 +44,7 @@ import { FormsModule } from '@angular/forms';
     ProductGridComponent,
     TestHeaderComponent,
     ContactComponent,
-    SignUpComponent,
+    SignupComponent,
     ShopingCartComponent,
     LogInComponent,
     ProductListingComponent,
@@ -61,6 +61,7 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatFormFieldModule,
     TreeFlatOverviewExample,
+    MatInputModule,
     ReactiveFormsModule,
     MatInputModule,
     MatSnackBarModule,
