@@ -1,0 +1,118 @@
+<div class="product-container" *ngIf="product">
+  <mat-card class="product-card">
+    <div class="product-grid">
+      <!-- Product Images Section -->
+      <div class="images-section">
+        <img
+          [src]="product.images[selectedImageIndex]"
+          [alt]="product.name"
+          class="main-image"
+        />
+        <div class="thumbnail-container">
+          <img
+            *ngFor="let image of product.images; let i = index"
+            [src]="image"
+            [alt]="'Thumbnail ' + (i + 1)"
+            class="thumbnail"
+            [class.selected]="selectedImageIndex === i"
+            (click)="selectImage(i)"
+          />
+        </div>
+      </div>
+
+      <!-- Product Details Section -->
+      <div class="details-section">
+        <mat-card-header>
+          <mat-card-title>{{ product.name }}</mat-card-title>
+          <mat-card-subtitle>
+            <div class="rating">
+              <mat-icon
+                *ngFor="let star of getRatingStars(product.rating)"
+                color="accent"
+                >star</mat-icon
+              >
+              <span>{{ product.rating }} / 5</span>
+            </div>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="price">
+            <h2>${{ product.price }}</h2>
+            <mat-chip>
+              <mat-chip color="primary" *ngIf="product.stockStatus"
+                >In Stock</mat-chip
+              >
+              <mat-chip color="warn" *ngIf="!product.stockStatus"
+                >Out of Stock</mat-chip
+              >
+            </mat-chip>
+          </div>
+
+          <div class="description">
+            <p>{{ product.description }}</p>
+          </div>
+
+          <div class="size-selection">
+            <h3>Select Size</h3>
+            <mat-button-toggle-group [(ngModel)]="selectedSize">
+              <mat-button-toggle
+                *ngFor="let size of product.sizes"
+                [value]="size"
+              >
+                {{ size }}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+
+          <div class="quantity-selector">
+            <h3>Quantity</h3>
+            <div class="quantity-controls">
+              <button mat-icon-button (click)="decrementQuantity()">
+                <mat-icon>remove</mat-icon>
+              </button>
+              <span>{{ quantity }}</span>
+              <button mat-icon-button (click)="incrementQuantity()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+          </div>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="add-to-cart-btn"
+            (click)="addToCart()"
+          >
+            <mat-icon>shopping_cart</mat-icon>
+            Add to Cart
+          </button>
+        </mat-card-content>
+      </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <mat-divider></mat-divider>
+    <section class="reviews-section">
+      <h2>Customer Reviews</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let review of product.reviews">
+          <div class="review-item">
+            <div class="review-header">
+              <h3 matLine>{{ review.userName }}</h3>
+              <div class="rating">
+                <mat-icon
+                  *ngFor="let star of getRatingStars(review.rating)"
+                  color="accent"
+                  >star</mat-icon
+                >
+              </div>
+            </div>
+            <p matLine>{{ review.comment }}</p>
+            <p matLine class="review-date">{{ review.date | date }}</p>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </section>
+  </mat-card>
+</div>

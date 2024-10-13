@@ -1,10 +1,10 @@
 p {
-    margin: auto;
-    font-size: 40px;
-    background-color: blue;
-    color: white;
-    padding: 100px;
-    text-align: center;
+  margin: auto;
+  font-size: 40px;
+  background-color: blue;
+  color: white;
+  padding: 100px;
+  text-align: center;
 }
 
 .example-card {
@@ -17,8 +17,8 @@ p {
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
 }
 
 .container {
@@ -28,13 +28,13 @@ p {
   gap: 10px;
 }
 
-.item{
+.item {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-img{
+img {
   padding: 15px;
   width: 250px;
   height: 300px;
@@ -54,10 +54,9 @@ img{
 }
 
 button {
-  background-color: #689AB5;
+  background-color: #689ab5;
   color: white;
-  width: 100%;
-  height: 40px;
+  width: fit-content;
   border: none;
   border-radius: 10px;
 }
@@ -65,14 +64,22 @@ button {
 mat-card-actions {
   justify-content: center;
 }
-
-.search{
+/* ahmed 10/10 */
+tree-list {
+  height: fit-content;
+  border-radius: 10px;
+}
+.row {
+  margin-top: 40px;
+  padding: 0 15px;
+}
+.search {
   padding: 20px;
   display: flex;
   justify-content: center;
 }
 
-.search input{
+.search input {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 300px;

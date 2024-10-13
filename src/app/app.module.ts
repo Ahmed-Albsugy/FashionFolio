@@ -13,7 +13,7 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductGridComponent } from './home/product-grid/product-grid.component';
 import { TestHeaderComponent } from './test-header/test-header.component';
 import { ContactComponent } from './contact/contact.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignupComponent } from './sign-up/sign-up.component';
 import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatTreeModule } from '@angular/material/tree';
@@ -22,9 +22,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
-import { FormsModule } from '@angular/forms'; // Add this
-
+import { TreeComponent } from './product-listing/tree/tree.component';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,10 +44,11 @@ import { FormsModule } from '@angular/forms'; // Add this
     ProductGridComponent,
     TestHeaderComponent,
     ContactComponent,
-    SignUpComponent,
+    SignupComponent,
     ShopingCartComponent,
     LogInComponent,
     ProductListingComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,8 +60,16 @@ import { FormsModule } from '@angular/forms'; // Add this
     MatIconModule,
     MatSelectModule,
     MatFormFieldModule,
-    TreeFlatOverviewExample,
-    FormsModule 
+    TreeComponent,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatChipsModule,
+    MatButtonToggleModule,
+    MatListModule,
+    MatDividerModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
