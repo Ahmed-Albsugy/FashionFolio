@@ -1,0 +1,22 @@
+.cart-total {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.total {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #689AB5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;}

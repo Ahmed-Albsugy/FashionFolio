@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +22,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { CartSummaryComponent } from './shoping-cart/cart-summary/cart-summary.component';
+
+
 
 @NgModule({
   declarations: [
@@ -36,9 +40,10 @@ import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
     TestHeaderComponent,
     ContactComponent,
     SignUpComponent,
-    ShopingCartComponent,
     LogInComponent,
     ProductListingComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -51,8 +56,16 @@ import { TreeFlatOverviewExample } from './product-listing/tree/tree.component';
     MatSelectModule,
     MatFormFieldModule,
     TreeFlatOverviewExample,
+    MatInputModule,
+    MatTableModule,
+    MatIconModule,
+    CartSummaryComponent,
+    ShopingCartComponent,
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

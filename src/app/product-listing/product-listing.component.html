@@ -9,7 +9,8 @@
         {{ product.title }}
       </div>
       <mat-card-actions>
-        <button mat-flat-button>Add to Card</button>
+        <button (click)="addToCart(product)">Add to Cart</button>
+
       </mat-card-actions>
     </mat-card>
   </div>
