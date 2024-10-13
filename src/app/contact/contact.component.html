@@ -1,1 +1,84 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <mat-card class="contact-card">
+    <mat-card-header>
+      <mat-card-title>Contact Us</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="contact-info">
+        <div class="contact-section">
+          <mat-icon>phone</mat-icon>
+          <div class="info-content">
+            <h3>Call To Us</h3>
+            <p>We are available 24/7, 7 days a week.</p>
+            <p>Phone: +880161112222</p>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <mat-icon>email</mat-icon>
+          <div class="info-content">
+            <h3>Write To Us</h3>
+            <p>Fill out our form and we will contact you within 24 hours.</p>
+            <p>Email: customer&#64;fashionfolio.me</p>
+            <p>Email: support&#64;fashionfolio.me</p>
+          </div>
+        </div>
+      </div>
+
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="contact-form"
+      >
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Your Name" />
+            <mat-error *ngIf="contactForm.get('name')?.invalid">
+              {{ getErrorMessage("name") }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Your Email" />
+            <mat-error *ngIf="contactForm.get('email')?.invalid">
+              {{ getErrorMessage("email") }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="phone" placeholder="Your Phone" />
+            <mat-error *ngIf="contactForm.get('phone')?.invalid">
+              {{ getErrorMessage("phone") }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Message</mat-label>
+          <textarea
+            matInput
+            formControlName="message"
+            rows="6"
+            placeholder="Your Message"
+          ></textarea>
+          <mat-error *ngIf="contactForm.get('message')?.invalid">
+            {{ getErrorMessage("message") }}
+          </mat-error>
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="contactForm.invalid"
+        >
+          Send Message
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

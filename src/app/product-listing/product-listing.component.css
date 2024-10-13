@@ -1,10 +1,10 @@
 p {
-    margin: auto;
-    font-size: 40px;
-    background-color: blue;
-    color: white;
-    padding: 100px;
-    text-align: center;
+  margin: auto;
+  font-size: 40px;
+  background-color: blue;
+  color: white;
+  padding: 100px;
+  text-align: center;
 }
 
 .example-card {
@@ -15,8 +15,8 @@ p {
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
 }
 
 .container {
@@ -26,8 +26,7 @@ p {
   gap: 15px;
 }
 
-img
-{
+img {
   padding: 15px;
   width: 250px;
   height: 300px;
@@ -47,13 +46,21 @@ img
 }
 
 button {
-  background-color: #689AB5;
+  background-color: #689ab5;
   color: white;
-  width: 110px;
-  height: 40px;
+  width: fit-content;
   border: none;
   border-radius: 10px;
 }
 mat-card-actions {
   justify-content: center;
+}
+/* ahmed 10/10 */
+tree-list {
+  height: fit-content;
+  border-radius: 10px;
+}
+.row {
+  margin-top: 40px;
+  padding: 0 15px;
 }
