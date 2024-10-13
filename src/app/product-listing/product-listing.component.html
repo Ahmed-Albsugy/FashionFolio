@@ -7,7 +7,7 @@
     <div *ngIf="filteredProducts.length === 0" class="no-products-message">
       <h2>No products found for this category.</h2>
     </div>
-    <div class="item" *ngFor="let product of products">
+    <div class="item" *ngFor="let product of filteredProducts">
       <mat-card class="example-card" appearance="outlined">
         <img mat-card-image [src]="product.image" alt="Photo of a Shiba Inu" />
         <br />
