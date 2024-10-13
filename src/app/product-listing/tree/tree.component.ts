@@ -1,5 +1,5 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { Component , EventEmitter , Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
@@ -21,16 +21,30 @@ const TREE_DATA: FoodNode[] = [
   {
     name: 'Women',
     children: [
-      {name: 'Clothhing',
-      children:[{name:'Coats'}, {name:'Jackets'}, {name:'Dresses'}, {name:'Shirts & Blouses'}, {name:'Tops'}, {name:'Skirts'}, {name:'jeans'}],
+      {
+        name: 'Clothhing',
+        children: [
+          { name: 'Coats' },
+          { name: 'Jackets' },
+          { name: 'Dresses' },
+          { name: 'Shirts & Blouses' },
+          { name: 'Tops' },
+          { name: 'Skirts' },
+          { name: 'jeans' },
+        ],
       },
-        {name: 'Accessories',
-        children: []
-        },
+      { name: 'Accessories', children: [] },
 
-        {name: 'Bags',
-        children: [{name:'Shoulder Bags'}, {name :'Tote Bags'} , {name :'Clutch Bags'} , {name :'BackPacks Bags'},{name :'Belt Bags'}],
-        },
+      {
+        name: 'Bags',
+        children: [
+          { name: 'Shoulder Bags' },
+          { name: 'Tote Bags' },
+          { name: 'Clutch Bags' },
+          { name: 'BackPacks Bags' },
+          { name: 'Belt Bags' },
+        ],
+      },
     ],
   },
 
@@ -39,26 +53,43 @@ const TREE_DATA: FoodNode[] = [
     children: [
       {
         name: 'Clothing',
-        children: [{name: 'Men Suits'}, {name: 'Men Blazers'}, {name: 'Men Shirts'}, {name: 'Men Pants'}, {name: 'Men shorts & Swimwear'},{name: 'Men Sweaters & Hoodies'}],
+        children: [
+          { name: 'Men Suits' },
+          { name: 'Men Blazers' },
+          { name: 'Men Shirts' },
+          { name: 'Men Pants' },
+          { name: 'Men shorts & Swimwear' },
+          { name: 'Men Sweaters & Hoodies' },
+        ],
       },
       {
         name: 'Shoes',
-        children: [{name: 'Adidas'}, {name: 'Nike'}, {name: 'New Balance'}, {name: 'vanss'}],
+        children: [
+          { name: 'Adidas' },
+          { name: 'Nike' },
+          { name: 'New Balance' },
+          { name: 'vanss' },
+        ],
       },
     ],
   },
   {
     name: 'Kids',
-    children:[
-    {
-      name: 'Clothing',
-        children: [{name: 'Kids Suits'}, {name: 'Kids Blazers'}, {name: 'Kids Shirts'}, {name: 'Kids Pants'}, {name: 'Kids shorts & Swimwear'},{name: 'Kids Sweaters & Hoodies'}],
-    }
-      ]
-
+    children: [
+      {
+        name: 'Clothing',
+        children: [
+          { name: 'Kids Suits' },
+          { name: 'Kids Blazers' },
+          { name: 'Kids Shirts' },
+          { name: 'Kids Pants' },
+          { name: 'Kids shorts & Swimwear' },
+          { name: 'Kids Sweaters & Hoodies' },
+        ],
+      },
+    ],
   },
 ];
-
 
 /** Flat node with expandable and level information */
 interface ExampleFlatNode {
@@ -71,13 +102,12 @@ interface ExampleFlatNode {
  * @title Tree with flat nodes
  */
 @Component({
-  selector: 'tree-flat-overview-example',
+  selector: 'tree-list',
   templateUrl: './tree.component.html',
   standalone: true,
   imports: [MatTreeModule, MatButtonModule, MatIconModule],
 })
-
-export class TreeFlatOverviewExample {
+export class TreeComponent {
   private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -106,8 +136,11 @@ export class TreeFlatOverviewExample {
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
-  @Output() categorySelected: EventEmitter<{ category: string, subcategory?: string, supsupcategory?: string }> = new EventEmitter();
-
+  @Output() categorySelected: EventEmitter<{
+    category: string;
+    subcategory?: string;
+    supsupcategory?: string;
+  }> = new EventEmitter();
 
   onCategoryClick(node: FoodNode) {
     const selectedCategory = node.name.toLowerCase();
@@ -117,11 +150,7 @@ export class TreeFlatOverviewExample {
     this.categorySelected.emit({
       category: selectedCategory,
       subcategory: selectedSubCategory,
-      supsupcategory: selectedSupSubCategory
+      supsupcategory: selectedSupSubCategory,
     });
   }
 }
-
-
-
-

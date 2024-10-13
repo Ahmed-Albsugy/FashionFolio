@@ -1,5 +1,5 @@
-<tree-flat-overview-example (categorySelected)="onCategorySelected($event)"></tree-flat-overview-example>
 <div class="container">
+  <tree-list (categorySelected)="onCategorySelected($event)"></tree-list>
   <div *ngIf="filteredProducts.length === 0" class="no-products-message">
     <h2>No products found for this category.</h2>
   </div>
