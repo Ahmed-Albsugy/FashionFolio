@@ -13,8 +13,8 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductGridComponent } from './home/product-grid/product-grid.component';
 import { TestHeaderComponent } from './test-header/test-header.component';
 import { ContactComponent } from './contact/contact.component';
-import { SignupComponent } from './sign-up/sign-up.component';
-import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatCardModule } from '@angular/material/card';
@@ -32,7 +32,10 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
-
+// ... firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from './environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +47,8 @@ import { FormsModule } from '@angular/forms';
     ProductGridComponent,
     TestHeaderComponent,
     ContactComponent,
-    SignupComponent,
-    ShopingCartComponent,
+    SignUpComponent,
+    ShoppingCartComponent,
     LogInComponent,
     ProductListingComponent,
     ProductDetailsComponent,
@@ -70,6 +73,9 @@ import { FormsModule } from '@angular/forms';
     MatListModule,
     MatDividerModule,
     FormsModule,
+    // ... firebase
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,18 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from './custom-validators';
+import { AuthService } from '../services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-signup',
+  selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
   hidePassword = true;
   hideConfirmPassword = true;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) {
     this.signupForm = this.fb.group(
       {
         firstName: ['', [Validators.required, Validators.minLength(2)]],
@@ -48,6 +56,22 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.valid) {
       console.log('Form submitted:', this.signupForm.value);
       // Implement your signup logic here
+      const { email, password } = this.signupForm.value;
+      this.authService
+        .register(email, password)
+        .then(() => {
+          console.log('Registration successful');
+          // Show a success message
+          this.snackBar.open('Registered successfully!', 'Close', {
+            duration: 3000, // 3 seconds
+          });
+          // Determine where to navigate next
+          // Example: Redirect to the homepage
+          this.router.navigate(['/our-product']); // or use '/dashboard', '/products', etc.
+        })
+        .catch((error) => {
+          console.error('Registration error:', error);
+        });
     } else {
       this.markFormGroupTouched(this.signupForm);
     }
