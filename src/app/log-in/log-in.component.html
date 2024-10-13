@@ -1,1 +1,61 @@
-<p>log-in works!</p>
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+       <input type="password" placeholder="password" required> -->
+      <!-- <mat-label>Passwors</mat-label>
+      <input type="password" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+           placeholder="password">
+    </mat-error>
+  </mat-form-field>
+</form> -->
+<!-- *************chat************ -->
+
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <!-- <div class="input_box">
+      <label for="username">Username</label>
+      <input type="text" placeholder="Username" required>
+    </div>
+
+    <div class="input_box">
+      <label for="password">Password</label>
+      <input type="password" placeholder="password" required>
+    </div> -->
+
+    <div class="input_box">
+      <input type="text" placeholder="Username" required>
+      <i class='bx bxs-user'></i>
+  </div>
+  <div class="input_box">
+      <input type="password" placeholder="password" required>
+      <i class='bx bxs-lock-alt'></i>
+  </div>
+
+
+    <div class="remaember_forget">
+      <label >
+        <input type="checkbox">Remeber me
+      </label>
+      <a href="#">Forget Password?</a>
+    </div>
+    <!-- <button type="submit" class="sub"> Login </button> -->
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+
+  <div class="register_link">
+      <p> Don't have an account? <a href="#"> Register </a> </p>
+  </div>
+  </form>
+</div>
+
+
