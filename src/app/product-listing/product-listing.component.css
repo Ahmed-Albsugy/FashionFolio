@@ -8,7 +8,7 @@ p {
 }
 
 .example-card {
-  width: 350px;
+  width: 250px;
   height: 450px;
   float: left;
   border-radius: 20px;
@@ -64,3 +64,12 @@ tree-list {
   margin-top: 40px;
   padding: 0 15px;
 }
+
+.favorite {
+ padding: 10px;
+ margin: 30px auto;
+ text-align: center;
+}
+
+
+

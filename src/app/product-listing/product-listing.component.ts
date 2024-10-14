@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FavoritesService } from '../favorites.service';
+
 
 @Component({
   selector: 'app-product-listing',
@@ -1097,4 +1099,34 @@ export class ProductListingComponent {
       return matchesCategory || matchesSubCategory || matchesSupSubCategory;
     });
   }
+
+
+  showFavoriteList = false;
+
+  constructor(private favoritesService: FavoritesService) {}
+
+  onShowFavorites() {
+    this.showFavoriteList = true;
+  }
+
+  get favoriteProducts() {
+    return this.favoritesService.getFavorites();
+  }
+  toggleFavorite(product: any) {
+    if (this.favoritesService.isFavorite(product.id)) {
+      this.favoritesService.removeFromFavorites(product.id);
+    } else {
+      this.favoritesService.addToFavorites(product);
+    }
+  }
+
+  isFavorite(productId: number) {
+    return this.favoritesService.isFavorite(productId);
+  }
+
+  showFavorites() {
+    this.showFavoriteList = !this.showFavoriteList;  // استخدام المتغير الجديد
+    console.log('Show Favorites Clicked:', this.showFavoriteList);  // تأكد من الطباعة في console
+  }
+
 }

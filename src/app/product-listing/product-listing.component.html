@@ -17,8 +17,32 @@
         </div>
         <mat-card-actions>
           <button mat-flat-button>Add to Card</button>
+          <button mat-icon-button (click)="toggleFavorite(product)">
+            <mat-icon *ngIf="isFavorite(product.id)">favorite</mat-icon>
+            <mat-icon *ngIf="!isFavorite(product.id)">favorite_border</mat-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>
+  </div>
+</div>
+<h2 class="favorite">Your Favorite Products</h2>
+<div *ngIf="showFavorites" class="container">
+  <div class="item" *ngFor="let product of favoriteProducts">
+    <mat-card class="example-card" appearance="outlined">
+      <img mat-card-image [src]="product.image" alt="Photo of a Shiba Inu" />
+      <br />
+      <div class="price">${{ product.price }}</div>
+      <div class="title">
+        {{ product.title }}
+      </div>
+      <mat-card-actions>
+        <button mat-flat-button>Add to Card</button>
+        <button mat-icon-button (click)="toggleFavorite(product)">
+          <mat-icon *ngIf="isFavorite(product.id)">favorite</mat-icon>
+          <mat-icon *ngIf="!isFavorite(product.id)">favorite_border</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>
