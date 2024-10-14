@@ -33,6 +33,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
+import { CartService } from './services/cart.service';
 // ... firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -50,8 +51,8 @@ import { environment } from './environments/environment';
     ContactComponent,
     SignUpComponent,
     LogInComponent,
-    ProductListingComponent,
     ProductDetailsComponent,
+    ProductListingComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,12 +76,11 @@ import { environment } from './environments/environment';
     FormsModule,
     MatTableModule,
     CartSummaryComponent,
-    ShoppingCartComponent,
     // ... firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
