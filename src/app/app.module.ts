@@ -32,7 +32,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
-import { CartSummaryComponent } from './shoping-cart/cart-summary/cart-summary.component';
+import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
 // ... firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -49,7 +49,6 @@ import { environment } from './environments/environment';
     TestHeaderComponent,
     ContactComponent,
     SignUpComponent,
-    ShoppingCartComponent,
     LogInComponent,
     ProductListingComponent,
     ProductDetailsComponent,

@@ -6,7 +6,6 @@ import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
-import { TestHeaderComponent } from './test-header/test-header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
@@ -23,8 +22,8 @@ const routes: Routes = [
     redirectTo: 'home',
   },
   { path: 'products', component: ProductListingComponent },
-  { path: 'cart', component: ShopingCartComponent },
-  { path: '', redirectTo: '/products', pathMatch: 'full' }
+  { path: 'cart', component: ShoppingCartComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
 ];
 
 @NgModule({
