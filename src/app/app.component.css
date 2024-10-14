@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  padding-top: 20px; /* Adjust this value based on your header height */
+}
+
+@media (max-width: 599px) {
+  .container {
+    padding-top: 56px; /* Adjust for smaller header on mobile */
+  }
+}
