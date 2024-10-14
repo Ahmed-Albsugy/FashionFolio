@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +31,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { CartSummaryComponent } from './shoping-cart/cart-summary/cart-summary.component';
 // ... firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -73,6 +74,9 @@ import { environment } from './environments/environment';
     MatListModule,
     MatDividerModule,
     FormsModule,
+    MatTableModule,
+    CartSummaryComponent,
+    ShoppingCartComponent,
     // ... firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

@@ -22,6 +22,9 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'home',
   },
+  { path: 'products', component: ProductListingComponent },
+  { path: 'cart', component: ShopingCartComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full' }
 ];
 
 @NgModule({
