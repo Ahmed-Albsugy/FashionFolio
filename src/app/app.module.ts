@@ -10,7 +10,6 @@ import { FooterComponent } from './footer/footer.component';
 import { AdvertisementComponent } from './home/advertisement/advertisement.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductGridComponent } from './home/product-grid/product-grid.component';
-import { TestHeaderComponent } from './test-header/test-header.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
@@ -34,30 +33,36 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
 import { CartService } from './services/cart.service';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+
 // ... firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from './environments/environment';
+import { ProductSliderComponent } from './home/product-slider/product-slider.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     FooterComponent,
     AdvertisementComponent,
     CategoriesComponent,
     ProductGridComponent,
-    TestHeaderComponent,
     ContactComponent,
     SignUpComponent,
     LogInComponent,
     ProductDetailsComponent,
     ProductListingComponent,
+    ProductSliderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HeaderComponent,
     MatCardModule,
     MatTreeModule,
     MatButtonModule,
@@ -76,6 +81,10 @@ import { environment } from './environments/environment';
     FormsModule,
     MatTableModule,
     CartSummaryComponent,
+    MatToolbarModule,
+    MatBadgeModule,
+    MatSidenavModule,
+    MatMenuModule,
     // ... firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
