@@ -1,11 +1,10 @@
-
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
-import { CartSummaryComponent } from './cart-summary/cart-summary.component';
+import { CartSummaryComponent } from '../shopping-cart/cart-summary/cart-summary.component';
 import { Component, OnInit } from '@angular/core';
 import { CartService, CartItem } from '../services/cart.service';
 import { Observable } from 'rxjs';
@@ -13,26 +12,28 @@ import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
-
-
-
 /**
  * @title Basic buttons
  */
 @Component({
   selector: 'button-overview-example',
-  templateUrl: './shoping-cart.component.html',
-  styleUrls: ['./shoping-cart.component.css'],
+  templateUrl: './shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.css'],
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule,MatInputModule,MatFormFieldModule, CartSummaryComponent, NgFor,CommonModule],
+  imports: [
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    CartSummaryComponent,
+    NgFor,
+    CommonModule,
+  ],
 })
-
-
-
-export class ShopingCartComponent implements OnInit {
+export class ShoppingCartComponent implements OnInit {
   cartItems$!: Observable<CartItem[]>;
   totalPrice: number = 0;
-
 
   constructor(private cartService: CartService, private router: Router) {}
 
@@ -48,13 +49,10 @@ export class ShopingCartComponent implements OnInit {
     this.cartService.updateQuantity(id, quantity);
   }
 
-
-
   returnToShop() {
     // Implement navigation back to the shop/product listing
     this.router.navigate(['/products']);
   }
-
 
   calculateTotalPrice(): void {
     this.totalPrice = 0;
@@ -63,7 +61,5 @@ export class ShopingCartComponent implements OnInit {
         this.totalPrice += item.price * item.quantity;
       });
     });
-
   }
-  
 }

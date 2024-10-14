@@ -20,7 +20,7 @@
       </td>
       <td>${{ item.price }}</td>
       <td>
-        <input id="quantity" type="number" [value]="item.quantity" 
+        <input id="quantity" type="number" [value]="item.quantity"
               (change)="updateQuantity(item.id, $event)" min="1">
       </td>
       <td>${{ item.price * item.quantity }}</td>
