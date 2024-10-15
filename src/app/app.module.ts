@@ -32,6 +32,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { FormsModule } from '@angular/forms';
     LogInComponent,
     ProductListingComponent,
     ProductDetailsComponent,
+    UserDashboardComponent,
+    FavoriteComponent,
   ],
   imports: [
     BrowserModule,

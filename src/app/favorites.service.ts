@@ -5,23 +5,33 @@ import { Injectable } from '@angular/core';
 })
 export class FavoritesService {
 
-  constructor() { }
+  private localStorageKey = 'favoriteProducts';  // مفتاح الـ localStorage
 
-  private favoriteProducts: any[] = [];
+  constructor() {}
 
-  addToFavorites(product: any) {
-    this.favoriteProducts.push(product);
+  getFavorites(): any[] {
+    // جلب المنتجات المفضلة من localStorage
+    const favorites = localStorage.getItem(this.localStorageKey);
+    return favorites ? JSON.parse(favorites) : [];
   }
 
-  removeFromFavorites(productId: number) {
-    this.favoriteProducts = this.favoriteProducts.filter(p => p.id !== productId);
+  addToFavorites(product: any): void {
+    const currentFavorites = this.getFavorites();
+    if (!currentFavorites.some(p => p.id === product.id)) {
+      currentFavorites.push(product);  // إضافة المنتج للمفضلة
+      localStorage.setItem(this.localStorageKey, JSON.stringify(currentFavorites));  // تخزين المفضلة في localStorage
+    }
   }
 
-  isFavorite(productId: number): boolean {
-    return this.favoriteProducts.some(p => p.id === productId);
+  removeFromFavorites(id: number): void {
+    let currentFavorites = this.getFavorites();
+    currentFavorites = currentFavorites.filter(product => product.id !== id);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(currentFavorites));  // تحديث المفضلة في localStorage
   }
 
-  getFavorites() {
-    return this.favoriteProducts;
+  isFavorite(id: number): boolean {
+    const currentFavorites = this.getFavorites();
+    return currentFavorites.some(product => product.id === id);
   }
 }
+

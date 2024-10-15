@@ -16,7 +16,7 @@
           {{ product.title }}
         </div>
         <mat-card-actions>
-          <button mat-flat-button>Add to Card</button>
+          <button mat-raised-button color="primary">Add to Card</button>
           <button mat-icon-button (click)="toggleFavorite(product)">
             <mat-icon *ngIf="isFavorite(product.id)">favorite</mat-icon>
             <mat-icon *ngIf="!isFavorite(product.id)">favorite_border</mat-icon>
@@ -37,7 +37,7 @@
         {{ product.title }}
       </div>
       <mat-card-actions>
-        <button mat-flat-button>Add to Card</button>
+        <button mat-raised-button color="primary">Add to Card</button>
         <button mat-icon-button (click)="toggleFavorite(product)">
           <mat-icon *ngIf="isFavorite(product.id)">favorite</mat-icon>
           <mat-icon *ngIf="!isFavorite(product.id)">favorite_border</mat-icon>

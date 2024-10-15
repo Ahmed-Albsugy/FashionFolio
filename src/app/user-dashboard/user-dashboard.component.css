@@ -1,0 +1,13 @@
+.dashboard {
+  padding: 20px;
+
+  .favorites-section {
+    margin-top: 20px;
+  }
+
+  .checkout-btn {
+    margin: auto;
+    margin-top: 20px ;
+    display: block;
+  }
+}

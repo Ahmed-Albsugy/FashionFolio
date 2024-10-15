@@ -58,7 +58,7 @@ tree-list {
   padding: 0 15px;
 }
 
-.favorite {
+.favorite , .no-favorite {
  padding: 10px;
  margin: 30px auto;
  text-align: center;
