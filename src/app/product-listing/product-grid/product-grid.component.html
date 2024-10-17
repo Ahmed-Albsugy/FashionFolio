@@ -19,7 +19,7 @@
       </div>
 
       <mat-form-field appearance="outline">
-        <mat-label>Sort By</mat-label>
+        <mat-label>Category</mat-label>
         <mat-select (selectionChange)="onSortChange($event)">
           <mat-option *ngFor="let option of sortOptions" [value]="option.value">
             {{ option.label }}

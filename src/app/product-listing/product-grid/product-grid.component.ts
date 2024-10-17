@@ -20,10 +20,9 @@ interface Product {
 export class ProductGridComponent implements OnInit {
   viewType: 'grid' | 'list' = 'grid';
   sortOptions = [
-    { value: 'price-asc', label: 'Price: Low to High' },
-    { value: 'price-desc', label: 'Price: High to Low' },
-    { value: 'rating-desc', label: 'Highest Rated' },
-    { value: 'newest', label: 'Newest First' },
+    { value: 'Women', label: 'Women' },
+    { value: 'price-desc', label: 'Men' },
+    { value: 'rating-desc', label: 'Kids' },
   ];
 
   products: Product[] = [

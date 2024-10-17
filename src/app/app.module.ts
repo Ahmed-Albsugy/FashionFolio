@@ -9,7 +9,7 @@ import { ProductListingComponent } from './product-listing/product-listing.compo
 import { FooterComponent } from './footer/footer.component';
 import { AdvertisementComponent } from './home/advertisement/advertisement.component';
 import { CategoriesComponent } from './home/categories/categories.component';
-import { ProductGridComponent } from './home/product-grid/product-grid.component';
+import { ProductGridComponent } from './product-listing/product-grid/product-grid.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
