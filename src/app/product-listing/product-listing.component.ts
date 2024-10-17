@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CartService, CartItem } from '../services/cart.service';
-import { FavoritesService } from '../favorites.service';
+import { CartService, CartItem } from '../../services/cart.service';
+import { FavoritesService } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-product-listing',

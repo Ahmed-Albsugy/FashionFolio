@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { CartSummaryComponent } from '../shopping-cart/cart-summary/cart-summary.component';
 import { Component, OnInit } from '@angular/core';
-import { CartService, CartItem } from '../services/cart.service';
+import { CartService, CartItem } from '../../services/cart.service';
 import { Observable } from 'rxjs';
 import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';

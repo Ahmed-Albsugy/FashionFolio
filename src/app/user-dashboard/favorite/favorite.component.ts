@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { FavoritesService } from '../../favorites.service';
-
+import { FavoritesService } from '../../../services/favorites.service';
 
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
 })
 export class FavoriteComponent {
   showFavoriteList = false;
@@ -17,19 +16,19 @@ export class FavoriteComponent {
   }
 
   get favoriteProducts() {
-    return this.favoritesService.getFavorites();  // جلب المنتجات المفضلة من الخدمة
+    return this.favoritesService.getFavorites(); // جلب المنتجات المفضلة من الخدمة
   }
 
   toggleFavorite(product: any) {
     if (this.favoritesService.isFavorite(product.id)) {
-      this.favoritesService.removeFromFavorites(product.id);  // إزالة من المفضلة
+      this.favoritesService.removeFromFavorites(product.id); // إزالة من المفضلة
     } else {
-      this.favoritesService.addToFavorites(product);  // إضافة للمفضلة
+      this.favoritesService.addToFavorites(product); // إضافة للمفضلة
     }
   }
 
   isFavorite(productId: number) {
-    return this.favoritesService.isFavorite(productId);  // تحقق إذا كان المنتج مضاف للمفضلة
+    return this.favoritesService.isFavorite(productId); // تحقق إذا كان المنتج مضاف للمفضلة
   }
 
   showFavorites() {
