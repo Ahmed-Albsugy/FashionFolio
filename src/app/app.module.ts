@@ -43,6 +43,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from './environments/environment';
 import { ProductSliderComponent } from './home/product-slider/product-slider.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +60,8 @@ import { ProductSliderComponent } from './home/product-slider/product-slider.com
     ProductDetailsComponent,
     ProductListingComponent,
     ProductSliderComponent,
+    UserDashboardComponent,
+    FavoriteComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +93,7 @@ import { ProductSliderComponent } from './home/product-slider/product-slider.com
     // ... firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    MatIconModule,
   ],
   providers: [CartService],
   bootstrap: [AppComponent],

@@ -7,6 +7,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'log-in', component: LogInComponent },
   { path: 'product-details', component: ProductDetailsComponent },
+  { path: 'dashboard', component:UserDashboardComponent },
   {
     path: '',
     pathMatch: 'full',

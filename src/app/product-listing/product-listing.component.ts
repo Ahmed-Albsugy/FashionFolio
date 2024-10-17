@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService, CartItem } from '../services/cart.service';
+import { FavoritesService } from '../favorites.service';
 
 @Component({
   selector: 'app-product-listing',
@@ -7,7 +8,10 @@ import { CartService, CartItem } from '../services/cart.service';
   styleUrls: ['./product-listing.component.css'],
 })
 export class ProductListingComponent {
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private favoritesService: FavoritesService
+  ) {}
 
   addToCart(product: any) {
     const cartItem: CartItem = {
@@ -15,8 +19,7 @@ export class ProductListingComponent {
       name: product.title,
       price: product.price,
       quantity: 1,
-      imageUrl: product.image
-      
+      imageUrl: product.image,
     };
     this.cartService.addToCart(cartItem);
   }
@@ -1112,4 +1115,30 @@ export class ProductListingComponent {
     });
   }
   searchText: string = '';
+
+  showFavoriteList = false;
+
+  onShowFavorites() {
+    this.showFavoriteList = true;
+  }
+
+  get favoriteProducts() {
+    return this.favoritesService.getFavorites();
+  }
+  toggleFavorite(product: any) {
+    if (this.favoritesService.isFavorite(product.id)) {
+      this.favoritesService.removeFromFavorites(product.id);
+    } else {
+      this.favoritesService.addToFavorites(product);
+    }
+  }
+
+  isFavorite(productId: number) {
+    return this.favoritesService.isFavorite(productId);
+  }
+
+  showFavorites() {
+    this.showFavoriteList = !this.showFavoriteList; // استخدام المتغير الجديد
+    console.log('Show Favorites Clicked:', this.showFavoriteList); // تأكد من الطباعة في console
+  }
 }
