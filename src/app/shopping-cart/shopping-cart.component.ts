@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { CartSummaryComponent } from '../shopping-cart/cart-summary/cart-summary.component';
 import { Component, OnInit } from '@angular/core';
-import { CartService, CartItem } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service';
 import { Observable } from 'rxjs';
 import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
@@ -32,21 +32,44 @@ import { of } from 'rxjs';
   ],
 })
 export class ShoppingCartComponent implements OnInit {
-  cartItems$!: Observable<CartItem[]>;
+  cartItems: any[] = [];
+
+  // cartItems$!: Observable<CartItemData[]>;
   totalPrice: number = 0;
 
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
-    this.cartService.getCartItems().subscribe((cartItems) => {
-      this.cartItems$ = of(cartItems);
-      this.calculateTotalPrice();
-    });
+    this.cartService.getCartItems().subscribe(
+      (items) => {
+        this.cartItems = items;
+      },
+      (error) => {
+        console.error('Error fetching cart items:', error);
+      }
+    );
+    // this.cartService.getCartItems().subscribe((cartItems) => {
+    //   this.cartItems$ = of(cartItems);
+    //   this.calculateTotalPrice();
+    // });
   }
 
-  updateQuantity(id: number, event: Event) {
-    const quantity = +(event.target as HTMLInputElement).value;
-    this.cartService.updateQuantity(id, quantity);
+  // updateQuantity(id: number, event: Event) {
+  //   const quantity = +(event.target as HTMLInputElement).value;
+  //   this.cartService.updateQuantity(id, quantity);
+  // }
+  removeFromCart(cartItemId: string) {
+    this.cartService.removeFromCart(cartItemId).subscribe(
+      () => {
+        console.log('Item removed from cart successfully');
+        this.cartItems = this.cartItems.filter(
+          (item) => item.id !== cartItemId
+        );
+      },
+      (error) => {
+        console.error('Error removing item from cart:', error);
+      }
+    );
   }
 
   returnToShop() {
@@ -54,12 +77,12 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(['/products']);
   }
 
-  calculateTotalPrice(): void {
-    this.totalPrice = 0;
-    this.cartItems$.subscribe((cartItems) => {
-      cartItems.forEach((item) => {
-        this.totalPrice += item.price * item.quantity;
-      });
-    });
-  }
+  // calculateTotalPrice(): void {
+  //   this.totalPrice = 0;
+  //   this.cartItems$.subscribe((cartItems) => {
+  //     cartItems.forEach((item) => {
+  //       this.totalPrice += item.price * item.quantity;
+  //     });
+  //   });
+  // }
 }

@@ -30,3 +30,18 @@ mat-form-field {
 button {
   width: 100%;
 }
+.signup-link {
+  text-align: center;
+  margin-top: 16px;
+  color: #666;
+
+  a {
+    color: primary;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

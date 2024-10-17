@@ -1,43 +1,75 @@
-<div class="cart-container">
+<!-- <div class="cart-container">
   <div class="breadcrumb">
     <a id="Home" href="/">Home</a> / <span>Cart</span>
   </div>
 
-  <table mat-table class="cart-table" >
+  <table mat-table class="cart-table">
     <thead>
-    <tr mat-header-row>
-      <th mat-header-cell>Product</th>
-      <th mat-header-cell>Price</th>
-      <th mat-header-cell>Quantity</th>
-      <th mat-header-cell>Total Price</th>
-    </tr>
-  </thead>
-  <br>
-  <tbody>
-    <tr *ngFor="let item of cartItems$ | async">
-      <td>
-        <img [src]="item.imageUrl" alt="{{ item.name }}" width="50" height="50">
-      </td>
-      <td>${{ item.price }}</td>
-      <td>
-        <input id="quantity" type="number" [value]="item.quantity"
-              (change)="updateQuantity(item.id, $event)" min="1">
-      </td>
-      <td>${{ item.price * item.quantity }}</td>
-    </tr>
-  </tbody>
-
+      <tr mat-header-row>
+        <th mat-header-cell>Product</th>
+        <th mat-header-cell>Price</th>
+        <th mat-header-cell>Quantity</th>
+        <th mat-header-cell>Total Price</th>
+      </tr>
+    </thead>
+    <br />
+    <tbody>
+      <!-- *ngFor="let item of cartItems$ | async"
+      <tr *ngFor="let item of cartItems">
+        <td>
+          <img
+            [src]="item.productImage"
+            alt="{{ item.name }}"
+            width="50"
+            height="50"
+          />
+        </td>
+        <td>${{ item.price }}</td>
+        <td>
+          <input
+            id="quantity"
+            type="number"
+            [value]="item.quantity"
+            (change)="updateQuantity(item.id, $event)"
+            min="1"
+          />
+        </td>
+        <td>${{ item.price * item.quantity }}</td>
+      </tr>
+    </tbody>
+    <ng-template #noItems>
+      <p>Your cart is empty.</p>
+    </ng-template>
   </table>
 
   <div class="cart-buttons">
     <div class="example-button-row">
-      <button mat-stroked-button (click)="returnToShop()" style="color: #f0f0f0;background-color: #689AB5;">Return to Shop</button>
+      <button
+        mat-stroked-button
+        (click)="returnToShop()"
+        style="color: #f0f0f0; background-color: #689ab5"
+      >
+        Return to Shop
+      </button>
     </div>
-
   </div>
-  <br>
+  <br />
   <div>
-
     <app-cart-summary [subtotal]="totalPrice"></app-cart-summary>
   </div>
+</div> -->
+
+<div *ngIf="cartItems.length > 0; else noItems">
+  <h2>Your Cart</h2>
+  <ul>
+    <li *ngFor="let item of cartItems">
+      <h3>{{ item.productId }}</h3>
+      <p>Quantity: {{ item.quantity }}</p>
+      <button (click)="removeFromCart(item.id)">Remove</button>
+    </li>
+  </ul>
 </div>
+
+<ng-template #noItems>
+  <p>Your cart is empty.</p>
+</ng-template>

@@ -64,13 +64,13 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/log-in']);
   }
   goCart() {
-    this.router.navigate(['/shopping-cart']);
+    this.router.navigate(['/cart']);
   }
   goProducts() {
     this.router.navigate(['/our-product']);
   }
   goFavorites() {
-    this.router.navigate(['/favorites']);
+    this.router.navigate(['/dashboard']);
   }
   onLogout() {
     this.authService.logout();
