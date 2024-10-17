@@ -14,3 +14,7 @@
     padding-top: 56px; /* Adjust for smaller header on mobile */
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,41 +1,46 @@
-<mat-toolbar color="primary">
-  <a href="#" routerLink="home"
-    ><img src="assets/images/logo/logo-white.svg" alt="logo"
-  /></a>
-  <span class="spacer"></span>
+<div class="header-container">
+  <div class="container">
+    <mat-toolbar color="primary">
+      <a href="#" routerLink="home"
+        ><img src="assets/images/logo/logo-white.svg" alt="logo"
+      /></a>
+      <span class="spacer"></span>
 
-  <ng-container *ngIf="(isHandset$ | async) === false; else mobileMenu">
-    <button mat-button (click)="goHome()">Home</button>
-    <button mat-button (click)="goProducts()">Products</button>
-    <button mat-button (click)="goContact()">Contact</button>
-    <button mat-button (click)="goSignUp()">Sign Up</button>
-    <span class="spacer"></span>
-  </ng-container>
+      <ng-container *ngIf="(isHandset$ | async) === false; else mobileMenu">
+        <button mat-button (click)="goHome()">Home</button>
+        <button mat-button (click)="goProducts()">Products</button>
+        <button mat-button (click)="goContact()">Contact</button>
+        <button mat-button (click)="goSignUp()">Sign Up</button>
+        <span class="spacer"></span>
+      </ng-container>
 
-  <button mat-icon-button (click)="goFavorites()">
-    <mat-icon matBadge="3" matBadgeColor="warn">favorite</mat-icon>
-  </button>
-  <button mat-icon-button (click)="goCart()">
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
-  <button mat-button (click)="goLogin()">Login</button>
-  <!-- <button mat-icon-button>
-    <mat-icon>person</mat-icon>
-  </button> -->
+      <button mat-icon-button (click)="goFavorites()">
+        <mat-icon matBadge="3" matBadgeColor="warn">favorite</mat-icon>
+      </button>
+      <button mat-icon-button (click)="goCart()">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button class="display" mat-button (click)="goLogin()">Login</button>
+      <!-- <button mat-icon-button>
+      <mat-icon>person</mat-icon>
+    </button> -->
 
-  <ng-template #mobileMenu>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="goHome()">Home</button>
-      <button mat-menu-item (click)="goProducts()">Products</button>
-      <button mat-menu-item (click)="goContact()">Contact</button>
-      <button mat-menu-item (click)="goSignUp()">Sign Up</button>
-      <!-- <mat-form-field appearance="outline">
-        <input matInput placeholder="What are you looking for?" />
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field> -->
-    </mat-menu>
-  </ng-template>
-</mat-toolbar>
+      <ng-template #mobileMenu>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="goHome()">Home</button>
+          <button mat-menu-item (click)="goProducts()">Products</button>
+          <button mat-menu-item (click)="goContact()">Contact</button>
+          <button mat-menu-item (click)="goSignUp()">Sign Up</button>
+          <button mat-button (click)="goLogin()">Login</button>
+          <!-- <mat-form-field appearance="outline">
+          <input matInput placeholder="What are you looking for?" />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field> -->
+        </mat-menu>
+      </ng-template>
+    </mat-toolbar>
+  </div>
+</div>
