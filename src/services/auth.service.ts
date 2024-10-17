@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  user$: Observable<any>;
+
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
+    this.user$ = this.afAuth.authState;
+  }
 
   // Register method
   register(email: string, password: string) {

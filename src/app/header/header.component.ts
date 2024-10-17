@@ -9,6 +9,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,14 +28,22 @@ import { Router } from '@angular/router';
   ],
 })
 export class HeaderComponent implements OnInit {
+  isAuthenticated = false;
+  user: any;
+
   isHandset$!: Observable<boolean>;
 
   constructor(
+    private authService: AuthService,
     private breakpointObserver: BreakpointObserver,
     private router: Router
   ) {}
 
   ngOnInit() {
+    this.authService.user$.subscribe((user) => {
+      this.isAuthenticated = !!user;
+      this.user = user;
+    });
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
       map((result) => result.matches),
       shareReplay()
@@ -62,5 +71,8 @@ export class HeaderComponent implements OnInit {
   }
   goFavorites() {
     this.router.navigate(['/favorites']);
+  }
+  onLogout() {
+    this.authService.logout();
   }
 }

@@ -10,7 +10,9 @@
         <button mat-button (click)="goHome()">Home</button>
         <button mat-button (click)="goProducts()">Products</button>
         <button mat-button (click)="goContact()">Contact</button>
-        <button mat-button (click)="goSignUp()">Sign Up</button>
+        <button mat-button *ngIf="!isAuthenticated" (click)="goSignUp()">
+          Sign Up
+        </button>
         <span class="spacer"></span>
       </ng-container>
 
@@ -20,7 +22,21 @@
       <button mat-icon-button (click)="goCart()">
         <mat-icon>shopping_cart</mat-icon>
       </button>
-      <button class="display" mat-button (click)="goLogin()">Login</button>
+      <button
+        class="display"
+        mat-button
+        *ngIf="!isAuthenticated"
+        (click)="goLogin()"
+      >
+        Login
+      </button>
+      <button mat-button *ngIf="isAuthenticated">
+        {{ user?.displayName || "Profile" }}
+      </button>
+      <button mat-button *ngIf="isAuthenticated" (click)="onLogout()">
+        Logout
+      </button>
+
       <!-- <button mat-icon-button>
       <mat-icon>person</mat-icon>
     </button> -->
@@ -33,8 +49,12 @@
           <button mat-menu-item (click)="goHome()">Home</button>
           <button mat-menu-item (click)="goProducts()">Products</button>
           <button mat-menu-item (click)="goContact()">Contact</button>
-          <button mat-menu-item (click)="goSignUp()">Sign Up</button>
-          <button mat-button (click)="goLogin()">Login</button>
+          <button mat-menu-item *ngIf="!isAuthenticated" (click)="goSignUp()">
+            Sign Up
+          </button>
+          <button mat-button *ngIf="!isAuthenticated" (click)="goLogin()">
+            Login
+          </button>
           <!-- <mat-form-field appearance="outline">
           <input matInput placeholder="What are you looking for?" />
           <mat-icon matSuffix>search</mat-icon>
