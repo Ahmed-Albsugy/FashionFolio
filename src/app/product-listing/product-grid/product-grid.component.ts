@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  discountPrice?: number;
-  rating: number;
-  image: string;
-  category: string;
-  inStock: boolean;
-}
+import { ProductService } from '../../../services/product.service';
+import { FavoritesService } from '../../../services/favorites.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-grid',
@@ -25,34 +16,39 @@ export class ProductGridComponent implements OnInit {
     { value: 'rating-desc', label: 'Kids' },
   ];
 
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Classic White T-Shirt',
-      description: 'Essential cotton crew neck t-shirt in classic white',
-      price: 29.99,
-      discountPrice: 24.99,
-      rating: 4.5,
-      image: 'assets/images/products/tshirt.jpg',
-      category: "Men's Fashion",
-      inStock: true,
-    },
-    {
-      id: 2,
-      name: 'Slim Fit Denim Jeans',
-      description: 'Contemporary slim fit jeans in dark wash',
-      price: 79.99,
-      rating: 4.8,
-      image: 'assets/images/products/jeans.jpg',
-      category: "Men's Fashion",
-      inStock: true,
-    },
-    // Add more products as needed
-  ];
+  products: Product[] = [];
 
-  constructor() {}
+  constructor(
+    private productService: ProductService,
+    private favoritesService: FavoritesService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
+    });
+  }
+
+  // loadProducts() {
+  //   const jsonFilePath = 'assets/products.json';
+  //   this.productService.loadProductsFromJson(jsonFilePath).subscribe(
+  //     (products: Product[]) => {
+  //       products.forEach((product) => {
+  //         this.productService
+  //           .addProduct(product)
+  //           .then(() => {
+  //             console.log(`Product ${product.name} added successfully`);
+  //           })
+  //           .catch((error) => {
+  //             console.error('Error adding product:', error);
+  //           });
+  //       });
+  //     },
+  //     (error) => {
+  //       console.error('Error loading products from JSON file:', error);
+  //     }
+  //   );
+  // }
 
   toggleView(view: 'grid' | 'list'): void {
     this.viewType = view;
@@ -63,6 +59,19 @@ export class ProductGridComponent implements OnInit {
     console.log(`Adding ${product.name} to cart`);
   }
 
+  toggleFavorite(product: any) {
+    if (this.favoritesService.isFavorite(product.id)) {
+      this.favoritesService.removeFromFavorites(product.id);
+    } else {
+      this.favoritesService.addToFavorites(product);
+    }
+  }
+  get favoriteProducts() {
+    return this.favoritesService.getFavorites();
+  }
+  isFavorite(productId: number) {
+    return this.favoritesService.isFavorite(productId);
+  }
   addToWishlist(product: Product): void {
     // Implement wishlist functionality
     console.log(`Adding ${product.name} to wishlist`);

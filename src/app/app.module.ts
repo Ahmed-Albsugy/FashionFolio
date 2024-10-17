@@ -37,14 +37,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
+import { ProductSliderComponent } from './home/product-slider/product-slider.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
 
 // ... firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { ProductSliderComponent } from './home/product-slider/product-slider.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -90,10 +92,12 @@ import { FavoriteComponent } from './user-dashboard/favorite/favorite.component'
     MatBadgeModule,
     MatSidenavModule,
     MatMenuModule,
+    MatIconModule,
     // ... firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    MatIconModule,
+    AngularFirestoreModule,
+    HttpClientModule,
   ],
   providers: [CartService],
   bootstrap: [AppComponent],

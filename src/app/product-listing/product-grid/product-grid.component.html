@@ -30,57 +30,59 @@
 
     <div class="products-grid" [class.list-view]="viewType === 'list'">
       <mat-card *ngFor="let product of products" class="product-card">
-        <div class="image-container">
-          <img mat-card-image [src]="product.image" [alt]="product.name" />
-          <button
-            mat-icon-button
-            class="wishlist-button"
-            (click)="addToWishlist(product)"
-          >
-            <mat-icon>favorite_border</mat-icon>
-          </button>
-          <div class="discount-badge" *ngIf="product.discountPrice">
-            {{
-              ((product.price - product.discountPrice) / product.price) * 100
-                | number : "1.0-0"
-            }}% OFF
+        <div class="data">
+          <div class="image-container">
+            <img mat-card-image [src]="product.imageURL" [alt]="product.name" />
+            <button
+              mat-icon-button
+              class="wishlist-button"
+              (click)="toggleFavorite(product)"
+            >
+              <mat-icon>favorite_border</mat-icon>
+            </button>
+            <div class="discount-badge" *ngIf="product.discountPrice">
+              {{
+                ((product.price - product.discountPrice) / product.price) * 100
+                  | number : "1.0-0"
+              }}% OFF
+            </div>
           </div>
+
+          <mat-card-content>
+            <div class="product-info">
+              <h3 class="product-name">{{ product.name }}</h3>
+              <p class="product-description">{{ product.description }}</p>
+
+              <div class="rating">
+                <mat-icon
+                  *ngFor="let star of getStarArray(product.rating)"
+                  class="star-icon"
+                  >star</mat-icon
+                >
+                <mat-icon
+                  *ngIf="getPartialStar(product.rating)"
+                  class="star-icon partial"
+                  [style.width.%]="getPartialStar(product.rating)"
+                >
+                  star
+                </mat-icon>
+                <span class="rating-value">({{ product.rating }})</span>
+              </div>
+
+              <div class="price-container">
+                <span
+                  class="current-price"
+                  [class.discounted]="product.discountPrice"
+                >
+                  {{ product.discountPrice || product.price | currency }}
+                </span>
+                <span class="original-price" *ngIf="product.discountPrice">
+                  {{ product.price | currency }}
+                </span>
+              </div>
+            </div>
+          </mat-card-content>
         </div>
-
-        <mat-card-content>
-          <div class="product-info">
-            <h3 class="product-name">{{ product.name }}</h3>
-            <p class="product-description">{{ product.description }}</p>
-
-            <div class="rating">
-              <mat-icon
-                *ngFor="let star of getStarArray(product.rating)"
-                class="star-icon"
-                >star</mat-icon
-              >
-              <mat-icon
-                *ngIf="getPartialStar(product.rating)"
-                class="star-icon partial"
-                [style.width.%]="getPartialStar(product.rating)"
-              >
-                star
-              </mat-icon>
-              <span class="rating-value">({{ product.rating }})</span>
-            </div>
-
-            <div class="price-container">
-              <span
-                class="current-price"
-                [class.discounted]="product.discountPrice"
-              >
-                {{ product.discountPrice || product.price | currency }}
-              </span>
-              <span class="original-price" *ngIf="product.discountPrice">
-                {{ product.price | currency }}
-              </span>
-            </div>
-          </div>
-        </mat-card-content>
 
         <mat-card-actions>
           <button
