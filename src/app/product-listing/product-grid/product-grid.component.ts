@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { FavoritesService } from '../../../services/favorites.service';
 import { Product } from '../../models/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-grid',
@@ -20,7 +21,8 @@ export class ProductGridComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private favoritesService: FavoritesService
+    private favoritesService: FavoritesService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +31,9 @@ export class ProductGridComponent implements OnInit {
     });
   }
 
+  goToDetails(productId: string) {
+    this.router.navigate(['/product', productId]);
+  }
   // loadProducts() {
   //   const jsonFilePath = 'assets/products.json';
   //   this.productService.loadProductsFromJson(jsonFilePath).subscribe(

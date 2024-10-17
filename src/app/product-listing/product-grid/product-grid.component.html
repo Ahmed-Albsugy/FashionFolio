@@ -50,7 +50,10 @@
 
           <mat-card-content>
             <div class="product-info">
-              <h3 class="product-name">{{ product.name }}</h3>
+              <a class="product-name" [routerLink]="['/product', product.id]">{{
+                product.name
+              }}</a>
+              <!-- <h3 class="product-name">{{ product.name }}</h3> -->
               <p class="product-description">{{ product.description }}</p>
 
               <div class="rating">

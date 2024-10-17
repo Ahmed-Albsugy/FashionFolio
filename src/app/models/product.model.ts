@@ -9,6 +9,16 @@ export interface Product {
   subSubcategory: string;
   imageURL: string;
   rating: number;
-  reviews: number;
   inStock: boolean;
+  sizes: string[];
+  images: string[];
+  reviews: Review[];
+  stockStatus: boolean;
+}
+interface Review {
+  id: number;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: Date;
 }

@@ -3,11 +3,7 @@
     <div class="product-grid">
       <!-- Product Images Section -->
       <div class="images-section">
-        <img
-          [src]="product.images[selectedImageIndex]"
-          [alt]="product.name"
-          class="main-image"
-        />
+        <img [src]="product.imageURL" [alt]="product.name" class="main-image" />
         <div class="thumbnail-container">
           <img
             *ngFor="let image of product.images; let i = index"
@@ -40,10 +36,10 @@
           <div class="price">
             <h2>${{ product.price }}</h2>
             <mat-chip>
-              <mat-chip color="primary" *ngIf="product.stockStatus"
+              <mat-chip color="primary" *ngIf="product.inStock"
                 >In Stock</mat-chip
               >
-              <mat-chip color="warn" *ngIf="!product.stockStatus"
+              <mat-chip color="warn" *ngIf="!product.inStock"
                 >Out of Stock</mat-chip
               >
             </mat-chip>

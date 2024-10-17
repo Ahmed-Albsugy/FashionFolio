@@ -9,6 +9,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Suits",
     "imageURL": "https://m.media-amazon.com/images/I/81MXgcHqBIL._AC_SL1500_.jpg",
+    "sizes": ["S", "M", "L", "XL"],
     "rating": 4.7,
     "reviews": 850,
     "inStock": true

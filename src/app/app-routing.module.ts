@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'log-in', component: LogInComponent },
-  { path: 'product-details', component: ProductDetailsComponent },
-  { path: 'dashboard', component:UserDashboardComponent },
+  { path: 'product/:id', component: ProductDetailsComponent },
+  { path: 'dashboard', component: UserDashboardComponent },
   {
     path: '',
     pathMatch: 'full',

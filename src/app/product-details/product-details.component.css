@@ -133,12 +133,13 @@
 }
 
 .mat-button-toggle-group {
+  width: fit-content;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  /* flex-wrap: wrap; */
 }
 
 .mat-button-toggle {
+  text-align: center;
   margin: 4px;
 }
 

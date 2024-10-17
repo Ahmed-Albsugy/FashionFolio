@@ -25,6 +25,10 @@ export class ProductService {
     return this.productsCollection.valueChanges({ idField: 'id' });
   }
 
+  getProductById(id: string): Observable<any> {
+    return this.firestore.collection('products').doc(id).valueChanges();
+  }
+
   // Update an existing product
   updateProduct(id: string, product: Product): Promise<void> {
     return this.productsCollection.doc(id).update(product);
