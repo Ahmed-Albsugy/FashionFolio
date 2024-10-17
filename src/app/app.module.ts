@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,10 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AdvertisementComponent } from './home/advertisement/advertisement.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductGridComponent } from './home/product-grid/product-grid.component';
-import { TestHeaderComponent } from './test-header/test-header.component';
 import { ContactComponent } from './contact/contact.component';
-import { SignupComponent } from './sign-up/sign-up.component';
-import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatCardModule } from '@angular/material/card';
@@ -32,26 +30,36 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
+import { CartService } from './services/cart.service';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+
+// ... firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from './environments/environment';
+import { ProductSliderComponent } from './home/product-slider/product-slider.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     FooterComponent,
     AdvertisementComponent,
     CategoriesComponent,
     ProductGridComponent,
-    TestHeaderComponent,
     ContactComponent,
-    SignupComponent,
-    ShopingCartComponent,
+    SignUpComponent,
     LogInComponent,
-    ProductListingComponent,
     ProductDetailsComponent,
+    ProductListingComponent,
+    ProductSliderComponent,
     UserDashboardComponent,
     FavoriteComponent,
   ],
@@ -59,6 +67,7 @@ import { FavoriteComponent } from './user-dashboard/favorite/favorite.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HeaderComponent,
     MatCardModule,
     MatTreeModule,
     MatButtonModule,
@@ -75,9 +84,18 @@ import { FavoriteComponent } from './user-dashboard/favorite/favorite.component'
     MatListModule,
     MatDividerModule,
     FormsModule,
+    MatTableModule,
+    CartSummaryComponent,
+    MatToolbarModule,
+    MatBadgeModule,
+    MatSidenavModule,
+    MatMenuModule,
+    // ... firebase
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,44 @@
+<div class="product-slider-container">
+  <h2>Our Products</h2>
+  <h1>Explore Our Products</h1>
+
+  <div class="product-slider">
+    <button mat-icon-button class="nav-button prev">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <div class="products-container">
+      <mat-card *ngFor="let product of products" class="product-card">
+        <img mat-card-image [src]="product.image" [alt]="product.name" />
+        <mat-card-content>
+          <h3>{{ product.name }}</h3>
+          <p class="price">${{ product.price }}</p>
+          <div class="rating">
+            <mat-icon
+              *ngFor="let star of [1, 2, 3, 4, 5]"
+              [class.filled]="star <= product.rating"
+              >star</mat-icon
+            >
+            <span>({{ product.reviews }})</span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="addToCart(product)"
+          >
+            Add To Cart
+          </button>
+          <button mat-icon-button (click)="addToWishlist(product)">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <button mat-icon-button class="nav-button next">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

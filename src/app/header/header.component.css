@@ -1,0 +1,51 @@
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 16px;
+}
+img {
+  height: 150px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.search {
+  margin-top: 10px;
+  input {
+    padding: 0 8px;
+  }
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 200px;
+  margin-right: 16px;
+}
+
+button {
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .mat-toolbar {
+    padding: 0 8px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  button {
+    margin-left: 4px;
+  }
+}
+
+::ng-deep .mat-menu-panel {
+  max-width: none !important;
+  width: 100vw;
+}
+
+::ng-deep .mat-menu-content {
+  padding: 16px !important;
+}

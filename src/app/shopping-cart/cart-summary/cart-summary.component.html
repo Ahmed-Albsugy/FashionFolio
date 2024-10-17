@@ -1,0 +1,16 @@
+<div class="cart-total">
+  <h2>Cart Total</h2>
+  <div class="summary-row">
+    <span>Subtotal:</span>
+    <span>{{ subtotal | currency }}</span>
+  </div>
+  <div class="summary-row">
+    <span>Shipping:</span>
+    <span>{{ shipping === 0 ? 'Free' : (shipping | currency) }}</span>
+  </div>
+  <div class="summary-row total">
+    <span>Total:</span>
+    <span>{{ total | currency }}</span>
+  </div>
+  <button>Process to checkout</button>
+</div>
