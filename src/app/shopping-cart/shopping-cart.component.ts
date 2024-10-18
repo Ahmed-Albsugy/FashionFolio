@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+import { Product } from '../models/product.model';
 
 /**
  * @title Basic buttons
@@ -58,18 +59,19 @@ export class ShoppingCartComponent implements OnInit {
   //   const quantity = +(event.target as HTMLInputElement).value;
   //   this.cartService.updateQuantity(id, quantity);
   // }
-  removeFromCart(cartItemId: string) {
-    this.cartService.removeFromCart(cartItemId).subscribe(
-      () => {
-        console.log('Item removed from cart successfully');
-        this.cartItems = this.cartItems.filter(
-          (item) => item.id !== cartItemId
-        );
-      },
-      (error) => {
-        console.error('Error removing item from cart:', error);
-      }
-    );
+  removeFromCart(product: Product) {
+    this.cartService.removeFromCart(product);
+    // .subscribe(
+    //   () => {
+    //     console.log('Item removed from cart successfully');
+    //     this.cartItems = this.cartItems.filter(
+    //       (item) => item.id !== product.id
+    //     );
+    //   },
+    //   (error) => {
+    //     console.error('Error removing item from cart:', error);
+    //   }
+    // );
   }
 
   returnToShop() {

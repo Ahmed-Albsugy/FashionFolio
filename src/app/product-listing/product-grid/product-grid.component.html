@@ -36,9 +36,12 @@
             <button
               mat-icon-button
               class="wishlist-button"
-              (click)="addToFavorites(product)"
+              (click)="toggleFavorite(product)"
+              [style.color]="(isFavorite(product) | async) ? '#3F51B5' : 'grey'"
             >
-              <mat-icon>favorite_border</mat-icon>
+              <mat-icon>{{
+                (isFavorite(product) | async) ? "favorite" : "favorite_border"
+              }}</mat-icon>
             </button>
             <div class="discount-badge" *ngIf="product.discountPrice">
               {{

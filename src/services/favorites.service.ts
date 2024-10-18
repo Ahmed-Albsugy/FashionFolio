@@ -4,18 +4,19 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { AuthService } from './auth.service';
-import { map, switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { map, switchMap, take } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../app/models/product.model';
-import { BehaviorSubject } from 'rxjs';
 
 export interface FavItem extends Product {
   id: string;
+  name: string;
 }
 
 interface FavData {
   [key: string]: FavItem;
 }
+
 @Injectable({
   providedIn: 'root',
 })
@@ -58,18 +59,6 @@ export class FavoritesService {
       });
   }
 
-  getFavorites(): Observable<FavItem[]> {
-    return this.favSubject.asObservable();
-  }
-
-  addToFavorites(product: Product) {
-    if (!this.favItems.some((item) => item.id === product.id)) {
-      this.favItems.push({ ...product, id: product.id ?? '' });
-      this.updateFavorites();
-    }
-    // this.updateFavorites();
-  }
-
   private updateFavorites() {
     this.favSubject.next([...this.favItems]);
     this.syncFavoritesWithFirestore();
@@ -91,83 +80,117 @@ export class FavoritesService {
     }
   }
 
-  // Fetch favorite items for the authenticated user
   getFavoriteItems(): Observable<any[]> {
     return this.favSubject.asObservable();
-    // return this.authService.user$.pipe(
-    //   switchMap((user) => {
-    //     if (!user) {
-    //       throw new Error('User not authenticated');
-    //     }
-    //     return this.firestore
-    //       .collection(`users/${user.uid}/favorites`)
-    //       .snapshotChanges()
-    //       .pipe(
-    //         map((actions) =>
-    //           actions.map((a) => {
-    //             const data = a.payload.doc.data();
-    //             const id = a.payload.doc.id;
-    //             return { id, ...(data as any) };
-    //           })
-    //         )
-    //       );
-    //   })
-    // );
   }
-  // getFavorites(): any[] {
-  //   // جلب المنتجات المفضلة من localStorage
-  //   const favorites = localStorage.getItem(this.localStorageKey);
-  //   return favorites ? JSON.parse(favorites) : [];
-  // }
-  // Add to favorites method
-  // addToFavorites(productId: string) {
-  //   return this.authService.user$.pipe(
-  //     map((user) => {
-  //       if (!user) {
-  //         throw new Error('User not authenticated');
-  //       }
-  //       const favoriteItem = { productId };
-  //       return this.firestore
-  //         .collection(`users/${user.uid}/favorites`)
-  //         .add(favoriteItem);
-  //     })
-  //   );
-  // }
-  // addToFavorites(product: any): void {
-  //   const currentFavorites = this.getFavorites();
-  //   if (!currentFavorites.some((p) => p.id === product.id)) {
-  //     currentFavorites.push(product); // إضافة المنتج للمفضلة
-  //     localStorage.setItem(
-  //       this.localStorageKey,
-  //       JSON.stringify(currentFavorites)
-  //     ); // تخزين المفضلة في localStorage
-  //   }
-  // }
 
-  // Remove from favorites method
-  removeFromFavorites(favoriteItemId: string) {
-    return this.authService.user$.pipe(
-      map((user) => {
-        if (!user) {
-          throw new Error('User not authenticated');
+  toggleFavorite(product: Product) {
+    this.isFavorite(product)
+      .pipe(
+        take(1) // Take only the first emission
+      )
+      .subscribe((isFav) => {
+        if (isFav) {
+          this.removeFavorite(product);
+        } else {
+          this.addToFavorites(product);
         }
-        return this.firestore
-          .doc(`users/${user.uid}/favorites/${favoriteItemId}`)
-          .delete();
+      });
+  }
+  addToFavorites(product: Product) {
+    if (!this.favItems.some((item) => item.id === product.id)) {
+      this.favItems.push({ ...product, id: product.id ?? '' });
+      this.updateFavorites();
+    }
+    this.updateFavorites();
+  }
+
+  removeFavorite(product: Product) {
+    const index = this.favItems.findIndex((item) => item.id === product.id);
+    if (index !== -1) {
+      this.favItems.splice(index, 1);
+      this.updateFavorites();
+    }
+    this.updateFavorites();
+  }
+
+  isFavorite(product: Product): Observable<boolean> {
+    return this.getFavoriteItems().pipe(
+      map((favorites) => {
+        return favorites.some((item) => item.id === product.id);
       })
     );
   }
-  // removeFromFavorites(id: number): void {
-  //   let currentFavorites = this.getFavorites();
-  //   currentFavorites = currentFavorites.filter((product) => product.id !== id);
-  //   localStorage.setItem(
-  //     this.localStorageKey,
-  //     JSON.stringify(currentFavorites)
-  //   ); // تحديث المفضلة في localStorage
-  // }
 
-  // isFavorite(id: number): boolean {
-  //   const currentFavorites = this.getFavoriteItems();
-  //   return currentFavorites.some((product) => product.id === id);
-  // }
+  // Fetch favorite items for the authenticated user
 }
+
+// toggleFavorite(productId: string) {
+//   const currentFavorites: FavItem[] = this.favSubject.value;
+//   const updatedFavorites = currentFavorites.includes(product.id)
+//     ? currentFavorites.filter((item) => item.id !== product.id)
+//     : [...currentFavorites, product.id];
+
+//   this.favSubject.next(updatedFavorites);
+//   this.syncFavoritesWithFirestore(updatedFavorites);
+// }
+
+// private updateFavorites() {
+//   this.favSubject.next([...this.favItems]);
+//   this.syncFavoritesWithFirestore();
+// }
+
+// private syncFavoritesWithFirestore() {
+//   if (this.favDoc) {
+//     const favData: FavData = {};
+//     this.favItems.forEach((item) => {
+//       favData[item.id] = item;
+//     });
+//     this.favDoc
+//       .set(favData)
+//       .then(() => console.log('Favorites synced with Firestore'))
+//       .catch((error) => console.error('Error syncing Favorites:', error));
+//   } else {
+//     console.warn('User not authenticated, favorites not synced');
+//   }
+// }
+
+// Remove from favorites method
+// removeFromFavorites(favItemId: string) {
+//   return this.authService.user$.pipe(
+//     map((user) => {
+//       if (!user) {
+//         throw new Error('User not authenticated');
+//       }
+//       return this.firestore
+//         .doc(`users/${user.uid}/favorites/${favItemId}`)
+//         .delete();
+//     })
+//   );
+// }
+
+// getFavorites(): Observable<FavItem[]> {
+//   return this.favSubject.asObservable();
+// }
+
+// getFavoriteItems(): Observable<Product[]> {
+//   // Assuming you have a user ID and a Firestore reference
+//   const userId = this.getCurrentUserId(); // Implement this method to get the current user's ID
+//   const favoritesRef = this.firestore.collection('users').doc(userId).collection('favorites');
+
+//   return favoritesRef.snapshotChanges().pipe(
+//     map(actions => actions.map(a => {
+//       const data = a.payload.doc.data() as Product;
+//       const id = a.payload.doc.id;
+//       return { id, ...data };
+//     }))
+//   );
+// }
+
+// toggleFavorite(product: Product) {
+//   if (this.isFavorite(product)) {
+//     this.removeFavorite(product);
+//   } else {
+//     this.addToFavorites(product);
+//   }
+// }

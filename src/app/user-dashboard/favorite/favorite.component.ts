@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FavoritesService } from '../../../services/favorites.service';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-favorite',
@@ -31,19 +32,19 @@ export class FavoriteComponent implements OnInit {
     return this.favoritesService.getFavoriteItems(); // جلب المنتجات المفضلة من الخدمة
   }
 
-  removeFromFavorites(favoriteItemId: string) {
-    this.favoritesService.removeFromFavorites(favoriteItemId).subscribe(
-      () => {
-        console.log('Item removed from favorites successfully');
-        this.favoriteItems = this.favoriteItems.filter(
-          (item) => item.id !== favoriteItemId
-        );
-      },
-      (error) => {
-        console.error('Error removing item from favorites:', error);
-      }
-    );
-  }
+  // removeFromFavorites(product: Product) {
+  //   this.favoritesService.removeFavorite(product).subscribe(
+  //     () => {
+  //       console.log('Item removed from favorites successfully');
+  //       this.favoriteItems = this.favoriteItems.filter(
+  //         (item) => item.id !== product.id
+  //       );
+  //     },
+  //     (error) => {
+  //       console.error('Error removing item from favorites:', error);
+  //     }
+  //   );
+  // }
   // toggleFavorite(product: any) {
   //   if (this.favoritesService.isFavorite(product.id)) {
   //     this.favoritesService.removeFromFavorites(product.id); // إزالة من المفضلة
@@ -52,9 +53,9 @@ export class FavoriteComponent implements OnInit {
   //   }
   // }
 
-  // isFavorite(productId: number) {
-  //   return this.favoritesService.isFavorite(productId); // تحقق إذا كان المنتج مضاف للمفضلة
-  // }
+  isFavorite(product: Product) {
+    return this.favoritesService.isFavorite(product); // تحقق إذا كان المنتج مضاف للمفضلة
+  }
 
   // showFavorites() {
   //   this.showFavoriteList = !this.showFavoriteList;

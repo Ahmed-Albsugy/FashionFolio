@@ -60,20 +60,6 @@ export class CartService {
       });
   }
 
-  getCart(): Observable<CartItem[]> {
-    return this.cartSubject.asObservable();
-  }
-
-  addToCart(product: Product) {
-    const existingItem = this.cartItems.find((item) => item.id === product.id);
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      this.cartItems.push({ ...product, id: product.id ?? '', quantity: 1 });
-    }
-    this.updateCart();
-  }
-
   private updateCart() {
     this.cartSubject.next([...this.cartItems]);
     this.syncCartWithFirestore();
@@ -93,6 +79,38 @@ export class CartService {
     } else {
       console.warn('User not authenticated, cart not synced');
     }
+  }
+
+  getCart(): Observable<CartItem[]> {
+    return this.cartSubject.asObservable();
+  }
+
+  addToCart(product: Product) {
+    const existingItem = this.cartItems.find((item) => item.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      this.cartItems.push({ ...product, id: product.id ?? '', quantity: 1 });
+    }
+    this.updateCart();
+  }
+  removeFromCart(product: Product) {
+    const index = this.cartItems.findIndex((item) => item.id === product.id);
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+      this.updateCart();
+    }
+    this.updateCart();
+    // return this.authService.user$.pipe(
+    //   map((user) => {
+    //     if (!user) {
+    //       throw new Error('User not authenticated');
+    //     }
+    //     return this.firestore
+    //       .doc(`users/${user.uid}/cart/${cartItemId}`)
+    //       .delete();
+    //   })
+    // );
   }
 
   // Fetch cart items for the authenticated user
@@ -209,18 +227,7 @@ export class CartService {
   // }
 
   // Remove from cart method
-  removeFromCart(cartItemId: string) {
-    return this.authService.user$.pipe(
-      map((user) => {
-        if (!user) {
-          throw new Error('User not authenticated');
-        }
-        return this.firestore
-          .doc(`users/${user.uid}/cart/${cartItemId}`)
-          .delete();
-      })
-    );
-  }
+
   // removeFromCart(id: number) {
   //   this.cartItems = this.cartItems.filter((item) => item.id !== id);
   //   this.cartSubject.next([...this.cartItems]);
