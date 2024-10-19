@@ -28,8 +28,14 @@
           >
             Add To Cart
           </button>
-          <button mat-icon-button (click)="addToWishlist(product)">
-            <mat-icon>favorite_border</mat-icon>
+          <button
+            mat-icon-button
+            (click)="toggleFavorite(product)"
+            [style.color]="(isFavorite(product) | async) ? '#3F51B5' : 'grey'"
+          >
+            <mat-icon>{{
+              (isFavorite(product) | async) ? "favorite" : "favorite_border"
+            }}</mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>

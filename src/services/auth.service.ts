@@ -42,4 +42,7 @@ export class AuthService {
       this.router.navigate(['../log-in']);
     });
   }
+  get isAuthenticated$(): boolean {
+    return this.user$ !== null;
+  }
 }

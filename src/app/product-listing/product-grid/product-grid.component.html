@@ -17,10 +17,21 @@
           <mat-icon>view_list</mat-icon>
         </button>
       </div>
-
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Search products..."
+          (input)="onSearchChange(searchTerm)"
+          [(ngModel)]="searchTerm"
+        />
+      </div>
       <mat-form-field appearance="outline">
         <mat-label>Category</mat-label>
-        <mat-select (selectionChange)="onSortChange($event)">
+        <mat-select
+          #sortSelect
+          (selectionChange)="onSortChange(selectedCategory)"
+          [(value)]="selectedCategory"
+        >
           <mat-option *ngFor="let option of sortOptions" [value]="option.value">
             {{ option.label }}
           </mat-option>
@@ -29,7 +40,7 @@
     </div>
 
     <div class="products-grid" [class.list-view]="viewType === 'list'">
-      <mat-card *ngFor="let product of products" class="product-card">
+      <mat-card *ngFor="let product of sortedProducts" class="product-card">
         <div class="data">
           <div class="image-container">
             <img mat-card-image [src]="product.imageURL" [alt]="product.name" />
@@ -103,5 +114,8 @@
         </mat-card-actions>
       </mat-card>
     </div>
+    <ng-template *ngIf="sortedProducts.length === 0">
+      <p>No available products</p>
+    </ng-template>
   </div>
 </section>

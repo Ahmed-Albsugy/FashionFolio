@@ -9,7 +9,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Suits",
     "imageURL": "https://m.media-amazon.com/images/I/81MXgcHqBIL._AC_SL1500_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.7,
     "reviews": 850,
     "inStock": true
@@ -20,9 +20,9 @@
     "name": "Boys Suit Jacket and Pants Set",
     "price": 45.0,
     "description": "Stylish suit for boys, perfect for formal occasions, weddings, or school events. The set includes a tailored jacket with matching pants, offering a sharp and polished look.",
-    "category": "kids",
+    "category": "Kids",
     "subcategory": "Clothing",
-    "subSubcategory": "kids Suits",
+    "subSubcategory": "Kids Suits",
     "imageURL": "https://m.media-amazon.com/images/I/71V-TH85HSL._AC_SX522_.jpg",
     "sizes": ["S", "M", "L"],
     "rating": 4.7,
@@ -39,7 +39,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "jackets",
     "imageURL": "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/21/722562/1.jpg?9739",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 2.6,
     "reviews": 850,
     "inStock": true
@@ -54,7 +54,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "jackets",
     "imageURL": "https://images-na.ssl-images-amazon.com/images/I/41gpl70tusL._UL500_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -69,7 +69,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Suits",
     "imageURL": "https://www.cordings.co.uk/media/catalog/product/cache/e89452242e02ce17aec9919532009943/t/r/tr478stone.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.1,
     "reviews": 259,
     "inStock": true
@@ -114,7 +114,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Coats",
     "imageURL": "https://images-na.ssl-images-amazon.com/images/I/81LlRQoAKyL._SL250_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -129,7 +129,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Blazers",
     "imageURL": "https://www.houseofblanks.com/cdn/shop/files/HOB-RelaxedCrew-Heather-Front.jpg?v=1707341201&width=533",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.1,
     "reviews": 259,
     "inStock": true
@@ -159,7 +159,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Coats",
     "imageURL": "https://cdn-img.prettylittlething.com/8/e/d/1/8ed19d6f6ba88357f41b3d2db157b6582314156f_CLV0472_3.JPG",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -215,7 +215,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Blazers",
     "imageURL": "https://i.pinimg.com/originals/3b/f4/ad/3bf4ad1ad55d2302ab942396b94ee4f9.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.1,
     "reviews": 259,
     "inStock": true
@@ -230,7 +230,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Dresses",
     "imageURL": "https://i5.walmartimages.com/asr/2a5d37f4-ec43-43ec-80a9-7e8bb0c35e6a.7997b57df5cb9c0f1bf3a024702e9b77.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -245,7 +245,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Shirts & Blouses",
     "imageURL": "https://ae01.alicdn.com/kf/HTB1v7YXSpXXXXXNaVXXq6xXFXXXq/2017-Women-Floral-Embroidery-White-Blouses-Roll-up-Long-Sleeve-V-Neck-Curved-Hem-Ladies-Office.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -275,7 +275,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Shirts",
     "imageURL": "https://th.bing.com/th/id/OIP.-Awebs3_y4N0vT-vv030IwAAAA?rs=1&pid=ImgDetMain",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.1,
     "reviews": 259,
     "inStock": true
@@ -290,7 +290,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Shirts & Blouses",
     "imageURL": "https://images-cdn.ubuy.co.in/654ec7dd9fb75b0f9d500283-aelfric-eden-cable-knit-sweater-women.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -319,7 +319,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Shirts",
     "imageURL": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 2.1,
     "reviews": 430,
     "inStock": true
@@ -334,7 +334,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Pants",
     "imageURL": "https://media.endclothing.com/media/catalog/product/2/9/29-05-2019_ami_heartlogooxfordshirt_white_a19c013-45-100_blr_1.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 5,
     "reviews": 260,
     "inStock": true
@@ -364,7 +364,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Tops",
     "imageURL": "https://cdn.shopify.com/s/files/1/0281/5757/5299/products/image_b8598dc7-741d-4f4b-b1ad-7b4f16b77f74_1445x.jpg?v=1675779170",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -394,7 +394,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Pants",
     "imageURL": "https://i.pinimg.com/736x/32/cb/6c/32cb6c465c8a3bfb080917c061f46237.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.1,
     "reviews": 259,
     "inStock": true
@@ -409,7 +409,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men shorts & Swimwear",
     "imageURL": "https://lp.arket.com/app006prod?set%3Dsource[02_0644961_005_1]%2Ctype[PRODUCT]%2Cdevice[hdpi]%2Cquality[80]%2CimageVersion[201909111034]%26call%3Durl[file:%2Fproduct%2Fmain]",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.1,
     "reviews": 259,
     "inStock": true
@@ -439,7 +439,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Tops",
     "imageURL": "https://m.media-amazon.com/images/I/41j+MwlcWqL._QL92_SH45_SR240,220_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -454,7 +454,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men shorts & Swimwear",
     "imageURL": "https://th.bing.com/th/id/OIP.VHOryi2FL5ZI64oUFQNnxQAAAA?rs=1&pid=ImgDetMain",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.1,
     "reviews": 259,
     "inStock": true
@@ -469,7 +469,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Dresses",
     "imageURL": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 2.9,
     "reviews": 340,
     "inStock": true
@@ -484,7 +484,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Men Sweaters & Hoodies",
     "imageURL": "https://cdn.shopify.com/s/files/1/1520/5960/files/NFTSFUTURE_SS_Creme_Front.jpg?v=1683927261&width=650",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 4.1,
     "reviews": 259,
     "inStock": true
@@ -499,7 +499,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "Skirts",
     "imageURL": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 2.9,
     "reviews": 340,
     "inStock": true
@@ -514,7 +514,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "jeans",
     "imageURL": "https://images-na.ssl-images-amazon.com/images/I/81LlRQoAKyL._SL250_.jpg",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true
@@ -529,7 +529,7 @@
     "subcategory": "Clothing",
     "subSubcategory": "jeans",
     "imageURL": "https://cdn.shopify.com/s/files/1/0281/5757/5299/products/image_b8598dc7-741d-4f4b-b1ad-7b4f16b77f74_1445x.jpg?v=1675779170",
-    "sizes": ["S", "M", "L", "XL" , "XXL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "rating": 3.8,
     "reviews": 679,
     "inStock": true

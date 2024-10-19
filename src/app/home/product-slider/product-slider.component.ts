@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ProductService } from '../../../services/product.service';
 import { CartService } from '../../../services/cart.service';
 import { FavoritesService } from '../../../services/favorites.service';
@@ -42,11 +40,19 @@ export class ProductSliderComponent implements OnInit {
   }
 
   addToCart(product: Product): void {
+    this.cartService.addToCart(product);
     this.snackBar.open(`${product.name} added to cart`, 'Close', {
       duration: 2000,
     });
   }
 
+  toggleFavorite(product: Product) {
+    this.favoritesService.toggleFavorite(product);
+    console.log(`toggling ${product.name} to wishlist`);
+  }
+  isFavorite(product: Product): Observable<boolean> {
+    return this.favoritesService.isFavorite(product);
+  }
   addToWishlist(product: Product): void {
     this.snackBar.open(`${product.name} added to wishlist`, 'Close', {
       duration: 2000,

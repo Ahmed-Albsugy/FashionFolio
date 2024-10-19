@@ -49,10 +49,6 @@ export class ShoppingCartComponent implements OnInit {
         console.error('Error fetching cart items:', error);
       }
     );
-    // this.cartService.getCartItems().subscribe((cartItems) => {
-    //   this.cartItems$ = of(cartItems);
-    //   this.calculateTotalPrice();
-    // });
   }
 
   // updateQuantity(id: number, event: Event) {
@@ -61,17 +57,6 @@ export class ShoppingCartComponent implements OnInit {
   // }
   removeFromCart(product: Product) {
     this.cartService.removeFromCart(product);
-    // .subscribe(
-    //   () => {
-    //     console.log('Item removed from cart successfully');
-    //     this.cartItems = this.cartItems.filter(
-    //       (item) => item.id !== product.id
-    //     );
-    //   },
-    //   (error) => {
-    //     console.error('Error removing item from cart:', error);
-    //   }
-    // );
   }
 
   returnToShop() {
@@ -79,12 +64,10 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(['/products']);
   }
 
-  // calculateTotalPrice(): void {
-  //   this.totalPrice = 0;
-  //   this.cartItems.subscribe((cartItems) => {
-  //     cartItems.forEach((item) => {
-  //       this.totalPrice += item.price * item.quantity;
-  //     });
-  //   });
-  // }
+  calculateTotalPrice(): void {
+    this.totalPrice = 0;
+    this.cartItems.forEach((item) => {
+      this.totalPrice += item.price * item.quantity;
+    });
+  }
 }

@@ -29,7 +29,8 @@ import { User } from '../models/user.model';
   ],
 })
 export class HeaderComponent implements OnInit {
-  isAuthenticated: boolean = false;
+  isAuthenticated$: boolean = false;
+  firstName$: Observable<string>;
   user$: Observable<User> | undefined;
 
   isHandset$!: Observable<boolean>;
@@ -38,11 +39,16 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService,
     private breakpointObserver: BreakpointObserver,
     private router: Router
-  ) {}
+  ) {
+    this.isAuthenticated$ = this.authService.isAuthenticated$;
+    this.firstName$ = this.authService.user$.pipe(
+      map((user) => user?.firstName || 'Profile')
+    );
+  }
 
   ngOnInit() {
     this.authService.user$.subscribe((user) => {
-      this.isAuthenticated = !!user;
+      this.isAuthenticated$ = !!user;
       this.user$ = user;
     });
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(

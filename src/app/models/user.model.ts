@@ -1,7 +1,9 @@
 export interface User {
   uid: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  displayName: string;
+  displayName?: string;
   cart: CartItem[];
   favorites: string[]; // Array of product IDs
 }

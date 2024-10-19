@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ProductService } from '../../../services/product.service';
 import { CartService } from '../../../services/cart.service';
 import { FavItem, FavoritesService } from '../../../services/favorites.service';
@@ -16,16 +14,18 @@ import { Observable } from 'rxjs';
 export class ProductGridComponent implements OnInit {
   viewType: 'grid' | 'list' = 'grid';
   sortOptions = [
+    { value: 'All', label: 'All' },
     { value: 'Women', label: 'Women' },
-    { value: 'price-desc', label: 'Men' },
-    { value: 'rating-desc', label: 'Kids' },
+    { value: 'Men', label: 'Men' },
+    { value: 'Kids', label: 'Kids' },
   ];
+  selectedCategory: string = 'All';
 
-  products: Product[] = [];
+  products$: Observable<Product[]> = this.productService.getProducts();
+  sortedProducts: Product[] = [];
+  searchTerm: string = '';
 
   constructor(
-    private firestore: AngularFirestore,
-    private afAuth: AngularFireAuth,
     private cartService: CartService,
     private productService: ProductService,
     private favoritesService: FavoritesService,
@@ -34,7 +34,10 @@ export class ProductGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((data) => {
-      this.products = data;
+      this.sortedProducts = data;
+    });
+    this.products$.subscribe((products) => {
+      this.sortedProducts = products; // Initialize with all products
     });
   }
 
@@ -188,9 +191,55 @@ export class ProductGridComponent implements OnInit {
     return this.favoritesService.isFavorite(product);
   }
 
-  onSortChange(event: any): void {
-    // Implement sorting logic
-    console.log(`Sorting by: ${event.value}`);
+  // onSortChange(event: any): void {
+  //   // Implement sorting logic
+  //   console.log(`Sorting by: ${event.value}`);
+  // }
+  onSortChange(selectedCategory: string): void {
+    this.selectedCategory = selectedCategory;
+    // this.products$.subscribe((products) => {
+    //   if (selectedCategory === 'All') {
+    //     this.sortedProducts = [...products]; // Show all products
+    //   } else {
+    //     this.sortedProducts = products.filter(
+    //       (product) =>
+    //         product.category.toLowerCase() === selectedCategory.toLowerCase()
+    //     );
+    //   }
+    // });
+    console.log(`Filtering by category: ${selectedCategory}`);
+    this.applyFilters();
+  }
+
+  onSearchChange(searchTerm: string): void {
+    this.searchTerm = searchTerm.toLowerCase(); // Convert search term to lowercase for case-insensitive search
+
+    // Filter products based on the search term
+    // this.products$.subscribe((products) => {
+    //   this.sortedProducts = products.filter((product) =>
+    //     product.name.toLowerCase().includes(this.searchTerm)
+    //   );
+    // });
+
+    console.log('Search term:', this.searchTerm);
+    console.log('Filtered Products:', this.sortedProducts);
+    this.applyFilters();
+  }
+
+  applyFilters(): void {
+    this.products$.subscribe((products) => {
+      this.sortedProducts = products.filter((product) => {
+        const matchesCategory =
+          this.selectedCategory === 'all' ||
+          product.category.toLowerCase() ===
+            this.selectedCategory.toLowerCase();
+        const matchesSearchTerm = product.name
+          .toLowerCase()
+          .includes(this.searchTerm);
+
+        return matchesCategory && matchesSearchTerm;
+      });
+    });
   }
 
   // Helper method to generate star array for rating display
