@@ -1,12 +1,12 @@
 <div class="product-slider-container">
   <h2>Best Selling</h2>
   <div class="product-slider">
-    <button mat-icon-button class="nav-button prev" (click)="prevSlide()">
+    <button mat-icon-button class="nav-button prev">
       <mat-icon>chevron_left</mat-icon>
     </button>
 
     <div class="products-container">
-      <mat-card *ngFor="let product of products$ | async" class="product-card">
+      <mat-card *ngFor="let product of products" class="product-card">
         <img mat-card-image [src]="product.imageURL" [alt]="product.name" />
         <mat-card-content>
           <h3>{{ product.name }}</h3>
@@ -35,7 +35,7 @@
       </mat-card>
     </div>
 
-    <button mat-icon-button class="nav-button next" (click)="nextSlide()">
+    <button mat-icon-button class="nav-button next">
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
