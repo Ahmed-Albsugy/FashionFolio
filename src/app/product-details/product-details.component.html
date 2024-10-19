@@ -15,7 +15,6 @@
           />
         </div>
       </div>
-
       <!-- Product Details Section -->
       <div class="details-section">
         <mat-card-header>
@@ -31,7 +30,6 @@
             </div>
           </mat-card-subtitle>
         </mat-card-header>
-
         <mat-card-content>
           <div class="price">
             <h2>${{ product.price }}</h2>
@@ -44,11 +42,9 @@
               >
             </mat-chip>
           </div>
-
           <div class="description">
             <p>{{ product.description }}</p>
           </div>
-
           <div
             class="size-selection"
             *ngIf="product && product.sizes && product.sizes.length > 0"
@@ -66,7 +62,6 @@
               </mat-button-toggle>
             </mat-button-toggle-group>
           </div>
-
           <div class="quantity-selector">
             <h3>Quantity</h3>
             <div class="quantity-controls">
@@ -79,7 +74,6 @@
               </button>
             </div>
           </div>
-
           <button
             mat-raised-button
             color="primary"
@@ -92,7 +86,6 @@
         </mat-card-content>
       </div>
     </div>
-
     <!-- Reviews Section -->
     <mat-divider></mat-divider>
     <section class="reviews-section">

@@ -1,0 +1,38 @@
+.payment-summary {
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.total {
+  font-weight: bold;
+}
+
+.payment-methods {
+  margin-bottom: 20px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.coupon-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+}
+
+.bank {
+  width: 40px;
+  height: 25px;
+}

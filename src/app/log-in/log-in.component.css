@@ -11,10 +11,29 @@ mat-card {
   max-width: 400px;
   padding: 20px;
 }
+.mat-mdc-card-header {
+  margin-bottom: 24px;
+  width: 100%;
+  .mat-mdc-card-header-text {
+    width: 100%;
+  }
+  .mat-mdc-card-header-text {
+    width: 100%;
+  }
+  .mat-card-title {
+    width: 100%;
+  }
+}
 
 .logo {
-  height: 40px;
-  margin-right: 10px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 16px;
+
+  img {
+    height: 80px;
+    margin: 0 auto;
+  }
 }
 
 form {

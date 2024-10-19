@@ -1,0 +1,31 @@
+<form [formGroup]="addressForm">
+  <mat-form-field appearance="outline">
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Street Address</mat-label>
+    <input matInput formControlName="streetAddress" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Apartment, floor, etc. (optional)</mat-label>
+    <input matInput formControlName="apartment" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Town/City</mat-label>
+    <input matInput formControlName="townCity" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Phone Number</mat-label>
+    <input matInput formControlName="phoneNumber" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email Address</mat-label>
+    <input matInput formControlName="emailAddress" required />
+  </mat-form-field>
+</form>

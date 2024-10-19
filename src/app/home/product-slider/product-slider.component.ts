@@ -8,15 +8,6 @@ import { debounceTime, map } from 'rxjs/operators';
 import { Product } from '../../models/product.model';
 import { NgZone } from '@angular/core';
 
-// interface Product {
-//   id: number;
-//   name: string;
-//   price: number;
-//   image: string;
-//   rating: number;
-//   reviews: number;
-// }
-
 @Component({
   selector: 'app-product-slider',
   templateUrl: './product-slider.component.html',

@@ -13,7 +13,6 @@ export interface Product {
   sizes: string[];
   images: string[];
   reviews: Review[];
-  stockStatus: boolean;
 }
 interface Review {
   id: number;

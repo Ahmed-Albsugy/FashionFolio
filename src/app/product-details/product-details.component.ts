@@ -26,11 +26,7 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id') || '';
     this.getProductDetails();
-    // this.selectedSize = '';
-    // Fetch the product details using this.productId
-    // In a real application, you would fetch the product details using the ID from the route
     const productId = this.route.snapshot.paramMap.get('id');
-    // this.loadProductDetails(productId);
   }
 
   getProductDetails() {
@@ -77,11 +73,6 @@ export class ProductDetailsComponent implements OnInit {
       });
     }
   }
-  // Add to cart logic here
-  //   this.snackBar.open('Product added to cart!', 'Close', {
-  //     duration: 3000,
-  //   });
-  // }
 
   getRatingStars(rating: number): number[] {
     return Array(Math.floor(rating)).fill(0);
@@ -89,7 +80,6 @@ export class ProductDetailsComponent implements OnInit {
 
   onSizeSelect(size: string) {
     this.selectedSize = size;
-    console.log('Selected size:', this.selectedSize);
-    // Here you can add any additional logic when a size is selected
+    // console.log('Selected size:', this.selectedSize);
   }
 }

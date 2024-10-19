@@ -18,7 +18,7 @@ export class FooterComponent {
   onSubscribe() {
     if (this.newsletterForm.valid) {
       console.log('Subscribed with email:', this.newsletterForm.value.email);
-      // Implement newsletter subscription logic here
+      // newsletter subscription logic
       this.newsletterForm.reset();
     }
   }
