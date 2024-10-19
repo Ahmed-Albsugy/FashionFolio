@@ -9,7 +9,7 @@ import { ProductListingComponent } from './product-listing/product-listing.compo
 import { FooterComponent } from './footer/footer.component';
 import { AdvertisementComponent } from './home/advertisement/advertisement.component';
 import { CategoriesComponent } from './home/categories/categories.component';
-import { ProductGridComponent } from './home/product-grid/product-grid.component';
+import { ProductGridComponent } from './product-listing/product-grid/product-grid.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
@@ -20,7 +20,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TreeComponent } from './product-listing/tree/tree.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -32,19 +31,24 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
-import { CartService } from './services/cart.service';
+import { CartService } from '../services/cart.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
+import { ProductSliderComponent } from './home/product-slider/product-slider.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './checkout/payment/payment.component';
 
 // ... firebase
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { environment } from './environments/environment';
-import { ProductSliderComponent } from './home/product-slider/product-slider.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { HttpClientModule } from '@angular/common/http';
+import { environment } from '../environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -74,7 +78,6 @@ import { FavoriteComponent } from './user-dashboard/favorite/favorite.component'
     MatIconModule,
     MatSelectModule,
     MatFormFieldModule,
-    TreeComponent,
     MatInputModule,
     ReactiveFormsModule,
     MatInputModule,
@@ -90,10 +93,13 @@ import { FavoriteComponent } from './user-dashboard/favorite/favorite.component'
     MatBadgeModule,
     MatSidenavModule,
     MatMenuModule,
+    MatIconModule,
     // ... firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    MatIconModule,
+    AngularFirestoreModule,
+    HttpClientModule,
+    NgbModule,
   ],
   providers: [CartService],
   bootstrap: [AppComponent],

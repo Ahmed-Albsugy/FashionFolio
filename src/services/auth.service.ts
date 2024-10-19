@@ -1,12 +1,26 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Observable, of } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  user$: Observable<any>;
+
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
+    this.user$ = this.afAuth.authState.pipe(
+      switchMap((user) => {
+        if (user) {
+          return this.afAuth.user;
+        } else {
+          return of(null);
+        }
+      })
+    );
+  }
 
   // Register method
   register(email: string, password: string) {
@@ -25,7 +39,10 @@ export class AuthService {
   // Logout method
   logout() {
     return this.afAuth.signOut().then(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['../log-in']);
     });
+  }
+  get isAuthenticated$(): boolean {
+    return this.user$ !== null;
   }
 }

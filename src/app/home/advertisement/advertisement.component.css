@@ -1,32 +1,21 @@
-.banner {
-  background-image: url(/assets/images/main-banner.jpg);
-  background-size: cover;
-  background-position: top right;
-  height: 600px;
-  width: 100%;
-  display: flex;
-  color: white;
-}
-
-.content {
-  padding: 30px;
-  width: 450px;
-}
-
-h1 {
+h5 {
   font-size: 2.5rem;
-  color: #001f3f;
+  color: #3f51b5;
   font-weight: 500;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 2rem;
   margin: 10px 0;
-  color: #3a6d8c;
+  color: #3f51b5;
 }
 
 a {
-  background-color: #4a249d;
+  background-color: #3f51b5;
   border: none;
   margin-top: 20px;
+}
+
+img {
+  height: 500px;
 }

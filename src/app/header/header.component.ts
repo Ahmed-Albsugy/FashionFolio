@@ -9,7 +9,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-header',
@@ -27,14 +29,28 @@ import { Router } from '@angular/router';
   ],
 })
 export class HeaderComponent implements OnInit {
+  isAuthenticated$: boolean = false;
+  firstName$: Observable<string>;
+  user$: Observable<User> | undefined;
+
   isHandset$!: Observable<boolean>;
 
   constructor(
+    private authService: AuthService,
     private breakpointObserver: BreakpointObserver,
     private router: Router
-  ) {}
+  ) {
+    this.isAuthenticated$ = this.authService.isAuthenticated$;
+    this.firstName$ = this.authService.user$.pipe(
+      map((user) => user?.firstName || 'Profile')
+    );
+  }
 
   ngOnInit() {
+    this.authService.user$.subscribe((user) => {
+      this.isAuthenticated$ = !!user;
+      this.user$ = user;
+    });
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
       map((result) => result.matches),
       shareReplay()
@@ -55,12 +71,15 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/log-in']);
   }
   goCart() {
-    this.router.navigate(['/shopping-cart']);
+    this.router.navigate(['/cart']);
   }
   goProducts() {
     this.router.navigate(['/our-product']);
   }
   goFavorites() {
-    this.router.navigate(['/favorites']);
+    this.router.navigate(['/dashboard']);
+  }
+  onLogout() {
+    this.authService.logout();
   }
 }

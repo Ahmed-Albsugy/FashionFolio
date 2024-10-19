@@ -1,0 +1,1122 @@
+[
+  {
+    "id": "1",
+    "name": "Slim Fit Jeans",
+    "price": 45.0,
+    "description": "Stretchable denim jeans with a classic slim fit, ideal for everyday wear.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Pants",
+    "imageURL": "https://i.pinimg.com/564x/ff/97/7f/ff977f4202ac22e0a1dd9cb309506fdd.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 892,
+    "inStock": true
+  },
+
+  {
+    "id": "2",
+    "name": "Knitted Scarf",
+    "price": 15.0,
+    "description": "Cozy knitted scarf, available in multiple colors to complement any outfit.",
+    "category": "Women",
+    "subcategory": "Accessories",
+    "subSubcategory": "Scarves",
+    "imageURL": "https://i.pinimg.com/564x/4a/9c/29/4a9c29be719d86f1a1940e8f63210ba1.jpg",
+    "rating": 4.5,
+    "reviews": 320,
+    "inStock": true
+  },
+
+  {
+    "id": "3",
+    "name": "Leather Wallet",
+    "price": 25.0,
+    "description": "Genuine leather wallet with multiple card slots and a sleek design.",
+    "category": "Men",
+    "subcategory": "Accessories",
+    "subSubcategory": "Wallets",
+    "imageURL": "https://i.pinimg.com/564x/73/55/fb/7355fba66e4b86f5cb5b64be9f1568f8.jpg",
+    "rating": 4.3,
+    "reviews": 500,
+    "inStock": true
+  },
+
+  {
+    "id": "4",
+    "name": "Summer Dress",
+    "price": 35.0,
+    "description": "Light and breathable dress, perfect for warm summer days.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Dresses",
+    "imageURL": "https://i.pinimg.com/enabled_lo/564x/5c/47/fd/5c47fdf429ebdd0b0f04c540f04c5711.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.2,
+    "reviews": 742,
+    "inStock": true
+  },
+
+  {
+    "id": "5",
+    "name": "Kids Hoodie",
+    "price": 30.0,
+    "description": "Soft and warm hoodie for kids, featuring playful designs and vibrant colors.",
+    "category": "Kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "Hoodies",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/51gYyr0gYTL._AC_UL1000_.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.7,
+    "reviews": 278,
+    "inStock": true
+  },
+
+  {
+    "id": "6",
+    "name": "Backpack with Laptop Compartment",
+    "price": 60.0,
+    "description": "Durable backpack with padded compartments for laptops and other essentials.",
+    "category": "Bags",
+    "subcategory": "Backpacks",
+    "subSubcategory": "Laptop Bags",
+    "imageURL": "https://i5.walmartimages.com/asr/474a97d6-6984-44b8-bc5c-f5b4e43446de_1.253016f724bfb11bd684e63737dc1f4a.jpeg",
+    "rating": 4.6,
+    "reviews": 915,
+    "inStock": true
+  },
+
+  {
+    "id": "7",
+    "name": "Leather Belt",
+    "price": 20.0,
+    "description": "Classic leather belt with an adjustable buckle for a perfect fit.",
+    "category": "Men",
+    "subcategory": "Accessories",
+    "subSubcategory": "Belts",
+    "imageURL": "https://i5.walmartimages.com/asr/a3078277-5e91-4bd2-8ea4-f89105b63fa5_2.198f40852dd94613a8bf87fd274ce073.jpeg",
+    "rating": 4.4,
+    "reviews": 658,
+    "inStock": true
+  },
+
+  {
+    "id": "8",
+    "name": "Belt",
+    "price": 20.0,
+    "description": "Classic leather belt with an adjustable buckle for a perfect fit.",
+    "category": "Women",
+    "subcategory": "Accessories",
+    "subSubcategory": "Belts",
+    "imageURL": "https://i.pinimg.com/564x/42/14/1b/42141bb12ec192e0dbdf98417fed84ed.jpg",
+    "rating": 4.4,
+    "reviews": 658,
+    "inStock": true
+  },
+
+  {
+    "id": "9",
+    "name": "Sneakers",
+    "price": 70.0,
+    "description": "Comfortable and stylish sneakers for everyday wear.",
+    "category": "Women",
+    "subcategory": "Shoes",
+    "subSubcategory": "Sneakers",
+    "imageURL": "https://i5.walmartimages.com/seo/Women-Sneakers-Womans-Shoes-Walking-Sneakers-for-Women-Casual-Shoes-Breathable-Large-Size-Lightweight-Sneakers-Tennis-Shoes-Purple-37_91c4a74d-bad1-4a3f-b7f9-fa28262a8935.c11f2456bdfb6c3f42883e90810e109c.jpeg?odnHeight=117&odnWidth=117&odnBg=FFFFFF",
+    "rating": 4.8,
+    "reviews": 1200,
+    "inStock": true
+  },
+
+  {
+    "id": "10",
+    "name": "Tote Bag",
+    "price": 40.0,
+    "description": "Spacious tote bag, perfect for carrying all your essentials.",
+    "category": "Bags",
+    "subcategory": "Totes",
+    "subSubcategory": "Shoulder Bags",
+    "imageURL": "https://th.bing.com/th/id/OIP.MntX9_lFLaMLxsmov7hU1gAAAA?rs=1&pid=ImgDetMain",
+    "rating": 4.5,
+    "reviews": 410,
+    "inStock": true
+  },
+
+  {
+    "id": "11",
+    "name": "Crossbody Bag",
+    "price": 55.0,
+    "description": "Trendy crossbody bag with multiple compartments.",
+    "category": "Bags",
+    "subcategory": "Crossbody",
+    "subSubcategory": "Shoulder Bags",
+    "imageURL": "https://i.pinimg.com/564x/7c/71/b3/7c71b3d1073d216695b3b19bb629cb2a.jpg",
+    "rating": 4.7,
+    "reviews": 370,
+    "inStock": true
+  },
+
+  {
+    "id": "12",
+    "name": "Running Shoes",
+    "price": 85.0,
+    "description": "Lightweight running shoes with excellent grip.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Running Shoes",
+    "imageURL": "https://cdn.shopclues.com/images/detailed/69352/11462770411415NikeMenBackGreyRevolution3RunningShoes86514627704112711_1493116941.jpg",
+    "rating": 4.6,
+    "reviews": 790,
+    "inStock": true
+  },
+
+  {
+    "id": "13",
+    "name": "Kids Backpack",
+    "price": 28.0,
+    "description": "Fun backpack for kids, perfect for school and play.",
+    "category": "Bags",
+    "subcategory": "Backpacks",
+    "subSubcategory": "Kids Bags",
+    "imageURL": "https://i.pinimg.com/564x/1d/92/43/1d9243c503c072b4710a40075c4563b7.jpg",
+    "rating": 4.8,
+    "reviews": 510,
+    "inStock": true
+  },
+
+  {
+    "id": "14",
+    "name": "Casual Slim Fit T-Shirts",
+    "price": 22.3,
+    "discountPrice": 24.99,
+    "description": "Stylish casual slim fit T-shirt made from breathable cotton, perfect for everyday wear and versatile enough to pair with any outfit.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men T-Shirts",
+    "imageURL": "https://i.pinimg.com/564x/bb/06/b1/bb06b138e54dba578667c7bf99e95dec.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.7,
+    "reviews": 850,
+    "inStock": true
+  },
+
+  {
+    "id": "15",
+    "name": "Boy's Suit Jacket and Pants Set",
+    "price": 45.0,
+    "description": "Elegant and stylish suit jacket and pants set for boys, perfect for formal occasions and special events.",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids formal suits",
+    "imageURL": "https://i.pinimg.com/564x/35/50/91/35509105bf89eb8fa7bae8211854e8fb.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.7,
+    "reviews": 850,
+    "inStock": true
+  },
+
+  {
+    "id": "16",
+    "name": "Denim Jacket",
+    "price": 42.5,
+    "description": "Timeless denim jacket featuring a relaxed fit and classic design, perfect for layering and everyday wear",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "jackets",
+    "imageURL": "https://i.pinimg.com/564x/5f/ea/99/5fea997843e347a1f4ac83ab566db7d1.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 2.6,
+    "reviews": 850,
+    "inStock": true
+  },
+
+  {
+    "id": "17",
+    "name": "Casual Maxi Dress",
+    "price": 50.0,
+    "description": "Flowy maxi dress designed for comfort and style, perfect for casual outings and warm-weather days",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Casyal Dresses",
+    "imageURL": "https://images-na.ssl-images-amazon.com/images/I/41gpl70tusL._UL500_.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "18",
+    "name": "Khaki Chinos",
+    "price": 38.0,
+    "description": "Versatile khaki chinos crafted for a relaxed fit, ideal for both casual and smart-casual occasions.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men pants",
+    "imageURL": "https://i.pinimg.com/564x/27/ff/9c/27ff9c8e7cb26f40624a961856b211e7.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "19",
+    "name": "Boys 3-Piece Suit Set",
+    "price": 60.0,
+    "description": "Stylish 3-piece suit set for boys, including a jacket, pants, and vest, perfect for formal occasions and special events",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Formal Suits",
+    "imageURL": "https://i.pinimg.com/564x/84/32/a3/8432a3f120f6018c6d2ff4b4728061c5.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.8,
+    "reviews": 1200,
+    "inStock": true
+  },
+
+  {
+    "id": "20",
+    "name": "Boys Classic Blazer Jacket",
+    "price": 55.0,
+    "description": "Timeless classic blazer jacket for boys, perfect for adding sophistication to formal outfits or special occasions",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids  Blazers & Jackets",
+    "imageURL": "https://i.pinimg.com/564x/13/dc/b9/13dcb9609fc79ef685161037daa7ea39.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.6,
+    "reviews": 950,
+    "inStock": true
+  },
+
+  {
+    "id": "21",
+    "name": "Lightweight Cardigan",
+    "price": 28.0,
+    "description": "Soft and breathable cardigan, ideal for layering and providing warmth without the bulk.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Women's Cardigans & Sweaters",
+    "imageURL": "https://i.pinimg.com/564x/ee/ad/c3/eeadc32161cd7d89acd242308442af79.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "22",
+    "name": "Crewneck Sweater",
+    "price": 65.0,
+    "description": "Timeless crewneck sweater made from cozy fabric, perfect for casual outings or layering",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men's Sweaters & Hoodies",
+    "imageURL": "https://i.pinimg.com/564x/a9/eb/cc/a9ebcc9da3ff6aa98b2165a6093bc682.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "23",
+    "name": "Blazer with Peplum",
+    "price": 48.0,
+    "description": "Chic blazer featuring a flattering peplum silhouette, perfect for adding a stylish touch to any outfit",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Blazers & Jackets",
+    "imageURL": "https://i.pinimg.com/originals/8a/2b/86/8a2b867d830c0a1b8415f230f342cc7a.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.5,
+    "reviews": 720,
+    "inStock": true
+  },
+
+  {
+    "id": "24",
+    "name": "Chiffon Blouse",
+    "price": 30.0,
+    "description": "Lightweight chiffon blouse with a flowy design, ideal for both casual and formal occasions.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Women's Tops & Blouses",
+    "imageURL": "https://i.pinimg.com/enabled_hi/564x/f6/7a/a6/f67aa6fb6d2152b4aa5ad03d8723941e.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+  {
+    "id": "25",
+    "name": "Cardigan Sweater",
+    "price": 30.0,
+    "description": "Warm and versatile cardigan sweater, perfect for layering over any outfit.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Women's Sweaters & Cardigans",
+    "imageURL": "https://i.pinimg.com/564x/63/0c/61/630c61977efea675f7fe3b56ceb81494.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "26",
+    "name": "Midi Skirt",
+    "price": 35.0,
+    "description": "Chic and flowy midi skirt, ideal for dressing up or down for any occasion",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Women's Skirts",
+    "imageURL": "https://m.media-amazon.com/images/I/51-wJ71RG+L._AC_SX385_.jpg",
+    "sizes": ["S", "M", "L", "XL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "27",
+    "name": "Diamond",
+    "price": 300,
+    "description": "Timeless diamond necklace that adds a touch of elegance to any outfit.",
+    "category": "Women",
+    "subcategory": "Accessories",
+    "imageURL": "https://ion.bluenile.com/sets/Jewelry-bn/194174/NOP/images/stage.jpg",
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "28",
+    "name": "Silver Necklace",
+    "price": 100,
+    "description": "A sleek silver necklace that enhances any look with a touch of sophistication.",
+    "category": "Women",
+    "subcategory": "Accessories",
+    "imageURL": "https://content.thewosgroup.com/productimage/12040048/12040048_1.jpg?impolicy=zoom",
+    "rating": 3.9,
+    "reviews": 70,
+    "inStock": true
+  },
+  {
+    "id": "29",
+    "name": "Silver Bracelete",
+    "price": 100,
+    "description": "A chic silver bracelet designed to complement your style with elegance and charm",
+    "category": "Women",
+    "subcategory": "Accessories",
+    "imageURL": "https://i.pinimg.com/564x/f0/da/2e/f0da2e3e89124a68c6bdbfa67551cb4f.jpg",
+    "rating": 3.9,
+    "reviews": 70,
+    "inStock": true
+  },
+  {
+    "id": "30",
+    "name": "Stainless watch",
+    "price": 100,
+    "description": "A durable and stylish stainless steel watch, perfect for everyday wear or formal occasions.",
+    "category": "men",
+    "subcategory": "Accessories",
+    "imageURL": "https://i.pinimg.com/564x/dd/32/af/dd32afbcba2b46fc9848aa3243786df6.jpg",
+    "rating": 3.9,
+    "reviews": 70,
+    "inStock": true
+  },
+  {
+    "id": "31",
+    "name": "leather watch",
+    "price": 100,
+    "description": "A classic leather watch with a sleek design, ideal for adding elegance to any outfit.",
+    "category": "women",
+    "subcategory": "Accessories",
+    "imageURL": "https://i.pinimg.com/564x/1d/a6/c1/1da6c1b03cfbe75d6b57d5a228d16678.jpg",
+    "rating": 3.9,
+    "reviews": 70,
+    "inStock": true
+  },
+
+  {
+    "id": "32",
+    "name": "Pullover Hoodie",
+    "price": 35.0,
+    "description": "Cozy pullover hoodie designed for warmth and casual style, perfect for layering on chilly days",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men Hoodies & Sweatshirts",
+    "imageURL": "https://i.pinimg.com/originals/3b/f4/ad/3bf4ad1ad55d2302ab942396b94ee4f9.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "33",
+    "name": "Jumpsuit",
+    "price": 55.0,
+    "description": "Chic and versatile jumpsuit that effortlessly transitions from day to night with its flattering fit and stylish design",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": " Jumpsuits & Rompers",
+    "imageURL": "https://i.pinimg.com/enabled_hi/564x/5b/3c/f0/5b3cf0272889cfedd454cf12c40f1561.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "34",
+    "name": "Shirt",
+    "price": 40.0,
+    "description": "Timeless button-up shirt designed for comfort and style, perfect for both casual and formal occasions.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": " Casual Shirts",
+    "imageURL": "https://i.pinimg.com/564x/b8/4d/2a/b84d2a67052956e2db0ad54fe63fe16a.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "35",
+    "name": "Boys Casual Button-Up Shirt",
+    "price": 25.0,
+    "description": "Stylish and comfortable button-up shirt for boys, perfect for everyday wear and special occasions.",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Shirts",
+    "imageURL": "https://th.bing.com/th/id/OIF.eUuuTdLTG28yWuoRUvVjYg?rs=1&pid=ImgDetMain",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.4,
+    "reviews": 500,
+    "inStock": true
+  },
+
+  {
+    "id": "36",
+    "name": "Durable Denim Jeans",
+    "price": 70.0,
+    "description": "Classic and tough denim jeans designed for everyday wear, combining style with long-lasting comfort.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men Pants",
+    "imageURL": "https://th.bing.com/th/id/OIP.-Awebs3_y4N0vT-vv030IwAAAA?rs=1&pid=ImgDetMain",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "37",
+    "name": "Knit Sweater",
+    "price": 40.0,
+    "description": "Cozy and stylish knit sweater perfect for layering or wearing on its own during chilly days.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Shirts & Sweaters",
+    "imageURL": "https://images-cdn.ubuy.co.in/654ec7dd9fb75b0f9d500283-aelfric-eden-cable-knit-sweater-women.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "38",
+    "name": "Leather Wallet",
+    "price": 100.0,
+    "description": "Elegant leather wallet with multiple card slots and a secure bill compartment for everyday use.",
+    "category": "men",
+    "subcategory": "Accessories",
+    "imageURL": "https://ae01.alicdn.com/kf/HTB1Y2c_aOnrK1Rjy1Xcq6yeDVXap/DIKEDAKU-Baellerry-Lucky-Box-Gift-Short-Wallet-Zipper-Multifunction-Wallet-Multicard-Zero-Wallet-Men-Purse.jpg",
+    "rating": 3,
+    "reviews": 400,
+    "inStock": true
+  },
+
+  {
+    "id": "39",
+    "name": "Slim Fit",
+    "price": 15.99,
+    "description": "Stylish slim fit shirt tailored for a modern look and comfortable fit.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men Casual Shirts",
+    "imageURL": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 2.1,
+    "reviews": 430,
+    "inStock": true
+  },
+
+  {
+    "id": "40",
+    "name": "Oxford Button-Down Shirt",
+    "price": 45.0,
+    "description": "Classic Oxford shirt featuring a button-down collar for a polished and versatile look.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men Casual Shirts",
+    "imageURL": "https://media.endclothing.com/media/catalog/product/2/9/29-05-2019_ami_heartlogooxfordshirt_white_a19c013-45-100_blr_1.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 5,
+    "reviews": 260,
+    "inStock": true
+  },
+
+  {
+    "id": "41",
+    "name": "Ruffled Sleeve Shirt",
+    "price": 22.0,
+    "description": "Chic shirt with playful ruffled sleeves, adding a touch of elegance to casual outfits",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Shirts",
+    "imageURL": "https://n.nordstrommedia.com/id/sr3/8cf0c170-216d-4738-acd8-fefbcf317d30.jpeg?h=365&w=240&dpr=2",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.7,
+    "reviews": 620,
+    "inStock": true
+  },
+
+  {
+    "id": "42",
+    "name": "Summer Dress",
+    "price": 35.0,
+    "description": "Lightweight and breezy dress, perfect for warm weather and casual outings.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Dresses",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0281/5757/5299/products/image_b8598dc7-741d-4f4b-b1ad-7b4f16b77f74_1445x.jpg?v=1675779170",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "43",
+    "name": "Boys Stretch Denim Pants",
+    "price": 30.0,
+    "description": "Comfortable and flexible denim pants, perfect for everyday wear and active play.",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Pants",
+    "imageURL": "https://cdna.lystit.com/photos/harrods/a2770eb1/canali-blue-Regular-fit-Stretch-Jeans.jpeg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.5,
+    "reviews": 430,
+    "inStock": true
+  },
+
+  {
+    "id": "44",
+    "name": "Bomber Jacket",
+    "price": 89.0,
+    "description": "A stylish, lightweight jacket with a zip-up front and ribbed cuffs for a cool, casual look.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men Jackets",
+    "imageURL": "https://i.pinimg.com/564x/98/05/ca/9805cad7bf2ac0e1303310c96a9a7a9d.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "45",
+    "name": "Puffer Jacket",
+    "price": 120.0,
+    "description": "A cozy, quilted jacket with insulated padding, perfect for staying warm in cold weather",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men Jackets",
+    "imageURL": "https://lp.arket.com/app006prod?set%3Dsource[02_0644961_005_1]%2Ctype[PRODUCT]%2Cdevice[hdpi]%2Cquality[80]%2CimageVersion[201909111034]%26call%3Durl[file:%2Fproduct%2Fmain]",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "46",
+    "name": "Floral Print pants",
+    "price": 18.0,
+    "description": "Stylish pants featuring vibrant floral patterns, adding a playful touch to any outfit",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Pants & Leggings",
+    "imageURL": "https://i5.walmartimages.com/seo/Rovga-Four-Seasons-Thin-Soft-Double-Seersucker-Air-Conditioning-Pants-Woven-Cotton-Loose-Home-Pants-Stylish-Streetwear_8a67f34f-a213-4c14-87ed-0a8a7b02271c.79fc871c167c1dea736a6a82506f8342.jpeg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.6,
+    "reviews": 540,
+    "inStock": true
+  },
+
+  {
+    "id": "47",
+    "name": "Wool Peacoat",
+    "price": 110.0,
+    "description": "Classic double-breasted peacoat crafted from warm wool, perfect for chilly days with a touch of elegance",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Coats & Jackets",
+    "imageURL": "https://i.pinimg.com/564x/81/30/9e/81309e394ce4ef9e9d5a2b4853747ad0.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "48",
+    "name": "Basic T-Shirt",
+    "price": 15.0,
+    "description": "Essential everyday T-shirt with a soft, breathable fit for versatile styling.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men T-Shirts",
+    "imageURL": "https://th.bing.com/th/id/OIP.VHOryi2FL5ZI64oUFQNnxQAAAA?rs=1&pid=ImgDetMain",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "49",
+    "name": "Peplum Jacket",
+    "price": 59.95,
+    "description": "Chic fitted jacket with a flared peplum hem for a flattering silhouette.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Jackets & Blazers",
+    "imageURL": "https://i.pinimg.com/564x/6e/54/fe/6e54fe48a5aa2231bea266bc774fe249.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 2.9,
+    "reviews": 340,
+    "inStock": true
+  },
+
+  {
+    "id": "50",
+    "name": "Graphic Tee",
+    "price": 25.0,
+    "description": "Trendy T-shirt featuring bold graphics for casual, everyday style.",
+    "category": "Men",
+    "subcategory": "Clothing",
+    "subSubcategory": "Men T-Shirts",
+    "imageURL": "https://i.pinimg.com/enabled_hi/564x/f7/63/35/f763357746397e123d91093990a6f6a8.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 4.1,
+    "reviews": 259,
+    "inStock": true
+  },
+
+  {
+    "id": "51",
+    "name": "Leather Moto Biker Jacket",
+    "price": 29.95,
+    "description": "Stylish and rugged leather jacket designed for a classic biker look.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Jackets",
+    "imageURL": "https://i.pinimg.com/564x/33/e0/f9/33e0f9d43751ede4964fa946f0eec3e7.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 2.9,
+    "reviews": 340,
+    "inStock": true
+  },
+
+  {
+    "id": "52",
+    "name": "Wedding dress",
+    "price": 28.0,
+    "description": "Stunning wedding dress featuring intricate lace details and a flowing silhouette.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Women's Dresses",
+    "imageURL": "https://i.pinimg.com/564x/51/8b/93/518b939223575418af56d39359266def.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "53",
+    "name": "Soiree Jumpsuit",
+    "price": 35.0,
+    "description": "Chic and stylish jumpsuit perfect for evening events and special occasions.",
+    "category": "Women",
+    "subcategory": "Clothing",
+    "subSubcategory": "Jumpsuits & Rompers",
+    "imageURL": "https://i.pinimg.com/564x/4d/59/9d/4d599d8c9251261a104171140a62d2d2.jpg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "54",
+    "name": "Women's Floral Summer Bag",
+    "price": 35.0,
+    "description": "Vibrant floral print bag ideal for sunny days and summer outings.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Shoulder Bags",
+    "imageURL": "https://m.media-amazon.com/images/I/61LhQIUkbKL.jpg",
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "55",
+    "name": "Women's Summer Bag",
+    "price": 35.0,
+    "description": "Stylish and lightweight bag perfect for beach days and sunny outings.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Shoulder Bags",
+    "imageURL": "https://i.pinimg.com/564x/70/73/65/707365ba5b4d5c21ab85c31f7e0735e1.jpg",
+    "rating": 3.8,
+    "reviews": 679,
+    "inStock": true
+  },
+
+  {
+    "id": "56",
+    "name": "Women's Canvas Tote Bag",
+    "price": 28.0,
+    "description": "Versatile and spacious canvas tote bag ideal for everyday use and casual outings.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Tote Bags",
+    "imageURL": "https://www.gardenista.com/wp-content/uploads/2015/04/fields/canvas-market-bag-manufactum_0.jpg",
+    "rating": 4.2,
+    "reviews": 523,
+    "inStock": true
+  },
+
+  {
+    "id": "57",
+    "name": "Eco-Friendly Reusable Tote Bag",
+    "price": 22.5,
+    "description": "Durable and sustainable tote bag designed for shopping and everyday use.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Tote Bags",
+    "imageURL": "https://i.pinimg.com/564x/5e/82/03/5e820339510e477f82a06d5449d57375.jpg",
+    "rating": 4.5,
+    "reviews": 412,
+    "inStock": true
+  },
+
+  {
+    "id": "58",
+    "name": "Women's Satin Evening Clutch Bag",
+    "price": 40.0,
+    "description": "Elegant satin clutch bag, perfect for formal occasions and evening events.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Clutch Bags",
+    "imageURL": "https://i.pinimg.com/564x/8b/17/62/8b1762ca3ec515c334277cf862f33cbf.jpg",
+    "rating": 4.7,
+    "reviews": 301,
+    "inStock": true
+  },
+
+  {
+    "id": "59",
+    "name": "Luxury Leather Clutch Bag",
+    "price": 65.0,
+    "description": "Sophisticated leather clutch bag designed for both formal events and casual outings.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Clutch Bags",
+    "imageURL": "https://i.pinimg.com/564x/1c/c7/a3/1cc7a3324c1e0f47bd2795ef563910f4.jpg",
+    "rating": 4.3,
+    "reviews": 250,
+    "inStock": true
+  },
+
+  {
+    "id": "60",
+    "name": "Casual Canvas Backpack",
+    "price": 50.0,
+    "description": "Durable canvas backpack with multiple compartments, perfect for everyday use and travel.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "BackPacks Bags",
+    "imageURL": "https://i.pinimg.com/564x/84/10/a4/8410a42d152b6f19b025ce71100e50db.jpg",
+    "rating": 4.5,
+    "reviews": 420,
+    "inStock": true
+  },
+
+  {
+    "id": "61",
+    "name": "Leather Fashion Backpack",
+    "price": 85.0,
+    "description": "Stylish leather backpack with a sleek design, ideal for casual and formal outfits.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "BackPacks Bags",
+    "imageURL": "https://i.pinimg.com/564x/b9/de/04/b9de04c67a2357a4142122113f2da089.jpg",
+    "rating": 4.8,
+    "reviews": 312,
+    "inStock": true
+  },
+
+  {
+    "id": "62",
+    "name": "Leather Belt Bag",
+    "price": 40.0,
+    "description": "Compact leather belt bag designed for hands-free convenience and stylish organization.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Belt Bags",
+    "imageURL": "https://i.pinimg.com/564x/b6/0c/45/b60c4508a653b32ef352ad70cc31bde7.jpg",
+    "rating": 4.2,
+    "reviews": 512,
+    "inStock": true
+  },
+
+  {
+    "id": "63",
+    "name": "Sporty Nylon Belt Bag",
+    "price": 30.0,
+    "description": "Lightweight and durable nylon belt bag, perfect for outdoor activities and travel.",
+    "category": "Women",
+    "subcategory": "Bags",
+    "subSubcategory": "Belt Bags",
+    "imageURL": "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/78/265025/1.jpg?6281",
+    "rating": 4.7,
+    "reviews": 378,
+    "inStock": true
+  },
+
+  {
+    "id": "64",
+    "name": "Adidas Ultraboost Running Shoes",
+    "price": 180.0,
+    "description": "High-performance running shoes designed for ultimate comfort with responsive cushioning and a flexible Primeknit upper.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Running Shoes",
+    "imageURL": "https://i.pinimg.com/564x/87/f6/74/87f674590e9cd3f3080089252383361e.jpg",
+    "rating": 4.8,
+    "reviews": 1200,
+    "inStock": true
+  },
+
+  {
+    "id": "65",
+    "name": "Adidas Superstar Classic Sneakers",
+    "price": 85.0,
+    "description": "Timeless sneakers featuring a leather upper and signature rubber shell toe, perfect for casual wear.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Sneakers Shoes",
+    "imageURL": "https://i.pinimg.com/564x/f0/11/4b/f0114b889d7d3dde39aa09eed8826c1b.jpg",
+    "rating": 4.5,
+    "reviews": 900,
+    "inStock": true
+  },
+  {
+    "id": "66",
+    "name": "Sandals heels",
+    "price": 85.0,
+    "description": "Chic heeled sandals that elevate any outfit with comfort and elegance.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Sandals",
+    "imageURL": "https://i.pinimg.com/736x/bd/0e/92/bd0e92ed9d3872e2196daf3f4d28a3c4.jpg",
+    "rating": 4.5,
+    "reviews": 900,
+    "inStock": true
+  },
+  {
+    "id": "67",
+    "name": "Sandals casual",
+    "price": 85.0,
+    "description": "Versatile sandals designed for all-day comfort and effortless style.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Sandals",
+    "imageURL": "https://i.pinimg.com/564x/88/d9/62/88d962a50d868985ab7bd9e000f9d5c5.jpg",
+    "rating": 4.5,
+    "reviews": 900,
+    "inStock": true
+  },
+  {
+    "id": "68",
+    "name": "Shoes heels",
+    "price": 85.0,
+    "description": "Stylish high heels that elevate any outfit with a touch of sophistication.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Heels",
+    "imageURL": "https://i.pinimg.com/564x/e0/40/00/e040001e260d7af348cfb9ef3490a91f.jpg",
+    "rating": 4.5,
+    "reviews": 900,
+    "inStock": true
+  },
+
+  {
+    "id": "69",
+    "name": "Nike Air Zoom Pegasus 38",
+    "price": 120.0,
+    "description": "High-performance running shoes designed for comfort and speed, perfect for both daily training and long-distance runs",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Running Shoes",
+    "imageURL": "https://i.pinimg.com/564x/11/06/14/1106147c3805189efe137b3699b13e7b.jpg",
+    "rating": 4.7,
+    "reviews": 950,
+    "inStock": true
+  },
+
+  {
+    "id": "70",
+    "name": "Nike Air Force 1'07",
+    "price": 90.0,
+    "description": "Classic sneakers featuring a premium leather upper and timeless design, perfect for casual wear and street style.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Sneakers Shoes",
+    "imageURL": "https://i.pinimg.com/564x/8d/2a/93/8d2a93a75cf7e9637402806608887fe5.jpg",
+    "rating": 4.6,
+    "reviews": 1100,
+    "inStock": true
+  },
+
+  {
+    "id": "71",
+    "name": "New Balance Fresh Foam 1080v11",
+    "price": 150.0,
+    "description": "High-performance running shoes with Fresh Foam cushioning for superior comfort and a smooth ride on long runs",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Running Shoes",
+    "imageURL": "https://i.pinimg.com/564x/6b/3d/12/6b3d120835b41d5803198be674c8ff58.jpg",
+    "rating": 4.8,
+    "reviews": 800,
+    "inStock": true
+  },
+
+  {
+    "id": "72",
+    "name": "New Balance 574 Core",
+    "price": 85.0,
+    "description": "Classic retro-inspired sneakers combining durable suede and mesh for style and comfort in everyday wear.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Lifestyle Sneakers",
+    "imageURL": "https://i.pinimg.com/564x/6e/7e/2b/6e7e2befdf3c65bf7fb5e8107d3a4a07.jpg",
+    "rating": 4.7,
+    "reviews": 900,
+    "inStock": true
+  },
+
+  {
+    "id": "73",
+    "name": "Vans Old Skool",
+    "price": 60.0,
+    "description": "Iconic skate shoes featuring the classic Vans side stripe with a durable canvas and suede upper for style and support.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": " Skate Sneakers",
+    "imageURL": "https://i.pinimg.com/564x/38/1a/22/381a22ab4318aff2e5cf7e2276f361e2.jpg",
+    "rating": 4.9,
+    "reviews": 1500,
+    "inStock": true
+  },
+
+  {
+    "id": "74",
+    "name": "Vans Authentic",
+    "price": 50.0,
+    "description": "Classic low-top skate shoes with a sturdy canvas upper and signature waffle rubber outsoles for lasting comfort and style.",
+    "category": "Men",
+    "subcategory": "Shoes",
+    "subSubcategory": "Skate Sneakers",
+    "imageURL": "https://i.pinimg.com/564x/56/74/71/5674715130db7a3dc54c02b0673fe9da.jpg",
+    "rating": 4.6,
+    "reviews": 1300,
+    "inStock": true
+  },
+
+  {
+    "id": "75",
+    "name": "Boys' Quick-Dry Swim Trunks",
+    "price": 22.0,
+    "description": "Lightweight and quick-drying swim trunks designed for beach days and poolside fun, featuring a comfortable elastic waistband.",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Shorts & Swimwear",
+    "imageURL": "https://i.pinimg.com/564x/e7/3e/c4/e73ec46672dc6e6cb406e030718f1f9d.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.7,
+    "reviews": 390,
+    "inStock": true
+  },
+
+  {
+    "id": "76",
+    "name": "Girls' Floral Swimwear Set",
+    "price": 28.0,
+    "description": "Charming floral swimwear set featuring a stylish bikini top and matching bottom, perfect for sunny days at the pool or beach.",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Swimwear",
+    "imageURL": "https://i.pinimg.com/564x/ef/b9/b9/efb9b9c447ce14958b94baf8d9363e1e.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.6,
+    "reviews": 450,
+    "inStock": true
+  },
+
+  {
+    "id": "77",
+    "name": "Boys' Quick-Dry Swim Trunks",
+    "price": 22.0,
+    "description": "Durable and lightweight swim trunks designed for active boys, featuring quick-dry technology for all-day comfort.",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Sweaters",
+    "imageURL": "https://i.pinimg.com/564x/52/11/f7/5211f7416869387f9b396552e6bbdd4c.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.7,
+    "reviews": 850,
+    "inStock": true
+  },
+
+  {
+    "id": "78",
+    "name": "Girls' Floral Swimwear Set",
+    "price": 28.0,
+    "description": "Charming floral swimwear set perfect for sunny days at the beach or pool, offering comfort and style for young swimmers.",
+    "category": "kids",
+    "subcategory": "Clothing",
+    "subSubcategory": "kids Sweaters",
+    "imageURL": "https://i.pinimg.com/564x/23/5e/57/235e575cb664e82485f85626465dd793.jpg",
+    "sizes": ["S", "M", "L"],
+    "rating": 4.6,
+    "reviews": 450,
+    "inStock": true
+  }
+]

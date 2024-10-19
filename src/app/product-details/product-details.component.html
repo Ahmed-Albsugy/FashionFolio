@@ -3,11 +3,7 @@
     <div class="product-grid">
       <!-- Product Images Section -->
       <div class="images-section">
-        <img
-          [src]="product.images[selectedImageIndex]"
-          [alt]="product.name"
-          class="main-image"
-        />
+        <img [src]="product.imageURL" [alt]="product.name" class="main-image" />
         <div class="thumbnail-container">
           <img
             *ngFor="let image of product.images; let i = index"
@@ -19,7 +15,6 @@
           />
         </div>
       </div>
-
       <!-- Product Details Section -->
       <div class="details-section">
         <mat-card-header>
@@ -35,27 +30,30 @@
             </div>
           </mat-card-subtitle>
         </mat-card-header>
-
         <mat-card-content>
           <div class="price">
             <h2>${{ product.price }}</h2>
             <mat-chip>
-              <mat-chip color="primary" *ngIf="product.stockStatus"
+              <mat-chip color="primary" *ngIf="product.inStock"
                 >In Stock</mat-chip
               >
-              <mat-chip color="warn" *ngIf="!product.stockStatus"
+              <mat-chip color="warn" *ngIf="!product.inStock"
                 >Out of Stock</mat-chip
               >
             </mat-chip>
           </div>
-
           <div class="description">
             <p>{{ product.description }}</p>
           </div>
-
-          <div class="size-selection">
+          <div
+            class="size-selection"
+            *ngIf="product && product.sizes && product.sizes.length > 0"
+          >
             <h3>Select Size</h3>
-            <mat-button-toggle-group [(ngModel)]="selectedSize">
+            <mat-button-toggle-group
+              [(ngModel)]="selectedSize"
+              (change)="onSizeSelect($event.value)"
+            >
               <mat-button-toggle
                 *ngFor="let size of product.sizes"
                 [value]="size"
@@ -64,7 +62,6 @@
               </mat-button-toggle>
             </mat-button-toggle-group>
           </div>
-
           <div class="quantity-selector">
             <h3>Quantity</h3>
             <div class="quantity-controls">
@@ -77,7 +74,6 @@
               </button>
             </div>
           </div>
-
           <button
             mat-raised-button
             color="primary"
@@ -90,7 +86,6 @@
         </mat-card-content>
       </div>
     </div>
-
     <!-- Reviews Section -->
     <mat-divider></mat-divider>
     <section class="reviews-section">

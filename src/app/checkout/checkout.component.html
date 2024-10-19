@@ -1,0 +1,18 @@
+<div class="checkout-container">
+  <mat-card>
+    <mat-card-content>
+      <h2>Billing Details</h2>
+      <div class="checkout-layout">
+        <div class="address-form">
+          <app-address></app-address>
+        </div>
+        <div class="payment-form">
+          <app-payment>
+            Subtotal: {{ subtotal }} Shipping: {{ shipping }} Total:
+            {{ total }} ></app-payment
+          >
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

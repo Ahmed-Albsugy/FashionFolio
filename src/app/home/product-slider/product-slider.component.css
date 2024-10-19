@@ -3,12 +3,8 @@
 
   h2 {
     color: #ff4081;
-    margin-bottom: 0;
-  }
-
-  h1 {
-    font-size: 2em;
-    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
   }
 }
 
@@ -19,6 +15,7 @@
 }
 
 .products-container {
+  padding: 0 20px;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -34,7 +31,14 @@
   flex: 0 0 auto;
   width: 250px;
   margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
 
+  h3 {
+    font-size: 20px;
+  }
   img {
     height: 200px;
     object-fit: cover;
@@ -61,12 +65,22 @@
     }
   }
 }
+mat-card-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .nav-button {
+  color: #fff;
+  background-color: #4758b8;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.prev {
     left: -20px;

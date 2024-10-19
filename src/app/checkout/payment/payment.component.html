@@ -1,0 +1,45 @@
+<div class="payment-summary">
+  <div class="summary-row">
+    <span>Subtotal:</span>
+    <span>{{ subtotal | currency }}</span>
+  </div>
+  <div class="summary-row">
+    <span>Shipping:</span>
+    <span>{{ shipping }}</span>
+  </div>
+  <div class="summary-row total">
+    <span>Total:</span>
+    <span>{{ total | currency }}</span>
+  </div>
+</div>
+
+<form [formGroup]="paymentForm">
+  <div class="payment-methods">
+    <mat-radio-group formControlName="paymentMethod">
+      <mat-radio-button value="bank">Bank</mat-radio-button>
+      <mat-radio-button value="cash">Cash on delivery</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="payment-icons">
+    <img
+      class="bank"
+      src="../../../assets/images/Bank Methods/pngegg.png"
+      alt="Bank"
+    />
+    <img
+      class="bank"
+      src="../../../assets/images/Bank Methods/pngegg (1).png"
+      alt="Visa"
+    />
+    <img
+      class="bank"
+      src="../../../assets/images/Bank Methods/meeza-logo-1CA419B654-seeklogo.com.png"
+      alt="Mastercard"
+    />
+  </div>
+
+  <button mat-raised-button color="primary" (click)="onPlaceOrder()">
+    Place Order
+  </button>
+</form>

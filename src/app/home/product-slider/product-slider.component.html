@@ -1,7 +1,5 @@
 <div class="product-slider-container">
-  <h2>Our Products</h2>
-  <h1>Explore Our Products</h1>
-
+  <h2>Best Selling</h2>
   <div class="product-slider">
     <button mat-icon-button class="nav-button prev">
       <mat-icon>chevron_left</mat-icon>
@@ -9,7 +7,7 @@
 
     <div class="products-container">
       <mat-card *ngFor="let product of products" class="product-card">
-        <img mat-card-image [src]="product.image" [alt]="product.name" />
+        <img mat-card-image [src]="product.imageURL" [alt]="product.name" />
         <mat-card-content>
           <h3>{{ product.name }}</h3>
           <p class="price">${{ product.price }}</p>
@@ -30,8 +28,14 @@
           >
             Add To Cart
           </button>
-          <button mat-icon-button (click)="addToWishlist(product)">
-            <mat-icon>favorite_border</mat-icon>
+          <button
+            mat-icon-button
+            (click)="toggleFavorite(product)"
+            [style.color]="(isFavorite(product) | async) ? '#3F51B5' : 'grey'"
+          >
+            <mat-icon>{{
+              (isFavorite(product) | async) ? "favorite" : "favorite_border"
+            }}</mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>

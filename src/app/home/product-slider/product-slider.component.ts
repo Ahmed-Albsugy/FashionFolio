@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  rating: number;
-  reviews: number;
-}
+import { ProductService } from '../../../services/product.service';
+import { CartService } from '../../../services/cart.service';
+import { FavoritesService } from '../../../services/favorites.service';
+import { interval, Observable, of, Subscription, fromEvent } from 'rxjs';
+import { debounceTime, map } from 'rxjs/operators';
+import { Product } from '../../models/product.model';
+import { NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-product-slider',
@@ -16,51 +14,36 @@ interface Product {
   styleUrls: ['./product-slider.component.css'],
 })
 export class ProductSliderComponent implements OnInit {
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Breed Dry Dog Food',
-      price: 100,
-      image: 'assets/dog-food.jpg',
-      rating: 3.5,
-      reviews: 35,
-    },
-    {
-      id: 2,
-      name: 'CANON EOS DSLR Camera',
-      price: 360,
-      image: 'assets/camera.jpg',
-      rating: 4,
-      reviews: 95,
-    },
-    {
-      id: 3,
-      name: 'ASUS FHD Gaming Laptop',
-      price: 700,
-      image: 'assets/laptop.jpg',
-      rating: 4.5,
-      reviews: 325,
-    },
-    {
-      id: 4,
-      name: 'Curology Product Set',
-      price: 500,
-      image: 'assets/product-set.jpg',
-      rating: 4,
-      reviews: 145,
-    },
-  ];
+  products: Product[] = [];
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private cartService: CartService,
+    private productService: ProductService,
+    private favoritesService: FavoritesService,
+    private ngZone: NgZone
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
+    });
+  }
 
   addToCart(product: Product): void {
+    this.cartService.addToCart(product);
     this.snackBar.open(`${product.name} added to cart`, 'Close', {
       duration: 2000,
     });
   }
 
+  toggleFavorite(product: Product) {
+    this.favoritesService.toggleFavorite(product);
+    console.log(`toggling ${product.name} to wishlist`);
+  }
+  isFavorite(product: Product): Observable<boolean> {
+    return this.favoritesService.isFavorite(product);
+  }
   addToWishlist(product: Product): void {
     this.snackBar.open(`${product.name} added to wishlist`, 'Close', {
       duration: 2000,

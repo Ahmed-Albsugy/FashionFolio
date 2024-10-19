@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <h2 class="favorite">Your Favorite Products</h2>
   <div *ngIf="favoriteProducts.length === 0" class="no-favorite"> NO favorite products  </div>
   <div *ngIf="showFavorites" class="container">
@@ -20,4 +20,17 @@
       </mat-card>
     </div>
   </div>
+</div> -->
+<div *ngIf="favoriteItems.length > 0; else noFavorites">
+  <h2>Your Favorites</h2>
+  <ul>
+    <li *ngFor="let item of favoriteItems">
+      <h3>{{ item.productId }}</h3>
+      <button>Remove</button>
+    </li>
+  </ul>
 </div>
+
+<ng-template #noFavorites>
+  <p>You have no favorite items.</p>
+</ng-template>

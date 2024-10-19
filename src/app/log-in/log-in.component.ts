@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
@@ -31,18 +31,16 @@ export class LogInComponent {
       this.authService
         .login(email, password)
         .then(() => {
-          console.log('Login successful');
+          // console.log('Login successful');
           // Show a success message
           this.snackBar.open('Login successful!', 'Close', {
-            duration: 3000, // 3 seconds
+            duration: 3000,
           });
-          // Determine where to navigate next
-          // Example: Redirect to the homepage
-          this.router.navigate(['/our-product']); // or use '/dashboard', '/products', etc.
+          //  navigate products
+          this.router.navigate(['/our-product']);
         })
         .catch((error) => {
-          console.error('Login error:', error);
-
+          // console.error('Login error:', error);
           // Show error message
           let errorMessage = 'Login failed. Please try again.';
           if (error.code === 'auth/user-not-found') {
@@ -50,7 +48,6 @@ export class LogInComponent {
           } else if (error.code === 'auth/wrong-password') {
             errorMessage = 'Incorrect password. Please try again.';
           }
-
           this.snackBar.open(errorMessage, 'Close', {
             duration: 3000,
           });
