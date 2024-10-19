@@ -11,6 +11,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-header',
@@ -28,8 +29,8 @@ import { Router } from '@angular/router';
   ],
 })
 export class HeaderComponent implements OnInit {
-  isAuthenticated = false;
-  user: any;
+  isAuthenticated: boolean = false;
+  user$: Observable<User> | undefined;
 
   isHandset$!: Observable<boolean>;
 
@@ -42,7 +43,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.authService.user$.subscribe((user) => {
       this.isAuthenticated = !!user;
-      this.user = user;
+      this.user$ = user;
     });
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
       map((result) => result.matches),

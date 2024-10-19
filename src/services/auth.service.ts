@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -11,7 +11,15 @@ export class AuthService {
   user$: Observable<any>;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
-    this.user$ = this.afAuth.authState;
+    this.user$ = this.afAuth.authState.pipe(
+      switchMap((user) => {
+        if (user) {
+          return this.afAuth.user;
+        } else {
+          return of(null);
+        }
+      })
+    );
   }
 
   // Register method

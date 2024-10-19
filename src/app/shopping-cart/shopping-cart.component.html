@@ -1,4 +1,4 @@
-<!-- <div class="cart-container">
+<div class="cart-container">
   <div class="breadcrumb">
     <a id="Home" href="/">Home</a> / <span>Cart</span>
   </div>
@@ -14,7 +14,7 @@
     </thead>
     <br />
     <tbody>
-      <!-- *ngFor="let item of cartItems$ | async"
+      <!-- *ngFor="let item of cartItems$ | async"-->
       <tr *ngFor="let item of cartItems">
         <td>
           <img
@@ -26,15 +26,18 @@
         </td>
         <td>${{ item.price }}</td>
         <td>
-          <input
-            id="quantity"
-            type="number"
-            [value]="item.quantity"
-            (change)="updateQuantity(item.id, $event)"
-            min="1"
-          />
+          <input id="quantity" type="number" [value]="item.quantity" min="1" />
         </td>
         <td>${{ item.price * item.quantity }}</td>
+        <td>
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="removeFromCart(item)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
       </tr>
     </tbody>
     <ng-template #noItems>
@@ -57,9 +60,9 @@
   <div>
     <app-cart-summary [subtotal]="totalPrice"></app-cart-summary>
   </div>
-</div> -->
+</div>
 
-<div *ngIf="cartItems.length > 0; else noItems">
+<!-- <div *ngIf="cartItems.length > 0; else noItems">
   <h2>Your Cart</h2>
   <ul>
     <li *ngFor="let item of cartItems">
@@ -72,4 +75,4 @@
 
 <ng-template #noItems>
   <p>Your cart is empty.</p>
-</ng-template>
+</ng-template> -->

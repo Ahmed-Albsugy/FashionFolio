@@ -13,6 +13,7 @@ import { ProductService } from './product.service';
 export interface CartItem extends Product {
   id: string;
   quantity: number;
+  size: string;
 }
 
 interface CartData {
@@ -90,7 +91,12 @@ export class CartService {
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      this.cartItems.push({ ...product, id: product.id ?? '', quantity: 1 });
+      this.cartItems.push({
+        ...product,
+        id: product.id ?? '',
+        quantity: 1,
+        size: '',
+      });
     }
     this.updateCart();
   }

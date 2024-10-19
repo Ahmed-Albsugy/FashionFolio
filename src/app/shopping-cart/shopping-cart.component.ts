@@ -81,7 +81,7 @@ export class ShoppingCartComponent implements OnInit {
 
   // calculateTotalPrice(): void {
   //   this.totalPrice = 0;
-  //   this.cartItems$.subscribe((cartItems) => {
+  //   this.cartItems.subscribe((cartItems) => {
   //     cartItems.forEach((item) => {
   //       this.totalPrice += item.price * item.quantity;
   //     });

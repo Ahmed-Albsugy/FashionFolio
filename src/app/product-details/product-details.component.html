@@ -49,9 +49,15 @@
             <p>{{ product.description }}</p>
           </div>
 
-          <div class="size-selection">
+          <div
+            class="size-selection"
+            *ngIf="product && product.sizes && product.sizes.length > 0"
+          >
             <h3>Select Size</h3>
-            <mat-button-toggle-group [(ngModel)]="selectedSize">
+            <mat-button-toggle-group
+              [(ngModel)]="selectedSize"
+              (change)="onSizeSelect($event.value)"
+            >
               <mat-button-toggle
                 *ngFor="let size of product.sizes"
                 [value]="size"

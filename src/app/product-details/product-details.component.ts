@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../../services/product.service';
+import { CartService } from '../../services/cart.service';
 import { Product } from '../models/product.model';
 
 @Component({
@@ -14,17 +15,18 @@ export class ProductDetailsComponent implements OnInit {
   productId: string = '';
   selectedImageIndex: number = 0;
   quantity: number = 1;
-  selectedSize: string = '';
+  selectedSize: string | null = null;
   constructor(
     private route: ActivatedRoute,
     private snackBar: MatSnackBar,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id') || '';
     this.getProductDetails();
-    this.selectedSize = 's';
+    // this.selectedSize = '';
     // Fetch the product details using this.productId
     // In a real application, you would fetch the product details using the ID from the route
     const productId = this.route.snapshot.paramMap.get('id');
@@ -56,11 +58,23 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCart(): void {
-    if (!this.selectedSize) {
-      this.snackBar.open('Please select a size', 'Close', {
+    if (this.product && this.product.sizes && this.product.sizes.length > 0) {
+      if (!this.selectedSize) {
+        this.snackBar.open('Please select a size', 'Close', {
+          duration: 3000,
+        });
+        return;
+      } else {
+        this.cartService.addToCart(this.product);
+        this.snackBar.open('Product added to cart!', 'Close', {
+          duration: 3000,
+        });
+      }
+    } else {
+      this.cartService.addToCart(this.product);
+      this.snackBar.open('Product added to cart!', 'Close', {
         duration: 3000,
       });
-      return;
     }
   }
   // Add to cart logic here
@@ -71,5 +85,11 @@ export class ProductDetailsComponent implements OnInit {
 
   getRatingStars(rating: number): number[] {
     return Array(Math.floor(rating)).fill(0);
+  }
+
+  onSizeSelect(size: string) {
+    this.selectedSize = size;
+    console.log('Selected size:', this.selectedSize);
+    // Here you can add any additional logic when a size is selected
   }
 }
