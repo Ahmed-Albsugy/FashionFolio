@@ -23,7 +23,6 @@
     "@angular/router": "^16.2.0",
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@ng-bootstrap/ng-bootstrap": "^15.1.2",
-    "@ngmodule/material-carousel": "^0.6.0",
     "@popperjs/core": "^2.11.6",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
