@@ -51,10 +51,10 @@ export class ShoppingCartComponent implements OnInit {
     );
   }
 
-  // updateQuantity(id: number, event: Event) {
-  //   const quantity = +(event.target as HTMLInputElement).value;
-  //   this.cartService.updateQuantity(id, quantity);
-  // }
+  updateQuantity(id: string, event: Event) {
+    const quantity = +(event.target as HTMLInputElement).value;
+    this.cartService.updateQuantity(id, quantity);
+  }
   removeFromCart(product: Product) {
     this.cartService.removeFromCart(product);
   }

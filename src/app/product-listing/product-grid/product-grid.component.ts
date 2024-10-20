@@ -5,7 +5,7 @@ import { FavoritesService } from '../../../services/favorites.service';
 import { Product } from '../../models/product.model';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuthService } from '../../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

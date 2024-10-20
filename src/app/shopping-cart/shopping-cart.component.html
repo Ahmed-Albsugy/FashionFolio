@@ -18,15 +18,20 @@
       <tr *ngFor="let item of cartItems">
         <td>
           <img
-            [src]="item.productImage"
+            [src]="item.imageURL"
             alt="{{ item.name }}"
             width="50"
             height="50"
           />
         </td>
-        <td>${{ item.price }}</td>
+        <td>${{ item?.price }}</td>
         <td>
-          <input id="quantity" type="number" [value]="item.quantity" min="1" />
+          <input
+            id="quantity"
+            type="number"
+            [value]="item ? item.quantity : 1"
+            min="1"
+          />
         </td>
         <td>${{ item.price * item.quantity }}</td>
         <td>

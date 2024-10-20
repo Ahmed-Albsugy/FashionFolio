@@ -218,13 +218,13 @@ export class CartService {
   //   this.cartSubject.next([...this.cartItems]);
   // }
 
-  // updateQuantity(id: number, quantity: number) {
-  //   const item = this.cartItems.find((i) => i.id === id);
-  //   if (item) {
-  //     item.quantity = quantity;
-  //     this.cartSubject.next([...this.cartItems]);
-  //   }
-  // }
+  updateQuantity(id: string, quantity: number) {
+    const item = this.cartItems.find((i) => i.id === id);
+    if (item) {
+      item.quantity = quantity;
+      this.cartSubject.next([...this.cartItems]);
+    }
+  }
 
   // Remove from cart method
 
