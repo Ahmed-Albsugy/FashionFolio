@@ -4,7 +4,8 @@ import { CartService } from '../../../services/cart.service';
 import { FavoritesService } from '../../../services/favorites.service';
 import { Product } from '../../models/product.model';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import { AuthService } from '../../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -34,7 +35,8 @@ export class ProductGridComponent implements OnInit {
     private favoritesService: FavoritesService,
     private authService: AuthService,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -47,6 +49,16 @@ export class ProductGridComponent implements OnInit {
     this.authService.isUserLoggedIn().subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;
     });
+    this.route.queryParams.subscribe((params) => {
+      const categoryId = +params['category']; // Convert to number
+      this.filterProductsByCategory(categoryId);
+    });
+  }
+
+  filterProductsByCategory(categoryId: number): void {
+    // this.sortedProducts = this.products.filter(
+    //   (product) => product.categoryId === categoryId
+    // );
   }
 
   goToDetails(productId: string) {

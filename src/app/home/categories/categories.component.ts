@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 interface Category {
   id: number;
@@ -13,6 +13,7 @@ interface Category {
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
+  @Output() categorySelected = new EventEmitter<number>();
   categories: Category[] = [
     {
       id: 1,
@@ -58,6 +59,7 @@ export class CategoriesComponent implements OnInit {
 
   onCategoryClick(categoryId: number): void {
     // Handle navigation or other actions when a category is clicked
+    this.categorySelected.emit(categoryId);
     console.log(`Category clicked: ${categoryId}`);
   }
 }

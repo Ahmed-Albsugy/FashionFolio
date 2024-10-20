@@ -14,7 +14,13 @@
           <p class="mat-body-1">{{ category.description }}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button color="primary">EXPLORE</button>
+          <button
+            mat-button
+            color="primary"
+            (click)="onCategoryClick(category.id)"
+          >
+            EXPLORE
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>

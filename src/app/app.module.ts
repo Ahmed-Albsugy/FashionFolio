@@ -39,6 +39,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ProductSliderComponent } from './home/product-slider/product-slider.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { FavoriteComponent } from './user-dashboard/favorite/favorite.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './checkout/payment/payment.component';
 
@@ -94,6 +96,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSidenavModule,
     MatMenuModule,
     MatIconModule,
+    MatTabsModule,
+    MatGridListModule,
+
     // ... firebase
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

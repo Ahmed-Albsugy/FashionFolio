@@ -1,47 +1,59 @@
-<div class="product-slider-container">
-  <h2>Best Selling</h2>
-  <div class="product-slider">
-    <button mat-icon-button class="nav-button prev">
+<div class="carousel-container">
+  <h2 class="carousel-title">Best Selling</h2>
+  <div class="carousel-content">
+    <button mat-icon-button class="nav-button prev" (click)="prevSlide()">
       <mat-icon>chevron_left</mat-icon>
     </button>
-
-    <div class="products-container">
-      <mat-card *ngFor="let product of products" class="product-card">
-        <img mat-card-image [src]="product.imageURL" [alt]="product.name" />
-        <mat-card-content>
-          <h3>{{ product.name }}</h3>
-          <p class="price">${{ product.price }}</p>
-          <div class="rating">
-            <mat-icon
-              *ngFor="let star of [1, 2, 3, 4, 5]"
-              [class.filled]="star <= product.rating"
-              >star</mat-icon
-            >
-            <span>({{ product.reviews }})</span>
+    <mat-tab-group
+      [selectedIndex]="selectedIndex"
+      (selectedIndexChange)="onTabChange($event)"
+    >
+      <mat-tab *ngFor="let chunk of productChunks">
+        <ng-template matTabContent>
+          <div class="product-row">
+            <div class="product-card" *ngFor="let product of chunk">
+              <img
+                [src]="product.imageURL"
+                [alt]="product.name"
+                class="product-image"
+              />
+              <mat-card-content>
+                <h3 class="product-name">{{ product.name }}</h3>
+                <p class="product-price">${{ product.price.toFixed(2) }}</p>
+                <div class="product-rating">
+                  <span class="stars">★★★★★</span>
+                  <span class="reviews">({{ product.reviews }})</span>
+                </div>
+              </mat-card-content>
+              <mat-card-actions>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="add-to-cart-btn"
+                  (click)="addToCart(product)"
+                >
+                  Add To Cart
+                </button>
+                <button
+                  mat-icon-button
+                  (click)="toggleFavorite(product)"
+                  [style.color]="
+                    (isFavorite(product) | async) ? '#3F51B5' : 'grey'
+                  "
+                >
+                  <mat-icon>{{
+                    (isFavorite(product) | async)
+                      ? "favorite"
+                      : "favorite_border"
+                  }}</mat-icon>
+                </button>
+              </mat-card-actions>
+            </div>
           </div>
-        </mat-card-content>
-        <mat-card-actions>
-          <button
-            mat-raised-button
-            color="primary"
-            (click)="addToCart(product)"
-          >
-            Add To Cart
-          </button>
-          <button
-            mat-icon-button
-            (click)="toggleFavorite(product)"
-            [style.color]="(isFavorite(product) | async) ? '#3F51B5' : 'grey'"
-          >
-            <mat-icon>{{
-              (isFavorite(product) | async) ? "favorite" : "favorite_border"
-            }}</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-
-    <button mat-icon-button class="nav-button next">
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+    <button mat-icon-button class="nav-button next" (click)="nextSlide()">
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
