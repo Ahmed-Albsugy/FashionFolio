@@ -7,6 +7,7 @@ import { FavoritesService } from '../../../services/favorites.service';
 import { interval, Observable, of, Subscription, fromEvent } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { Product } from '../../models/product.model';
+import { Router } from '@angular/router';
 import { NgZone } from '@angular/core';
 
 @Component({
@@ -23,7 +24,8 @@ export class ProductSliderComponent implements OnInit {
     private cartService: CartService,
     private productService: ProductService,
     private favoritesService: FavoritesService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,15 +38,37 @@ export class ProductSliderComponent implements OnInit {
   }
 
   addToCart(product: Product): void {
-    this.cartService.addToCart(product);
-    this.snackBar.open(`${product.name} added to cart`, 'Close', {
-      duration: 2000,
-    });
+    if (this.isLoggedIn) {
+      this.cartService.addToCart(product);
+      this.snackBar.open(`${product.name} added to cart`, 'Close', {
+        duration: 2000,
+      });
+    } else {
+      this.snackBar.open(
+        'You must be logged in to add products to the cart',
+        'Close',
+        {
+          duration: 3000,
+        }
+      );
+      this.router.navigate(['/log-in']);
+    }
   }
 
   toggleFavorite(product: Product) {
-    this.favoritesService.toggleFavorite(product);
-    // console.log(`toggling ${product.name} to Favorites`);
+    if (this.isLoggedIn) {
+      this.favoritesService.toggleFavorite(product);
+      // console.log(`toggling ${product.name} to Favorites`);
+    } else {
+      this.snackBar.open(
+        'You must be logged in to add products to the Favorites',
+        'Close',
+        {
+          duration: 3000,
+        }
+      );
+      this.router.navigate(['/log-in']);
+    }
   }
   isFavorite(product: Product): Observable<boolean> {
     return this.favoritesService.isFavorite(product);
