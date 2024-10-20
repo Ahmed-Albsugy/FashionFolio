@@ -1,36 +1,94 @@
-<!-- <div>
-  <h2 class="favorite">Your Favorite Products</h2>
-  <div *ngIf="favoriteProducts.length === 0" class="no-favorite"> NO favorite products  </div>
-  <div *ngIf="showFavorites" class="container">
-    <div class="item" *ngFor="let product of favoriteProducts">
-      <mat-card class="example-card" appearance="outlined">
-        <img mat-card-image [src]="product.image" alt="Photo of a Shiba Inu" />
-        <br />
-        <div class="price">${{ product.price }}</div>
-        <div class="title">
-          {{ product.title }}
-        </div>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Add to Card</button>
-          <button mat-icon-button (click)="toggleFavorite(product)">
-            <mat-icon *ngIf="isFavorite(product.id)">favorite</mat-icon>
-            <mat-icon *ngIf="!isFavorite(product.id)">favorite_border</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div>
-</div> -->
-<div *ngIf="favoriteItems.length > 0; else noFavorites">
+<!-- <div *ngIf="favoriteItems.length > 0; else noFavorites">
   <h2>Your Favorites</h2>
   <ul>
     <li *ngFor="let item of favoriteItems">
       <h3>{{ item.productId }}</h3>
-      <button>Remove</button>
+      <button (click)="removeFromFavorites(item)">Remove</button>
     </li>
   </ul>
 </div>
-
 <ng-template #noFavorites>
   <p>You have no favorite items.</p>
-</ng-template>
+</ng-template> -->
+<section class="products-section">
+  <div class="container">
+    <div class="products-grid">
+      <mat-card *ngFor="let product of favoriteItems" class="product-card">
+        <div class="data">
+          <div class="image-container">
+            <img mat-card-image [src]="product.imageURL" [alt]="product.name" />
+            <button
+              mat-icon-button
+              class="wishlist-button"
+              (click)="removeFromFavorites(product)"
+              [style.color]="(isFavorite(product) | async) ? '#3F51B5' : 'grey'"
+            >
+              <mat-icon>{{
+                (isFavorite(product) | async) ? "favorite" : "favorite_border"
+              }}</mat-icon>
+            </button>
+            <div class="discount-badge" *ngIf="product.discountPrice">
+              {{
+                ((product.price - product.discountPrice) / product.price) * 100
+                  | number : "1.0-0"
+              }}% OFF
+            </div>
+          </div>
+
+          <mat-card-content>
+            <div class="product-info">
+              <a class="product-name" [routerLink]="['/product', product.id]">{{
+                product.name
+              }}</a>
+              <!-- <h3 class="product-name">{{ product.name }}</h3> -->
+              <p class="product-description">{{ product.description }}</p>
+
+              <div class="rating">
+                <mat-icon
+                  *ngFor="let star of getStarArray(product.rating)"
+                  class="star-icon"
+                  >star</mat-icon
+                >
+                <mat-icon
+                  *ngIf="getPartialStar(product.rating)"
+                  class="star-icon partial"
+                  [style.width.%]="getPartialStar(product.rating)"
+                >
+                  star
+                </mat-icon>
+                <span class="rating-value">({{ product.rating }})</span>
+              </div>
+
+              <div class="price-container">
+                <span
+                  class="current-price"
+                  [class.discounted]="product.discountPrice"
+                >
+                  {{ product.discountPrice || product.price | currency }}
+                </span>
+                <span class="original-price" *ngIf="product.discountPrice">
+                  {{ product.price | currency }}
+                </span>
+              </div>
+            </div>
+          </mat-card-content>
+        </div>
+
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!product.inStock"
+            (click)="addToCart(product)"
+          >
+            <mat-icon>shopping_cart</mat-icon>
+            {{ product.inStock ? "Add to Cart" : "Out of Stock" }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <ng-template *ngIf="favoriteItems.length === 0">
+      <p>No available products</p>
+    </ng-template>
+  </div>
+</section>
