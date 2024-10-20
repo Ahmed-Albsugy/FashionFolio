@@ -7,6 +7,7 @@ import { AuthService } from './auth.service';
 import { map, switchMap, take } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../app/models/product.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface FavItem extends Product {
   id: string;
@@ -28,7 +29,8 @@ export class FavoritesService {
 
   constructor(
     private firestore: AngularFirestore,
-    private authService: AuthService
+    private authService: AuthService,
+    private snackBar: MatSnackBar
   ) {
     this.initializeFavorites();
   }
@@ -103,6 +105,9 @@ export class FavoritesService {
       this.updateFavorites();
     }
     this.updateFavorites();
+    this.snackBar.open(`${product.name} added to Favorites`, 'Close', {
+      duration: 2000,
+    });
   }
 
   removeFavorite(product: Product) {
@@ -112,6 +117,9 @@ export class FavoritesService {
       this.updateFavorites();
     }
     this.updateFavorites();
+    this.snackBar.open(`${product.name} removed from Favorites`, 'Close', {
+      duration: 2000,
+    });
   }
 
   isFavorite(product: Product): Observable<boolean> {

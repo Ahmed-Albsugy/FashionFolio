@@ -3,7 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
 import { Product } from '../models/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -16,17 +18,23 @@ export class ProductDetailsComponent implements OnInit {
   selectedImageIndex: number = 0;
   quantity: number = 1;
   selectedSize: string | null = null;
+  isLoggedIn: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private snackBar: MatSnackBar,
     private productService: ProductService,
-    private cartService: CartService
+    private cartService: CartService,
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id') || '';
     this.getProductDetails();
     const productId = this.route.snapshot.paramMap.get('id');
+    this.authService.isUserLoggedIn().subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+    });
   }
 
   getProductDetails() {
@@ -54,12 +62,19 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCart(): void {
-    if (this.product && this.product.sizes && this.product.sizes.length > 0) {
-      if (!this.selectedSize) {
-        this.snackBar.open('Please select a size', 'Close', {
-          duration: 3000,
-        });
-        return;
+    if (this.isLoggedIn) {
+      if (this.product && this.product.sizes && this.product.sizes.length > 0) {
+        if (!this.selectedSize) {
+          this.snackBar.open('Please select a size', 'Close', {
+            duration: 3000,
+          });
+          return;
+        } else {
+          this.cartService.addToCart(this.product);
+          this.snackBar.open('Product added to cart!', 'Close', {
+            duration: 3000,
+          });
+        }
       } else {
         this.cartService.addToCart(this.product);
         this.snackBar.open('Product added to cart!', 'Close', {
@@ -67,10 +82,14 @@ export class ProductDetailsComponent implements OnInit {
         });
       }
     } else {
-      this.cartService.addToCart(this.product);
-      this.snackBar.open('Product added to cart!', 'Close', {
-        duration: 3000,
-      });
+      this.snackBar.open(
+        'You must be logged in to add products to the cart',
+        'Close',
+        {
+          duration: 3000,
+        }
+      );
+      this.router.navigate(['/log-in']);
     }
   }
 

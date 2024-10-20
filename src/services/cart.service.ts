@@ -9,6 +9,7 @@ import { from, Observable } from 'rxjs';
 import { Product } from '../app/models/product.model';
 import { BehaviorSubject } from 'rxjs';
 import { ProductService } from './product.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface CartItem extends Product {
   id: string;
@@ -27,10 +28,12 @@ export class CartService {
   private cartItems: CartItem[] = [];
   private cartSubject = new BehaviorSubject<CartItem[]>([]);
   private cartDoc: AngularFirestoreDocument<CartData> | null = null;
+  isLoggedIn: boolean = false;
 
   constructor(
     private firestore: AngularFirestore,
-    private authService: AuthService
+    private authService: AuthService,
+    private snackBar: MatSnackBar
   ) {
     this.initializeCart();
   }
@@ -88,6 +91,7 @@ export class CartService {
 
   addToCart(product: Product) {
     const existingItem = this.cartItems.find((item) => item.id === product.id);
+
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
@@ -107,16 +111,6 @@ export class CartService {
       this.updateCart();
     }
     this.updateCart();
-    // return this.authService.user$.pipe(
-    //   map((user) => {
-    //     if (!user) {
-    //       throw new Error('User not authenticated');
-    //     }
-    //     return this.firestore
-    //       .doc(`users/${user.uid}/cart/${cartItemId}`)
-    //       .delete();
-    //   })
-    // );
   }
 
   // Fetch cart items for the authenticated user

@@ -11,15 +11,17 @@ export class AuthService {
   user$: Observable<any>;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
-    this.user$ = this.afAuth.authState.pipe(
-      switchMap((user) => {
-        if (user) {
-          return this.afAuth.user;
-        } else {
-          return of(null);
-        }
-      })
-    );
+    this.user$ = this.afAuth.authState;
+
+    // this.user$ = this.afAuth.authState.pipe(
+    //   switchMap((user) => {
+    //     if (user) {
+    //       return this.afAuth.user;
+    //     } else {
+    //       return of(null);
+    //     }
+    //   })
+    // );
   }
 
   // Register method
@@ -44,5 +46,18 @@ export class AuthService {
   }
   get isAuthenticated$(): boolean {
     return this.user$ !== null;
+  }
+
+  isAuthenticated(): boolean {
+    // Check if the user is logged in
+    return this.afAuth.currentUser !== null;
+  }
+  getCurrentUser() {
+    return this.afAuth.currentUser;
+  }
+
+  isUserLoggedIn(): Observable<boolean> {
+    // Observe the user's authentication state and map to a boolean value
+    return this.user$.pipe(map((user) => !!user));
   }
 }

@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit {
   isAuthenticated$: boolean = false;
   firstName$: Observable<string>;
   user$: Observable<User> | undefined;
-
   isHandset$!: Observable<boolean>;
 
   constructor(

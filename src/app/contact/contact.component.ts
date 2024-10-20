@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
+  constructor(
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -23,12 +28,10 @@ export class ContactComponent implements OnInit {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      // Here you would typically send the form data to your backend
-      console.log(this.contactForm.value);
       this.snackBar.open('Message sent successfully!', 'Close', {
         duration: 3000,
       });
-      this.contactForm.reset();
+      this.router.navigate(['/home']);
     }
   }
 

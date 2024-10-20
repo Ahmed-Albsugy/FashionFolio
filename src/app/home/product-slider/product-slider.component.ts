@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../../../services/product.service';
 import { CartService } from '../../../services/cart.service';
+import { AuthService } from '../../../services/auth.service';
 import { FavoritesService } from '../../../services/favorites.service';
 import { interval, Observable, of, Subscription, fromEvent } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
@@ -15,18 +16,22 @@ import { NgZone } from '@angular/core';
 })
 export class ProductSliderComponent implements OnInit {
   products: Product[] = [];
+  isLoggedIn: boolean = false;
 
   constructor(
     private snackBar: MatSnackBar,
     private cartService: CartService,
     private productService: ProductService,
     private favoritesService: FavoritesService,
-    private ngZone: NgZone
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((products) => {
       this.products = products;
+    });
+    this.authService.isUserLoggedIn().subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
     });
   }
 
@@ -39,14 +44,14 @@ export class ProductSliderComponent implements OnInit {
 
   toggleFavorite(product: Product) {
     this.favoritesService.toggleFavorite(product);
-    console.log(`toggling ${product.name} to wishlist`);
+    // console.log(`toggling ${product.name} to Favorites`);
   }
   isFavorite(product: Product): Observable<boolean> {
     return this.favoritesService.isFavorite(product);
   }
-  addToWishlist(product: Product): void {
-    this.snackBar.open(`${product.name} added to wishlist`, 'Close', {
-      duration: 2000,
-    });
-  }
+  // addToWishlist(product: Product): void {
+  //   this.snackBar.open(`${product.name} added to Favorites`, 'Close', {
+  //     duration: 2000,
+  //   });
+  // }
 }

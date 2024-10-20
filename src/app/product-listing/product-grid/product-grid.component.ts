@@ -5,6 +5,8 @@ import { FavoritesService } from '../../../services/favorites.service';
 import { Product } from '../../models/product.model';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../../services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-grid',
@@ -24,11 +26,14 @@ export class ProductGridComponent implements OnInit {
   products: Observable<Product[]> = this.productService.getProducts();
   sortedProducts: Product[] = [];
   searchTerm: string = '';
+  isLoggedIn: boolean = false;
 
   constructor(
     private cartService: CartService,
     private productService: ProductService,
     private favoritesService: FavoritesService,
+    private authService: AuthService,
+    private snackBar: MatSnackBar,
     private router: Router
   ) {}
 
@@ -38,6 +43,9 @@ export class ProductGridComponent implements OnInit {
     });
     this.products.subscribe((products) => {
       this.sortedProducts = products; // Initialize with all products
+    });
+    this.authService.isUserLoggedIn().subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
     });
   }
 
@@ -70,23 +78,47 @@ export class ProductGridComponent implements OnInit {
   }
 
   addToCart(product: Product) {
-    this.cartService.addToCart(product);
+    if (this.isLoggedIn) {
+      this.cartService.addToCart(product);
+      this.snackBar.open(`${product.name} added to cart`, 'Close', {
+        duration: 2000,
+      });
+    } else {
+      this.snackBar.open(
+        'You must be logged in to add products to the cart',
+        'Close',
+        {
+          duration: 3000,
+        }
+      );
+      this.router.navigate(['/log-in']);
+    }
   }
   get favoriteProducts() {
     return this.favoritesService.getFavoriteItems();
   }
-  // isFavorite(productId: number) {
-  //   return this.favoritesService.isFavorite(productId);
-  // }
 
   toggleFavorite(product: Product) {
-    this.favoritesService.toggleFavorite(product);
-    console.log(`toggling ${product.name} to wishlist`);
+    if (this.isLoggedIn) {
+      this.favoritesService.toggleFavorite(product);
+      // this.snackBar.open(`${product.name} added to Favorites`, 'Close', {
+      //   duration: 2000,
+      // });
+      // console.log(`toggling ${product.name} to wishlist`);
+    } else {
+      this.snackBar.open(
+        'You must be logged in to add products to the Favorites',
+        'Close',
+        {
+          duration: 3000,
+        }
+      );
+      this.router.navigate(['/log-in']);
+    }
   }
   addToFavorites(product: Product): void {
     this.favoritesService.addToFavorites(product);
-    // Implement wishlist functionality
-    console.log(`Adding ${product.name} to wishlist`);
+    // console.log(`Adding ${product.name} to wishlist`);
   }
 
   removeFavorite(product: Product) {
