@@ -73,6 +73,8 @@ tree-list {
 
 .search input {
   border: 1px solid #ccc;
+  color: #f7f4fb;
+  background-color: #5b5484;
   border-radius: 5px;
   width: 300px;
   height: 40px;

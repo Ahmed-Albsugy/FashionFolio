@@ -7,6 +7,7 @@
     <thead>
       <tr mat-header-row>
         <th mat-header-cell>Product</th>
+        <th mat-header-cell>Product image</th>
         <th mat-header-cell>Price</th>
         <th mat-header-cell>Quantity</th>
         <th mat-header-cell>Total Price</th>
@@ -15,7 +16,8 @@
     <br />
     <tbody>
       <!-- *ngFor="let item of cartItems$ | async"-->
-      <tr *ngFor="let item of cartItems">
+      <tr *ngFor="let item of cartItems; let i = index">
+        <td>{{ item.name }}</td>
         <td>
           <img
             [src]="item.imageURL"
@@ -29,15 +31,16 @@
           <input
             id="quantity"
             type="number"
-            [value]="item ? item.quantity : 1"
+            [value]="item.quantity"
             min="1"
+            (change)="updateQuantity(i, $event)"
           />
         </td>
         <td>${{ item.price * item.quantity }}</td>
         <td>
           <button
             mat-icon-button
-            color="primary"
+            style="color: var(--button-color)"
             (click)="removeFromCart(item)"
           >
             <mat-icon>delete</mat-icon>
@@ -55,15 +58,19 @@
       <button
         mat-stroked-button
         (click)="returnToShop()"
-        style="color: #f0f0f0; background-color: #3f51b5"
+        style="color: #f0f0f0; background-color: var(--button-color)"
       >
         Return to Shop
       </button>
     </div>
   </div>
   <br />
+  <div *ngIf="loading" class="loading-spinner">
+    <p>Loading...</p>
+    <!-- Replace with a custom spinner or animation if desired -->
+  </div>
   <div>
-    <app-cart-summary [subtotal]="totalPrice"></app-cart-summary>
+    <app-cart-summary [totalPrice]="totalPrice"></app-cart-summary>
   </div>
 </div>
 

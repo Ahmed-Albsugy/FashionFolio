@@ -2,11 +2,11 @@
   <h2>Cart Total</h2>
   <div class="summary-row">
     <span>Subtotal:</span>
-    <span>{{ subtotal | currency }}</span>
+    <span>{{ totalPrice | currency }}</span>
   </div>
   <div class="summary-row">
     <span>Shipping:</span>
-    <span>{{ shipping === 0 ? 'Free' : (shipping | currency) }}</span>
+    <span>{{ shipping === 0 ? "Free" : (shipping | currency) }}</span>
   </div>
   <div class="summary-row total">
     <span>Total:</span>

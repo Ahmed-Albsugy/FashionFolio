@@ -28,6 +28,7 @@ interface CartItem {
 export class CartSummaryComponent {
   constructor(private cartService: CartService, private router: Router) {}
   @Input() subtotal: number = 0;
+  @Input() totalPrice: number = 0;
 
   shipping: number = 0;
   total: number = 0;
@@ -37,8 +38,8 @@ export class CartSummaryComponent {
   }
 
   calculateShippingAndTotal(): void {
-    this.shipping = this.subtotal > 500 ? 0 : 20;
-    this.total = this.subtotal + this.shipping;
+    this.shipping = this.totalPrice > 500 ? 0 : 20;
+    this.total = this.totalPrice + this.shipping;
   }
 
   processToCheckout() {

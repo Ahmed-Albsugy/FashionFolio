@@ -137,6 +137,10 @@
   display: flex;
   /* flex-wrap: wrap; */
 }
+.add-to-cart-btn {
+  color: white;
+  background-color: var(--button-color) !important;
+}
 
 .mat-button-toggle {
   text-align: center;

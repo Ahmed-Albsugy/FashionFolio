@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormGroup } from '@angular/forms';
 import { Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -31,7 +32,7 @@ export class PaymentComponent {
 
   paymentForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.paymentForm = this.fb.group({
       paymentMethod: ['cash', Validators.required],
       couponCode: [''],
@@ -39,8 +40,9 @@ export class PaymentComponent {
   }
 
   onPlaceOrder() {
-    if (this.paymentForm.valid) {
-      this.placeOrder.emit();
-    }
+    this.router.navigate(['/success']);
+    // if (this.paymentForm.valid) {
+    //   this.placeOrder.emit();
+    // }
   }
 }

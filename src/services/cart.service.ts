@@ -29,6 +29,7 @@ export class CartService {
   private cartSubject = new BehaviorSubject<CartItem[]>([]);
   private cartDoc: AngularFirestoreDocument<CartData> | null = null;
   isLoggedIn: boolean = false;
+  totalPrice: number = 0;
 
   constructor(
     private firestore: AngularFirestore,
@@ -64,7 +65,7 @@ export class CartService {
       });
   }
 
-  private updateCart() {
+  updateCart() {
     this.cartSubject.next([...this.cartItems]);
     this.syncCartWithFirestore();
   }
@@ -232,4 +233,12 @@ export class CartService {
   //   this.cartItems = this.cartItems.filter((item) => item.id !== id);
   //   this.cartSubject.next([...this.cartItems]);
   // }
+
+  updateCartItemQuantity(cartItemId: string, newQuantity: number) {
+    // Update the quantity in the Firestore collection
+    return this.firestore
+      .collection('cart')
+      .doc(cartItemId)
+      .update({ quantity: newQuantity });
+  }
 }

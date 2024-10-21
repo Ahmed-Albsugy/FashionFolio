@@ -48,7 +48,9 @@
               mat-icon-button
               class="wishlist-button"
               (click)="toggleFavorite(product)"
-              [style.color]="(isFavorite(product) | async) ? '#3F51B5' : 'grey'"
+              [style.color]="
+                (isFavorite(product) | async) ? 'var(--button-color)' : 'grey'
+              "
             >
               <mat-icon>{{
                 (isFavorite(product) | async) ? "favorite" : "favorite_border"
@@ -104,7 +106,7 @@
         <mat-card-actions>
           <button
             mat-raised-button
-            color="primary"
+            color="#3d3664af"
             [disabled]="!product.inStock"
             (click)="addToCart(product)"
           >

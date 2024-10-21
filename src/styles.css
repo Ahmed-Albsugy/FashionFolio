@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-
+:root {
+  --background-color: #e8f0fd;
+  --button-color: #2a7cc7;
+}
 body {
-  background-color: #f5f5f5;
+  background-color: #e8f0fd;
 }
 html,
 body {
@@ -124,4 +127,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-primary {
+  color: #6f6a8b !important;
 }

@@ -1,6 +1,6 @@
 .categories-section {
-  padding: 40px 0;
-  background-color: #f5f5f5;
+  padding: 80px 40px;
+  background-color: #e8f0fd;
 
   .container {
     max-width: 1200px;
@@ -22,30 +22,37 @@
   }
 
   .category-card {
-    padding-top: 20px;
+    background-color: #f3f8fc;
+    /* padding-top: 20px; */
     cursor: pointer;
     transition: transform 0.3s ease;
     height: 100%;
+    box-shadow: none;
+    border: 1px solid #cdd2d6;
 
     &:hover {
+      background-color: #e4e9ec;
       transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     }
 
     img {
       height: 200px;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     mat-card-content {
       padding: 16px;
 
       h3 {
+        font-size: 20px;
+        font-weight: bold;
         margin: 0 0 8px;
         color: #333;
       }
 
       p {
+        font-size: 12px;
         color: #666;
         margin: 0;
       }

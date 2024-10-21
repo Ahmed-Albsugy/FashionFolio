@@ -1,0 +1,7 @@
+p {
+  font-weight: 900;
+  font-size: 50px;
+  color: var(--button-color);
+  text-align: center;
+  margin-top: 150px;
+}

@@ -1,10 +1,11 @@
 .footer-container {
-  background-color: #d4d4d4;
+  background-color: #2a7cc7;
   padding: 40px 20px 20px;
   margin-top: 40px;
 }
 
 .footer-content {
+  color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -20,7 +21,7 @@
   h3 {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: #333;
+    color: #ffffff;
   }
 
   ul {
@@ -31,26 +32,28 @@
       margin-bottom: 8px;
 
       a {
-        color: #666;
+        color: #c9c9c9;
         text-decoration: none;
 
         &:hover {
-          color: #3f51b5;
+          color: #fff;
         }
       }
     }
   }
 
   p {
-    color: #666;
+    color: #8ec2f2;
     line-height: 1.6;
   }
 
   form {
+    color: #c9c9c9;
     display: flex;
     flex-direction: column;
 
     mat-form-field {
+      color: #c9c9c9;
       width: 100%;
       margin-bottom: 10px;
     }
@@ -68,7 +71,7 @@
   border-top: 1px solid #ddd;
 
   p {
-    color: #666;
+    color: #c9c9c9;
     margin-bottom: 0;
   }
 }

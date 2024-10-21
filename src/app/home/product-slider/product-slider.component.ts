@@ -47,25 +47,25 @@ export class ProductSliderComponent implements OnInit {
   @ViewChild('tabGroup') tabGroup?: MatTabGroup;
   isLoggedIn: boolean = false;
   product: Product[] = [];
-  productChunks: Product[][] = [];
+  products: Product[] = [];
   selectedIndex = 0;
   Chunk: any;
   ngOnInit() {
-    this.productService.getProducts().subscribe((products) => {
-      this.productChunks = this.chunkArray(products, 4);
-    });
-    this.autoChangeTab();
+    // this.productService.getProducts().subscribe((products) => {
+    //   this.products = this.Array(products, 4);
+    // });
+    // this.autoChangeTab();
     // this.authService.isUserLoggedIn().subscribe((loggedIn) => {
     //   this.isLoggedIn = loggedIn;
     // });
-    // this.productService.getProducts().subscribe((products) => {
-    //   this.productChunks = products;
-    // });
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
+    });
     // this.productChunks = this.chunkArray(this.products, 4);
     // this.autoChangeTab();
   }
 
-  chunkArray(array: Product[], size: number) {
+  Array(array: Product[], size: number) {
     const chunked: Product[][] = [];
     for (let i = 0; i < array.length; i += size) {
       chunked.push(array.slice(i, i + size));
@@ -86,13 +86,12 @@ export class ProductSliderComponent implements OnInit {
     this.selectedIndex = index;
   }
   nextSlide() {
-    this.selectedIndex = (this.selectedIndex + 1) % this.productChunks.length;
+    this.selectedIndex = (this.selectedIndex + 1) % this.products.length;
   }
 
   prevSlide() {
     this.selectedIndex =
-      (this.selectedIndex - 1 + this.productChunks.length) %
-      this.productChunks.length;
+      (this.selectedIndex - 1 + this.products.length) % this.products.length;
   }
   // ngOnInit(): void {
   //   this.productService.getProducts().subscribe((products) => {

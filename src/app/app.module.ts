@@ -51,6 +51,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProductSliderComponent,
     UserDashboardComponent,
     FavoriteComponent,
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,
