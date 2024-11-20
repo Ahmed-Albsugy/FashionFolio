@@ -29,15 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Team Members
 
-Ahmed Hassan 
-
-Ahmed Ayman
-
-Mohamed Emad
-
-Nariman Lotfy
-
-Esraa Saeid 
-
+Ahmed Hassan |
+Ahmed Ayman |
+Mohamed Emad |
+Nariman Lotfy|
+Esraa Saeid |
 Zeinab Khaled
 
